@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<score:SContext xmlns:score="http://scoreabm.org/score" label="RiverBaSim" ID="riverBaSim" pluralLabel="RiverBaSims">
-  <implementation package="riverbasim" className="" basePath="../RiverBaSim" mode="AUTO"/>
-</score:SContext>

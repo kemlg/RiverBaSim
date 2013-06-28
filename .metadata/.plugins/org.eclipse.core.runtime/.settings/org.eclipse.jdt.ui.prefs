@@ -1,4 +1,4 @@
-#Fri Jun 28 15:02:06 CEST 2013
+#Fri Jun 28 15:50:13 CEST 2013
 useQuickDiffPrefPage=true
 proposalOrderMigrated=true
 tabWidthPropagated=true
@@ -7,7 +7,8 @@ org.eclipse.jdt.ui.javadoclocations.migrated=true
 useAnnotationsPrefPage=true
 org.eclipse.jface.textfont=1|Monaco|11.0|0|CARBON|1|;
 org.eclipse.jdt.ui.editor.tab.width=
-org.eclipse.jdt.ui.formatterprofiles.version=11
+org.eclipse.jdt.ui.formatterprofiles.version=12
+content_assist_number_of_computers=14
 spelling_locale_initialized=true
 eclipse.preferences.version=1
 content_assist_proposals_foreground=0,0,0
