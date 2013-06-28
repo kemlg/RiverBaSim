@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="800" key="dialogWidth"/>
+		<item value="640" key="dialogHeight"/>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="textEntries">
+		</list>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="24" key="DIALOG_Y_ORIGIN"/>
+		<item value="202" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="repast.simphony.agents.new_rs_flow_creation_wizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="repast.eclipse.ide.wizards"/>
+		</list>
+	</section>
+</section>
