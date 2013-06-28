@@ -6,7 +6,7 @@ Water Basin Management Simulator, Repast-based
 Software needed
 ---------------
 
-* [Repast Simphony 1.2.0|http://sourceforge.net/projects/repast/files/Repast%20Simphony/Repast%20Simphony%201.2.0/]
+* [Repast Simphony 1.2.0](http://sourceforge.net/projects/repast/files/Repast%20Simphony/Repast%20Simphony%201.2.0/)
 
 Getting started
 ---------------
