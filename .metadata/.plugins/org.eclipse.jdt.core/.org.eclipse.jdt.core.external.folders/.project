@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link0</name>
+			<type>2</type>
+			<location>/Users/sergio/.groovy/greclipse/global_dsld_support</location>
+		</link>
+		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>/Applications/Repast-Simphony-2.0/eclipse/plugins/org.codehaus.groovy_1.8.4.xx-20111212-0900-e37-RELEASE/plugin_dsld_support</location>
+		</link>
+	</linkedResources>
+</projectDescription>
