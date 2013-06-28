@@ -1,1 +1,0 @@
-This is the RiverBaSim model. Please contact the developers for more information.

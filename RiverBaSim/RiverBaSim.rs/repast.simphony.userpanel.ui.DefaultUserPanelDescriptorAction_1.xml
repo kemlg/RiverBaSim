@@ -1,4 +1,0 @@
-<repast.simphony.userpanel.ui.DefaultUserPanelDescriptor>
-  <name>Custom Panel</name>
-  <userPanelCreator>com.github.kemlg.riverbasim.factories.ReLogoPanelCreator</userPanelCreator>
-</repast.simphony.userpanel.ui.DefaultUserPanelDescriptor>
