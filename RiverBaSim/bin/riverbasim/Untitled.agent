@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent version="1" agentcomment="This is an agent." agentclassname="Untitled" agentparentclassname="" agentinterfaces="" agentimports="">
+  <behaviorsteps/>
+  <tasksteps>
+    <taskstep x="198" y="182" comment="This is a task." command1="" command2="" command3="" command4="" command5="">
+      <label x="198" y="167" text="Do Task"/>
+    </taskstep>
+  </tasksteps>
+  <decisionsteps/>
+  <joinsteps/>
+  <agentproperties/>
+  <endsteps>
+    <endstep x="203" y="363"/>
+  </endsteps>
+  <connections>
+    <transitions>
+      <transition>
+        <transitionsource type="task" index="0" anchor="2"/>
+        <transitiontarget type="end" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+    </transitions>
+    <booleantransitions/>
+  </connections>
+</agent>

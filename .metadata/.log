@@ -3142,3 +3142,89 @@ HandlerActivation(commandId=org.eclipse.gef.zoom_out,
 HandlerActivation(commandId=org.eclipse.gef.zoom_out,
 	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@5ad0f0),
 	expression=,sourcePriority=0)
+!SESSION 2013-06-28 17:22:35.373 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-06-28 17:22:56.714
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.880
+!MESSAGE Installed JRE 'JVM 1.4' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.885
+!MESSAGE Installed JRE 'JVM 1.4.2' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.891
+!MESSAGE Installed JRE 'JVM 1.5' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.896
+!MESSAGE Installed JRE 'JVM 1.5.0' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.900
+!MESSAGE Installed JRE 'JVM 1.6' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.905
+!MESSAGE Installed JRE 'JVM 1.6.0' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-06-28 17:23:00.909
+!MESSAGE Installed JRE 'JDK7' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.ui 4 4 2013-06-28 17:23:13.716
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-06-28 17:23:37.640
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-06-28 17:23:37.640
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_in':
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@b57646),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@1680bc6),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-06-28 17:23:37.644
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-06-28 17:23:37.644
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_out':
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@1bbf341),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@5f4e03),
+	expression=,sourcePriority=0)
+!SESSION 2013-06-28 17:28:41.462 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2013-06-28 17:28:57.364
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-06-28 17:28:57.565
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-06-28 17:28:57.565
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_in':
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@1dea651),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@791901),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-06-28 17:28:57.576
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-06-28 17:28:57.576
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_out':
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@fa9557),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@16292a4),
+	expression=,sourcePriority=0)

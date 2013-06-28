@@ -10,7 +10,7 @@
  * Set the package name.
  *
  */
-package riverbasim
+package bin.riverbasim
 
 /**
  *
@@ -61,22 +61,7 @@ import static repast.simphony.essentials.RepastEssentials.*
  * This is an agent.
  *
  */
-public class WaterPlant  {
-
-    /**
-     *
-     * This is an agent property.
-     * @field property
-     *
-     */
-    @Parameter (displayName = "Property", usageName = "property")
-    public def getProperty() {
-        return property
-    }
-    public void setProperty(def newValue) {
-        property = newValue
-    }
-    public def property = 0
+public class ModelInitializer  {
 
     /**
      *
@@ -100,15 +85,19 @@ public class WaterPlant  {
      * @field agentID
      *
      */
-    protected String agentID = "WaterPlant " + (agentIDCounter++)
+    protected String agentID = "ModelInitializer " + (agentIDCounter++)
 
     /**
      *
-     * This is the step behavior.
-     * @method step
+     * This is the user model builder
+     * @method initializeModel
      *
      */
-    public def step() {
+    @ScheduledMethod(
+        start = 0d,
+        shuffle = true
+    )
+    public static def initializeModel() {
 
         // Define the return value variable.
         def returnValue
@@ -116,18 +105,6 @@ public class WaterPlant  {
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
 
-
-        // This is an agent decision.
-        if (isBlah()) {
-
-
-        } else  {
-
-            // This is a task.
-            callSomething();
-            // This is a task.
-
-        }
         // Return the results.
         return returnValue
 

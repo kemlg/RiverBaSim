@@ -10,7 +10,7 @@
  * Set the package name.
  *
  */
-package riverbasim
+package bin.riverbasim
 
 /**
  *

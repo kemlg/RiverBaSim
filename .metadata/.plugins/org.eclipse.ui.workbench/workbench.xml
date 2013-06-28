@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="27" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
-<window height="768" width="1024" x="119" y="114">
+<window height="768" maximized="true" width="1024" x="119" y="114">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="266"/>
 </perspectiveBar>
-<coolbarLayout>
+<coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="106" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="130" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="70" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="32" y="22"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="54" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -20,12 +20,12 @@
 <coolItem id="repast.simphony.eclipse.insertcode" itemType="typeToolBarContribution" x="32" y="22"/>
 <coolItem id="repast.simphony.relogo.ide.ReLogoActionSet" itemType="typeToolBarContribution" x="120" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="70" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="repast.simphony.agents.rs_flow_editor" itemType="typeToolBarContribution" x="122" y="22"/>
+<coolItem id="repast.simphony.agents.rs_flow_editor" itemType="typeToolBarContribution" x="135" y="22"/>
 <coolItem id="org.codehaus.groovy.eclipse.editor.GroovyEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -37,10 +37,27 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="repast.simphony.agents.rs_flow_editor" name="ModelInitializer.agent" partName="ModelInitializer.agent" path="C:/Users/Luis/RiverBaSim/RiverBaSim/src/riverbasim/ModelInitializer.agent" title="ModelInitializer.agent" tooltip="RiverBaSim/src/riverbasim/ModelInitializer.agent" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/ModelInitializer.agent"/>
+</editor>
+<editor id="repast.simphony.agents.rs_flow_editor" name="WaterPlant.agent" partName="WaterPlant.agent" path="C:/Users/Luis/RiverBaSim/RiverBaSim/src/riverbasim/WaterPlant.agent" title="WaterPlant.agent" tooltip="RiverBaSim/src/riverbasim/WaterPlant.agent" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/WaterPlant.agent"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="model_description.txt" partName="model_description.txt" path="C:/Users/Luis/RiverBaSim/RiverBaSim/model_description.txt" title="model_description.txt" tooltip="RiverBaSim/model_description.txt" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/model_description.txt"/>
+<editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor activePart="true" focus="true" id="repast.simphony.agents.rs_flow_editor" name="Untitled.agent" partName="Untitled.agent" path="C:/Users/Luis/RiverBaSim/RiverBaSim/src/riverbasim/Untitled.agent" title="Untitled.agent" tooltip="RiverBaSim/src/riverbasim/Untitled.agent" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/Untitled.agent"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
@@ -59,7 +76,7 @@
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
-<viewState group_libraries="1" layout="2" linkWithEditor="1" rootMode="1" workingSetName="Aggregate for window 1372424312664">
+<viewState group_libraries="1" isWindowWorkingSet="true" layout="2" linkWithEditor="1" rootMode="1" workingSetName="">
 <customFilters userDefinedPatternsEnabled="false">
 <xmlDefinedFilters>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
@@ -77,7 +94,6 @@
 <child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
-<child filterId="repast.simphony.relogo.ide.relogoResourceFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
@@ -94,7 +110,7 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="repast.simphony.relogo.ide.relogoperspective">
+<perspectives activePart="repast.simphony.agents.rs_flow_editor" activePerspective="repast.simphony.relogo.ide.relogoperspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -204,10 +220,7 @@
 <alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
-<alwaysOnActionSet id="org.codehaus.groovy.eclipse.ui.groovyElementCreation"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
-<alwaysOnActionSet id="repast.simphony.eclipse.samplemodelsactionSet"/>
-<alwaysOnActionSet id="repast.simphony.relogo.ide.ReLogoActionSet"/>
 <show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
 <show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <show_view_action id="org.eclipse.jdt.ui.SourceView"/>
@@ -234,13 +247,6 @@
 <new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
 <new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
 <new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
-<hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
-<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.search.searchActionSet"/>
-<hide_toolbar_item_id id="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<hide_toolbar_item_id id="repast.simphony.eclipse.insertrepastcode"/>
-<hide_toolbar_item_id id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ResourceNavigator"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
@@ -299,6 +305,11 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/factories/ReLogoPanelCreator.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" path="/RiverBaSim/src/riverbasim/relogo/UserGlobalsAndPanelFactory.groovy"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/Untitled.agent"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/riverbasim/ModelInitializer.agent"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/riverbasim/WaterPlant.agent"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" path="/RiverBaSim/src/riverbasim/WaterPlant.groovy"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/RiverBaSim/model_description.txt"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/riverbasim/Untitled.agent"/>
 </editors>
 <item historyLabel="model.score" index="0"/>
 <item historyLabel="UserLink.groovy" index="1">
@@ -357,7 +368,27 @@
 <item historyLabel="UserGlobalsAndPanelFactory.groovy" index="14">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="Untitled.agent" index="15"/>
+<item historyLabel="Untitled.agent" index="15"/>
+<item historyLabel="ModelInitializer.agent" index="16"/>
+<item historyLabel="WaterPlant.agent" index="17"/>
+<item historyLabel="WaterPlant.groovy" index="18">
+<position/>
+</item>
+<item historyLabel="WaterPlant.agent" index="17"/>
+<item historyLabel="WaterPlant.groovy" index="18">
+<position/>
+</item>
+<item historyLabel="WaterPlant.agent" index="17"/>
+<item historyLabel="WaterPlant.groovy" index="18">
+<position/>
+</item>
+<item historyLabel="WaterPlant.agent" index="17"/>
+<item historyLabel="model_description.txt" index="19">
+<position/>
+</item>
+<item historyLabel="WaterPlant.agent" index="17"/>
+<item historyLabel="Untitled.agent" index="15"/>
+<item active="true" historyLabel="Untitled.agent" index="20"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -375,8 +406,23 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" name="Untitled.agent" tooltip="RiverBaSim/src/riverbasim/Untitled.agent">
+<persistable path="/RiverBaSim/src/riverbasim/Untitled.agent"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" name="Untitled.agent" tooltip="RiverBaSim/src/Untitled.agent">
 <persistable path="/RiverBaSim/src/Untitled.agent"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="model_description.txt" tooltip="RiverBaSim/model_description.txt">
+<persistable path="/RiverBaSim/model_description.txt"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" name="WaterPlant.groovy" tooltip="RiverBaSim/src/riverbasim/WaterPlant.groovy">
+<persistable path="/RiverBaSim/src/riverbasim/WaterPlant.groovy"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" name="WaterPlant.agent" tooltip="RiverBaSim/src/riverbasim/WaterPlant.agent">
+<persistable path="/RiverBaSim/src/riverbasim/WaterPlant.agent"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" name="ModelInitializer.agent" tooltip="RiverBaSim/src/riverbasim/ModelInitializer.agent">
+<persistable path="/RiverBaSim/src/riverbasim/ModelInitializer.agent"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" name="UserObserver.groovy" tooltip="RiverBaSim/src/riverbasim/relogo/UserObserver.groovy">
 <persistable path="/RiverBaSim/src/riverbasim/relogo/UserObserver.groovy"/>
@@ -404,12 +450,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" name="UserPatch.groovy" tooltip="RiverBaSim/src/riverbasim/relogo/UserPatch.groovy">
 <persistable path="/RiverBaSim/src/riverbasim/relogo/UserPatch.groovy"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" name="UserLink.groovy" tooltip="RiverBaSim/src/riverbasim/relogo/UserLink.groovy">
-<persistable path="/RiverBaSim/src/riverbasim/relogo/UserLink.groovy"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.score.ide.editor" name="model.score" tooltip="RiverBaSim/riverbasim.rs/model.score">
-<persistable path="/RiverBaSim/riverbasim.rs/model.score"/>
 </file>
 </mruList>
 </workbench>
