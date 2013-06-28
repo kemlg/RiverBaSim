@@ -1,3 +1,4 @@
-#Fri Jun 28 14:58:33 CEST 2013
+#Fri Jun 28 15:57:12 CEST 2013
 eclipse.preferences.version=1
 showIntro=false
+PERSPECTIVE_BAR_EXTRAS=repast.simphony.relogo.ide.relogoperspective

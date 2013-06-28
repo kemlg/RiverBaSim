@@ -6,7 +6,7 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>repast.simphony.eclipse.repast_simphony_builder</name>
+			<name>repast.simphony.score.agents.repast_simphony_builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -15,10 +15,15 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.codehaus.groovy.eclipse.groovyBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.eclipse.jdt.groovy.core.groovyNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>repast.simphony.eclipse.repast_simphony_nature</nature>
+		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+		<nature>repast.simphony.score.agents.repast_simphony_nature</nature>
 	</natures>
 </projectDescription>

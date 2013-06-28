@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
 
-<!-- Copies the user files to a temp directory and starts the IzPack installer
-     builder.
-     
-     Created by Michael J. North
-     			Jonathan Ozik
-     -->
+<!-- Created by Michael J. North -->
+<!-- September 20, 2007          -->
 
 <project name="BuildModelInstaller" default="BuildUserModelInstaller" basedir="..">
 
@@ -13,27 +9,10 @@
 
 		<!-- Declare the local variables -->
 		<echo message="EclipsePluginsDirectory = ${EclipsePluginsDirectory}" />
-		<echo message="GroovyHomeDirectory = ${GroovyHomeDirectory}" />
-		<property name="GroovyLibDirectory" value="${GroovyHomeDirectory}lib" />
-		<echo message="GroovyLibDirectory = ${GroovyLibDirectory}" />
-		<fileset dir="${GroovyLibDirectory}" id="gAll.jar">
-			<filename name="groovy-all-*.jar" />
-			<not>
-				<filename name="groovy-all-*-sources.jar" />
-			</not>
-		</fileset>
-		<property name="Groovy_All_Jar" refid="gAll.jar" />
-		<echo message="Groovy_All_Jar = ${Groovy_All_Jar}" />
-		<property name="GroovyAllJarLocation" value="${GroovyLibDirectory}/${Groovy_All_Jar}" />
-
-		<!-- A hidden staging dirctory to store the install files that will be deleted at cleanup -->
-		<property name="StagingArea" value="./.temp/RiverBaSim" />
-		<property name="StagingOptionalArea" value="./.temp" />
+		<property name="StagingArea" value="${EclipsePluginsDirectory}/repast.simphony.bin_and_src_${REPAST_VERSION}/temp" />
 		<echo message="StagingArea = ${StagingArea}" />
-		<property name="IzPackHomeDirectory" value="${EclipsePluginsDirectory}/repast.simphony.eclipse_${REPAST_VERSION}/setupfiles/IzPack" />
+		<property name="IzPackHomeDirectory" value="${EclipsePluginsDirectory}/repast.simphony.score.agents_${REPAST_VERSION}/setupfiles/IzPack" />
 		<echo message="IzPackHomeDirectory = ${IzPackHomeDirectory}" />
-
-
 		<property name="IzPackLibDirectory" value="${IzPackHomeDirectory}/lib" />
 		<echo message="IzPackLibDirectory = ${IzPackLibDirectory}" />
 		<fileset id="RawIzPackJARs" dir="${IzPackLibDirectory}">
@@ -44,39 +23,42 @@
 		<echo message="Clearing the temporary staging area..." />
 		<delete includeemptydirs="true" quiet="true">
 			<fileset dir="${StagingArea}" includes="**/*" />
-			<fileset dir="${StagingOptionalArea}" includes="**/*" />
 		</delete>
 
-		<!-- Copy files to the temporary staging area except those filtered-->
+		<!-- Setup the temporary staging area -->
 		<echo message="Setting up the temporary staging area..." />
 		<copy todir="${StagingArea}" overwrite="true" failonerror="false">
 			<fileset dir="." casesensitive="no">
-				<exclude name="**/src/**" />
-				<exclude name="**/docs/**" />
-			</fileset>
-		</copy>
-
-		<!-- Copy optional files to a separate directory -->
-		<copy todir="${StagingOptionalArea}" overwrite="true" failonerror="false">
-			<fileset dir="." casesensitive="no">
-				<include name="**/src/**" />
-				<include name="**/docs/**" />
+				<include name="model_description.txt" />
+				<include name="license.txt" />
+				<include name="installer/start_model.bat" />
+				<include name="installer/start_model.command" />
+				<include name="installer/splash_screen.png" />
+				<include name="docs/**" />
+				<include name="freezedried_data/**" />
+				<include name="src/**" />
+				<include name="bin/**" />
+				<include name="bin-groovy/**" />
+				<include name="repast-licenses/**" />
+				<include name="integration/**" />
+				<include name="lib/**" />
+				<include name="icons/**" />
+				<include name="misc/**" />
+				<include name="batch/**" />
+				<include name="riverbasim.rs/**" />
+				<include name="installer/shortcuts_Windows.xml" />
+				<include name="installer/shortcuts_Windows_Registry.xml" />
+				<include name="installer/shortcuts_Xnix.xml" />
 			</fileset>
 		</copy>
 
 		<chmod perm="+x" file="${StagingArea}/installer/start_model.command" />
 
 
-		<copy file="installer/installation_components.xml" tofile="${StagingArea}/installation_components_temp.xml" />
+		<copy file="installer/installation_components.xml" tofile="${StagingArea}/installation_components_temp.xml"/>
 
 		<replace file="${StagingArea}/installation_components_temp.xml">
 			<replacefilter token="$REPAST_VERSION" value="${REPAST_VERSION}" />
-			<replacefilter token="$StagingArea" value="${StagingArea}" />
-			<replacefilter token="$StagingOptionalArea" value="${StagingOptionalArea}" />
-			<replacefilter token="$IzPackHomeDirectory" value="${IzPackHomeDirectory}" />
-			<replacefilter token="$EclipsePluginsDirectory" value="${EclipsePluginsDirectory}" />
-			<replacefilter token="$GroovyAllJarLocation" value="${GroovyAllJarLocation}" />
-			<replacefilter token="$Groovy_All_Jar" value="${Groovy_All_Jar}" />
 		</replace>
 
 		<!-- Run IzPack -->
@@ -89,21 +71,23 @@
 			</classpath>
 			<arg value="${StagingArea}/installation_components_temp.xml" />
 			<arg value="-b" />
-			<arg value="." />
+			<arg value="${EclipsePluginsDirectory}" />
 			<arg value="-o" />
 			<arg value="${outputInstallationFile}" />
 			<arg value="-k" />
 			<arg value="standard" />
 		</java>
 
+
 		<!-- Clear the temporary staging area -->
 		<echo message="Clearing the temporary staging area..." />
 		<delete includeemptydirs="true" quiet="true">
 			<fileset dir="${StagingArea}" includes="**/*" />
-			<fileset dir="${StagingOptionalArea}" includes="**/*" />
 		</delete>
 
 		<!-- Note the status -->
 		<echo message="Done!" />
+
 	</target>
+
 </project>
