@@ -6,8 +6,8 @@
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="142" y="151" comment="This is a task." command1="callSomething();" command2="" command3="" command4="" command5="">
-      <label x="142" y="136" text="Do Task"/>
+    <taskstep x="162" y="156" comment="This is a task." command1="callSomething();" command2="" command3="" command4="" command5="">
+      <label x="162" y="141" text="Do Task"/>
     </taskstep>
     <taskstep x="206" y="240" comment="This is a task." command1="" command2="" command3="" command4="" command5="">
       <label x="206" y="225" text="Do Task"/>
@@ -25,8 +25,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="195" y="337"/>
-    <endstep x="397" y="362"/>
+    <endstep x="200" y="342"/>
+    <endstep x="402" y="367"/>
   </endsteps>
   <connections>
     <transitions>
