@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent version="1" agentcomment="This is an agent." agentclassname="WaterPlant" agentparentclassname="" agentinterfaces="" agentimports="">
+  <behaviorsteps>
+    <behaviorstep x="77" y="24" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="This is the step behavior." visibility="0" returntype="def" compiledname="step" parameters="" exceptions="">
+      <label x="77" y="9" text="Step"/>
+    </behaviorstep>
+  </behaviorsteps>
+  <tasksteps>
+    <taskstep x="142" y="151" comment="This is a task." command1="callSomething();" command2="" command3="" command4="" command5="">
+      <label x="142" y="136" text="Do Task"/>
+    </taskstep>
+    <taskstep x="206" y="240" comment="This is a task." command1="" command2="" command3="" command4="" command5="">
+      <label x="206" y="225" text="Do Task"/>
+    </taskstep>
+  </tasksteps>
+  <decisionsteps>
+    <decisionstep x="322" y="154" comment="This is an agent decision." criteria="isBlah()" branchType="if">
+      <label x="322" y="139" text="Evaluate Criteria"/>
+    </decisionstep>
+  </decisionsteps>
+  <joinsteps/>
+  <agentproperties>
+    <agentproperty x="581" y="117" comment="This is an agent property." visibility="0" compiledname="property" type="def" defaultvalue="0">
+      <label x="586" y="102" text="Property"/>
+    </agentproperty>
+  </agentproperties>
+  <endsteps>
+    <endstep x="195" y="337"/>
+    <endstep x="397" y="362"/>
+  </endsteps>
+  <connections>
+    <transitions>
+      <transition>
+        <transitionsource type="behavior" index="0" anchor="0"/>
+        <transitiontarget type="decision" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="0" anchor="2"/>
+        <transitiontarget type="task" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="1" anchor="2"/>
+        <transitiontarget type="end" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+    </transitions>
+    <booleantransitions>
+      <booleantransition value="true">
+        <transitionsource type="decision" index="0" anchor="2"/>
+        <transitiontarget type="end" index="1" anchor="0"/>
+        <bendpoints/>
+      </booleantransition>
+      <booleantransition value="false">
+        <transitionsource type="decision" index="0" anchor="1"/>
+        <transitiontarget type="task" index="0" anchor="3"/>
+        <bendpoints/>
+      </booleantransition>
+    </booleantransitions>
+  </connections>
+</agent>
