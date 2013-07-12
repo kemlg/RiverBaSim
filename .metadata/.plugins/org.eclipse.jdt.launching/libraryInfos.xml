@@ -42,7 +42,25 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home" version="1.6.0_51">
+<libraryInfo home="C:\Program Files\RepastSimphony-1.2.0\eclipse" version="1.6.0_06">
+<bootpath>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home" version="1.6.0_51">
 <bootpath>
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar"/>
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar"/>
@@ -63,7 +81,7 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home" version="1.6.0_51">
+<libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home" version="1.6.0_51">
 <bootpath>
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar"/>
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar"/>

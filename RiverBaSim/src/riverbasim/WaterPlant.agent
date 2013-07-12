@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="WaterPlant" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="77" y="24" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="This is the step behavior." visibility="0" returntype="def" compiledname="step" parameters="" exceptions="">
-      <label x="77" y="9" text="Step"/>
+    <behaviorstep x="310" y="57" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Treating wastewater" visibility="0" returntype="def" compiledname="step" parameters="" exceptions="">
+      <label x="310" y="42" text="Wastewater treatement"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="162" y="156" comment="This is a task." command1="callSomething();" command2="" command3="" command4="" command5="">
-      <label x="162" y="141" text="Do Task"/>
+    <taskstep x="169" y="280" comment="Cleans N units of wastewater" command1="callSomething();" command2="" command3="" command4="" command5="">
+      <label x="130" y="266" text="CleanWasteWater"/>
     </taskstep>
-    <taskstep x="206" y="240" comment="This is a task." command1="" command2="" command3="" command4="" command5="">
-      <label x="206" y="225" text="Do Task"/>
+    <taskstep x="169" y="375" comment="Send the cleaned water to the Water Transporter agent to be dumped to the river." command1="" command2="" command3="" command4="" command5="">
+      <label x="92" y="358" text="Send water to Water Transporter agent"/>
+    </taskstep>
+    <taskstep x="420" y="275" comment="Send the cleaned water to the Water Transporter agent to be dumped to the river." command1="" command2="" command3="" command4="" command5="">
+      <label x="419" y="261" text="Send water to Water Transporter agent"/>
     </taskstep>
   </tasksteps>
   <decisionsteps>
-    <decisionstep x="322" y="154" comment="This is an agent decision." criteria="isBlah()" branchType="if">
-      <label x="322" y="139" text="Evaluate Criteria"/>
+    <decisionstep x="309" y="196" comment="The Water Plant has to decide if it cleans a certain amount of wastewater or not." criteria="cleaningWastewaterFeasible()" branchType="if">
+      <label x="352" y="198" text="Is it feasible to clean wastewater?"/>
     </decisionstep>
   </decisionsteps>
   <joinsteps/>
   <agentproperties>
-    <agentproperty x="581" y="117" comment="This is an agent property." visibility="0" compiledname="property" type="def" defaultvalue="0">
-      <label x="586" y="102" text="Property"/>
+    <agentproperty x="139" y="169" comment="This property tells if it is raining." visibility="0" compiledname="raining" type="def" defaultvalue="0">
+      <label x="144" y="154" text="Is it raining?"/>
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="200" y="342"/>
-    <endstep x="402" y="367"/>
+    <endstep x="174" y="469"/>
+    <endstep x="425" y="462"/>
   </endsteps>
   <connections>
     <transitions>
@@ -45,16 +48,21 @@
         <transitiontarget type="end" index="0" anchor="0"/>
         <bendpoints/>
       </transition>
+      <transition>
+        <transitionsource type="task" index="2" anchor="2"/>
+        <transitiontarget type="end" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
     </transitions>
     <booleantransitions>
       <booleantransition value="true">
-        <transitionsource type="decision" index="0" anchor="2"/>
-        <transitiontarget type="end" index="1" anchor="0"/>
+        <transitionsource type="decision" index="0" anchor="1"/>
+        <transitiontarget type="task" index="0" anchor="3"/>
         <bendpoints/>
       </booleantransition>
       <booleantransition value="false">
-        <transitionsource type="decision" index="0" anchor="1"/>
-        <transitiontarget type="task" index="0" anchor="3"/>
+        <transitionsource type="decision" index="0" anchor="3"/>
+        <transitiontarget type="task" index="2" anchor="1"/>
         <bendpoints/>
       </booleantransition>
     </booleantransitions>

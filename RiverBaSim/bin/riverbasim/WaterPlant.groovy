@@ -65,18 +65,18 @@ public class WaterPlant  {
 
     /**
      *
-     * This is an agent property.
-     * @field property
+     * This property tells if it is raining.
+     * @field raining
      *
      */
-    @Parameter (displayName = "Property", usageName = "property")
-    public def getProperty() {
-        return property
+    @Parameter (displayName = "Is it raining?", usageName = "raining")
+    public def getRaining() {
+        return raining
     }
-    public void setProperty(def newValue) {
-        property = newValue
+    public void setRaining(def newValue) {
+        raining = newValue
     }
-    public def property = 0
+    public def raining = 0
 
     /**
      *
@@ -104,7 +104,7 @@ public class WaterPlant  {
 
     /**
      *
-     * This is the step behavior.
+     * Treating wastewater
      * @method step
      *
      */
@@ -117,15 +117,16 @@ public class WaterPlant  {
         def time = GetTickCountInTimeUnits()
 
 
-        // This is an agent decision.
-        if (isBlah()) {
+        // The Water Plant has to decide if it cleans a certain amount of wastewater or not.
+        if (cleaningWastewaterFeasible()) {
 
+            // Cleans N units of wastewater
+            callSomething();
+            // Send the cleaned water to the Water Transporter agent to be dumped to the river.
 
         } else  {
 
-            // This is a task.
-            callSomething();
-            // This is a task.
+            // Send the cleaned water to the Water Transporter agent to be dumped to the river.
 
         }
         // Return the results.

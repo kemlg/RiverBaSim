@@ -950,3 +950,33 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:549)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:504)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
+!SESSION 2013-07-12 07:32:18.039 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-07-12 07:32:31.903
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-12 07:32:39.114
+!MESSAGE Installed JRE 'JVM 1.4' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-12 07:32:39.119
+!MESSAGE Installed JRE 'JVM 1.4.2' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-12 07:32:39.124
+!MESSAGE Installed JRE 'JVM 1.5' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-12 07:32:39.128
+!MESSAGE Installed JRE 'JVM 1.5.0' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-12 07:32:39.132
+!MESSAGE Installed JRE 'JVM 1.6' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-12 07:32:39.137
+!MESSAGE Installed JRE 'JVM 1.6.0' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-12 07:34:31.588
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
