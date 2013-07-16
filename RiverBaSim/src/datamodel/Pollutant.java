@@ -19,37 +19,79 @@ package datamodel;
 public class Pollutant {
 
 	private String name;
-	private float amount;
+	private float concentration;
 	private String units;
 	
-	public Pollutant(String name, float amount, String units){
+	public Pollutant(String name, float concentration){
 		this.name = name;
-		this.amount = amount;
-		this.units = units;
+		this.concentration = concentration;
+		this.units = "g/m3";
 	}
-	
+	/**
+	 * Returns pollutant name
+	 * @return String name
+	 */
 	public String getName(){
 		return this.name;
 	}
-	public float getAmount(){
-		return this.amount;
+	/**
+	 * Returns pollutant concentration
+	 * @return float concentration
+	 */
+	public float getConcentration(){
+		return this.concentration;
 	}
+	/**
+	 * Returns pollutant units
+	 * @return String units
+	 */
 	public String getUnits(){
 		return this.units;
 	}
 	
-	
-	public void reduceAbsoluteAmount(float absoluteAmountReduced){
-		if (this.amount<=absoluteAmountReduced) this.amount = 0;
-		else this.amount -= absoluteAmountReduced;
+	/**
+	 * Reduces the amount of pollutant concentration according to a given absolute value
+	 * E.g., 0.2 reduces the amount of pollutant by 0.2 units (we have 100 units, it is reduced to 99.8)
+	 * @param float absoluteConcentrationReduced
+	 */
+	public void reduceAbsoluteConcentration(float absoluteConcentrationReduced){
+		if (this.concentration<=absoluteConcentrationReduced) this.concentration = 0;
+		else this.concentration -= absoluteConcentrationReduced;
 	}
-	
-	public void reducePercentageAmount(float percentageAmountReduced){
-		
+	/**
+	 * Reduces the amount of pollutant concentration according to a given percentage (0-1)
+	 * E.g., 0.2 reduces the concentration of pollutant by a 20% (we have 100 g/m3, it is reduced to 80 g/m3)
+	 * @param float percentageConcentrationReduced
+	 * @throws Exception 
+	 */
+	public void reducePercentageConcentration(float percentageConcentrationReduced) throws Exception{
+		if (percentageConcentrationReduced>=0 && percentageConcentrationReduced<=1){
+			this.concentration *=percentageConcentrationReduced;
+		}
+		else{
+			throw new Exception("Invalid percentage value "+percentageConcentrationReduced);
+		}
 	}
+
+	public void setConcentration(float newConcentration){
+		this.concentration=newConcentration;
+	}
+
+
 	
-	public float mergeWith(Pollutant other){
-		return 0;
-		
+	/**
+	 * A pollutant is equal to another one if they are the same kind of pollutant (same Name) and 
+	 * they have the same magnitude units (same Units).
+	 * @param Pollutant other 
+	 * @return boolean
+	 */
+	public boolean equals(Pollutant other){
+		return (this.name.equalsIgnoreCase(other.getName())&&this.units.equalsIgnoreCase(other.getUnits()));
+	}
+	/**
+	 * To display pollutant information: Amount+units+name
+	 */
+	public String toString(){
+		return "Pollutant information: "+this.concentration+" "+this.units+" of "+this.name+"\n";
 	}
 }
