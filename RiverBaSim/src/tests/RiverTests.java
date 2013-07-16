@@ -30,12 +30,14 @@ public class RiverTests {
 	@Test
 	public void testFlow(){
 		log.info("Starting pollution");
-		Pollutants pollution = new Pollutants(120, 30, 20, 5, 5);
+		Pollutants pol = new Pollutants(100, 30, 20, 5, 5);
 		for(int i=0; i<5;i++){
-			this.river.flowWater(new WaterMass(1000, pollution));
+			log.info(this.river);
+			this.river.flowWater(new WaterMass(1000, pol));
 		}
-		this.river.setWaterInSection(2, new WaterMass(1, new Pollutants(120, 30, 20, 5, 5)));
 		log.info(this.river);
+		//this.river.setWaterInSection(2, new WaterMass(1, new Pollutants(120, 30, 20, 5, 5)));
+		//log.info(this.river);
 	}
 
 }

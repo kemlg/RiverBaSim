@@ -13,30 +13,46 @@ import java.util.Iterator;
 public class Pollutants {
 	private ArrayList<Pollutant> pollutants;
 	
-	public Pollutants(float solidConcentration, float BODConcentration, float CODConcentration, float NtConcentration, float PtConcentration){
-		pollutants = new ArrayList<Pollutant>();
-		pollutants.add(new Pollutant("Solid", solidConcentration));
-		pollutants.add(new Pollutant("BOD", BODConcentration));
-		pollutants.add(new Pollutant("COD", CODConcentration));
-		pollutants.add(new Pollutant("Nt", NtConcentration));
-		pollutants.add(new Pollutant("Pt", PtConcentration));
+	public Pollutants(double solidConcentration, double BODConcentration, double CODConcentration, double NtConcentration, double PtConcentration){
+		this.pollutants = new ArrayList<Pollutant>();
+		this.pollutants.add(new Pollutant("Solid", solidConcentration));
+		this.pollutants.add(new Pollutant("BOD", BODConcentration));
+		this.pollutants.add(new Pollutant("COD", CODConcentration));
+		this.pollutants.add(new Pollutant("Nt", NtConcentration));
+		this.pollutants.add(new Pollutant("Pt", PtConcentration));
 	}
 
 	public Pollutants(){
-		pollutants = new ArrayList<Pollutant>();
-		pollutants.add(new Pollutant("Solid", 0));
-		pollutants.add(new Pollutant("BOD", 0));
-		pollutants.add(new Pollutant("COD", 0));
-		pollutants.add(new Pollutant("Nt", 0));
-		pollutants.add(new Pollutant("Pt", 0));
+		this.pollutants = new ArrayList<Pollutant>();
+		this.pollutants.add(new Pollutant("Solid", 0));
+		this.pollutants.add(new Pollutant("BOD", 0));
+		this.pollutants.add(new Pollutant("COD", 0));
+		this.pollutants.add(new Pollutant("Nt", 0));
+		this.pollutants.add(new Pollutant("Pt", 0));
 	}
 	
+	public Pollutants (Pollutants pollutantsToCopy){
+		this.pollutants = new ArrayList<Pollutant>();
+		Iterator<Pollutant> itr = pollutantsToCopy.getPollutants().iterator();
+		while (itr.hasNext()){
+			Pollutant pollutant = itr.next();
+			this.pollutants.add(new Pollutant(pollutant));
+			
+		}
+	
+	}
 	
 	public ArrayList<Pollutant> getPollutants(){
 		return pollutants;
 	}
 	
-	public void mergePollutants(float thisVolume, float otherVolume, Pollutants other){
+	
+	public void setPollutants(Pollutants newPollutants){
+		for (int index=0; index<this.pollutants.size(); index++){
+			this.pollutants.get(index).setConcentration(newPollutants.getPollutants().get(index).getConcentration());
+		}
+	}
+	public void mergePollutants(double d, double e, Pollutants other){
 		Iterator<Pollutant> otherPollutants  = other.pollutants.iterator();
 		int index = 0;
 		while (otherPollutants.hasNext()){
@@ -44,11 +60,11 @@ public class Pollutants {
 			Pollutant thisPollutant = this.pollutants.get(index);
 			
 			// We need to know the exact amount of each pollutant from each water mass
-			float amountOtherPollutant = otherPollutant.getConcentration()*otherVolume;
-			float amountThisPollutant = thisPollutant.getConcentration()*thisVolume;
+			double amountOtherPollutant = otherPollutant.getConcentration()*e;
+			double amountThisPollutant = thisPollutant.getConcentration()*d;
 			
 			// We calculate the new concentration
-			thisPollutant.setConcentration((amountOtherPollutant+amountThisPollutant)/(otherVolume+thisVolume));
+			thisPollutant.setConcentration((amountOtherPollutant+amountThisPollutant)/(e+d));
 			
 			// And replace the old pollutant for the new pollutant in the merged water mass
 			this.pollutants.set(index, thisPollutant);
@@ -56,7 +72,7 @@ public class Pollutants {
 		}
 	}
 	
-	public void depollute(float percentageSolid, float percentageBOD, float percentageCOD, float percentageNt, float percentagePt){
+	public void depollute(double percentageSolid, double percentageBOD, double percentageCOD, double percentageNt, double percentagePt){
 		try {
 			this.pollutants.get(0).reducePercentageConcentration(percentageSolid);
 			this.pollutants.get(1).reducePercentageConcentration(percentageBOD);

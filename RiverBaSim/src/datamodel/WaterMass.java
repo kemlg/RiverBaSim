@@ -19,7 +19,7 @@ public class WaterMass {
 	/**
 	 * Volume of water (m3)
 	 */
-	private float volume;
+	private double volume;
 	/**
 	 * List of pollutants in the water mass. It is a fixed list of pollutants (Solid, BOD, COD, Nt and Pt)
 	 * These pollutants are expressed in terms of concentration (g/m3)
@@ -29,24 +29,30 @@ public class WaterMass {
 	
 	/**
 	 * Creation of a fresh water mass, free of pollutants
-	 * @param volume
+	 * @param waterPerSection
 	 */
-	public WaterMass(float volume){
-		this.volume = volume;
+	public WaterMass(double waterPerSection){
+		this.volume = waterPerSection;
 		// Setting up the list of pollutants that are considered in the scenario
 		pollutants = new Pollutants();
 	}
 	
-	public WaterMass(float volume, Pollutants pollutants){
+	public WaterMass(double volume, Pollutants pollutants){
 		this.volume = volume;
-		this.pollutants = pollutants;
+		this.pollutants = new Pollutants(pollutants);
 	}
 	
+	public WaterMass(WaterMass waterMassToCopy) {
+		// TODO Auto-generated constructor stub
+		this.volume = waterMassToCopy.getVolume();
+		this.pollutants = new Pollutants (waterMassToCopy.getPollutants());
+	}
+
 	/**
 	 * Returns the amount of water in the water mass
 	 * @return float volume
 	 */
-	public float getVolume(){
+	public double getVolume(){
 		return this.volume;
 	}
 	/**
@@ -57,8 +63,8 @@ public class WaterMass {
 		return this.pollutants;
 	}
 	
-	public void depolluteWaterMass(float percentageSolid, float percentageBOD, float percentageCOD, float percentageNt, float percentagePt){
-		this.pollutants.depollute(percentageSolid, percentageBOD, percentageCOD, percentageNt, percentagePt);
+	public void depolluteWaterMass(double d, double e, double f, double g, double h){
+		this.pollutants.depollute(d, e, f, g, h);
 	}
 
 	

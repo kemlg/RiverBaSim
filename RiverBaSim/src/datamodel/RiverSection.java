@@ -22,8 +22,8 @@ package datamodel;
 public class RiverSection {
 	private WaterMass currentWater;
 	
-	public RiverSection(float amountWater){
-		this.currentWater = new WaterMass(amountWater);
+	public RiverSection(double waterPerSection){
+		this.currentWater = new WaterMass(waterPerSection);
 	}
 	
 	public void dumpWater(WaterMass dumpedWater){
@@ -41,5 +41,8 @@ public class RiverSection {
 	
 	public String toString(){
 		return "River section: "+this.currentWater.toString();
+	}
+	public void depolluteSection(double d, double e, double f, double g, double h){
+		this.currentWater.depolluteWaterMass(d, e, f, g, h);
 	}
 }

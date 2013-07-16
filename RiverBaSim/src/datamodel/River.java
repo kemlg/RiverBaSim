@@ -28,13 +28,12 @@ import org.apache.log4j.Logger;
  */
 public class River {
 	private List<RiverSection> river;
-	private static final Logger log =Logger.getLogger(River.class.getName());
 	@SuppressWarnings("unused")
-	private int numSections;
+	private static final Logger log =Logger.getLogger(River.class.getName());
+	
 	public River(int numSections, float totalWaterInRiver){
-		this.numSections = numSections;
 		this.setRiver(new ArrayList<RiverSection>());
-		float waterPerSection = totalWaterInRiver/numSections;
+		double waterPerSection = totalWaterInRiver/numSections;
 		for (int i=0; i<numSections;i++){
 			this.river.add(new RiverSection(waterPerSection));
 		}
@@ -47,19 +46,19 @@ public class River {
 	}
 	
 	public void flowWater(WaterMass waterToIntroduce){
-		Iterator<RiverSection> itr = this.river.iterator();
 		WaterMass waterToMove = waterToIntroduce;
-		while (itr.hasNext()){
-			RiverSection currentSection = itr.next();
-			WaterMass currentWater = currentSection.getCurrentWater();
+		for (RiverSection currentSection: this.river){
+			WaterMass currentWater = new WaterMass(currentSection.getCurrentWater());
 			currentSection.setWater(waterToMove);
-			waterToMove = selfCleaningProcess(currentWater);
+			waterToMove = currentWater;
 		}
+		this.selfCleaningProcessWholeRiver();
 	}
 	
-	private WaterMass selfCleaningProcess(WaterMass waterToMove) {
-		waterToMove.depolluteWaterMass((float) 0.4, (float)0.90, (float)0.92, (float)0.98, (float)0.97);
-		return waterToMove;
+	private void selfCleaningProcessWholeRiver() {
+		for(RiverSection section : this.river){
+			section.depolluteSection(0.4, 0.90, 0.92, 0.98, 0.97);
+		}
 	}
 	public String toString(){
 		String result = "River information: \n";
@@ -74,7 +73,6 @@ public class River {
 		this.river.get(section).dumpWater(dumpedWater);
 	}
 	public void setWaterInSection(int section, WaterMass dumpedWater){
-		//this.river.get(section).setWater(dumpedWater);
 		RiverSection riverSection = this.river.get(section);
 		riverSection.setWater(dumpedWater);
 		this.river.set(section, riverSection);

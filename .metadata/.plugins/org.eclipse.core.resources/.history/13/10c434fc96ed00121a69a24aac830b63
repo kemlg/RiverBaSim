@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package datamodel;
+
+/**
+ * @author Luis
+ *
+ */
+public class Pollutant {
+
+}

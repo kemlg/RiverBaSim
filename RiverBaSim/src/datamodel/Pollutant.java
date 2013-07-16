@@ -19,13 +19,19 @@ package datamodel;
 public class Pollutant {
 
 	private String name;
-	private float concentration;
+	private double concentration;
 	private String units;
 	
-	public Pollutant(String name, float concentration){
+	public Pollutant(String name, double concentration){
 		this.name = name;
 		this.concentration = concentration;
 		this.units = "g/m3";
+	}
+	
+	public Pollutant(Pollutant pollutantToCopy){
+		this.name          = pollutantToCopy.getName();
+		this.units 		   = pollutantToCopy.getUnits();
+		this.concentration = pollutantToCopy.getConcentration();
 	}
 	/**
 	 * Returns pollutant name
@@ -36,9 +42,9 @@ public class Pollutant {
 	}
 	/**
 	 * Returns pollutant concentration
-	 * @return float concentration
+	 * @return double concentration
 	 */
-	public float getConcentration(){
+	public double getConcentration(){
 		return this.concentration;
 	}
 	/**
@@ -64,7 +70,7 @@ public class Pollutant {
 	 * @param float percentageConcentrationReduced
 	 * @throws Exception 
 	 */
-	public void reducePercentageConcentration(float percentageConcentrationReduced) throws Exception{
+	public void reducePercentageConcentration(double percentageConcentrationReduced) throws Exception{
 		if (percentageConcentrationReduced>=0 && percentageConcentrationReduced<=1){
 			this.concentration *=percentageConcentrationReduced;
 		}
@@ -73,7 +79,7 @@ public class Pollutant {
 		}
 	}
 
-	public void setConcentration(float newConcentration){
+	public void setConcentration(double newConcentration){
 		this.concentration=newConcentration;
 	}
 
