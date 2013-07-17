@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent version="1" agentcomment="This is an agent." agentclassname="GasNode" agentparentclassname="" agentinterfaces="" agentimports="">
+  <behaviorsteps>
+    <behaviorstep x="262" y="122" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="linked_from" watchannotationtargetclassname="infrastructuredemo.GasNode" watchannotationtargetfieldnames="pressure" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="10" watchannotationtriggerpriority="" watchannotationpick="" comment="This is the step behavior." visibility="0" returntype="" compiledname="step" parameters="infrastructuredemo.GasNode watchedAgent" exceptions="">
+      <label x="262" y="107" text="Watch for pressure change"/>
+    </behaviorstep>
+  </behaviorsteps>
+  <tasksteps>
+    <taskstep x="260" y="225" comment="This is a task." command1="pressure = watchedAgent.pressure" command2="" command3="" command4="" command5="">
+      <label x="239" y="208" text="Change Pressure"/>
+    </taskstep>
+  </tasksteps>
+  <decisionsteps/>
+  <joinsteps/>
+  <agentproperties>
+    <agentproperty x="102" y="144" comment="This is an agent property." visibility="0" compiledname="pressure" type="double" defaultvalue="300">
+      <label x="107" y="129" text="Node Pressure"/>
+    </agentproperty>
+  </agentproperties>
+  <endsteps>
+    <endstep x="271" y="362"/>
+  </endsteps>
+  <connections>
+    <transitions>
+      <transition>
+        <transitionsource type="behavior" index="0" anchor="0"/>
+        <transitiontarget type="task" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="0" anchor="2"/>
+        <transitiontarget type="end" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+    </transitions>
+    <booleantransitions/>
+  </connections>
+</agent>

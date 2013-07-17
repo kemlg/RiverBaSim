@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<score:SContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:score="http://scoreabm.org/score" label="InfrastructureDemo" ID="infrastructureDemo" pluralLabel="InfrastructureDemos">
+  <implementation package="infrastructuredemo" className="" basePath="../Infrastructure_Demo" mode="AUTO"/>
+  <agents label="GasNode" ID="gasNode" pluralLabel="GasNodes">
+    <implementation className="GasNode"/>
+  </agents>
+  <projections xsi:type="score:SNetwork" label="GasNetwork" ID="gasNetwork" pluralLabel="GasNetworks" directed="true"/>
+  <projections xsi:type="score:SGrid" label="Grid2D" ID="grid2D" pluralLabel="Grid2Ds" dimensionality="2">
+    <attributes xsi:type="score:SAttributeArray" label="Dimensions" ID="dimensions" pluralLabel="Dimensionss" description="The size of each dimension." sType="INTEGER" size="2"/>
+    <attributes label="Width" ID="width" pluralLabel="Widths" description="The horizontal extent of the space." sType="INTEGER" defaultValue="20"/>
+    <attributes label="Height" ID="height" pluralLabel="Heights" description="The vertical extent of the space." sType="INTEGER" defaultValue="30"/>
+  </projections>
+</score:SContext>

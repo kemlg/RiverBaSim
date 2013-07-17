@@ -80,6 +80,21 @@ public class WaterPlant  {
 
     /**
      *
+     * River section where the WWTP dumps treated water.
+     * @field riverSectionLocation
+     *
+     */
+    @Parameter (displayName = "River section location", usageName = "riverSectionLocation")
+    public def getRiverSectionLocation() {
+        return riverSectionLocation
+    }
+    public void setRiverSectionLocation(def newValue) {
+        riverSectionLocation = newValue
+    }
+    public def riverSectionLocation = 0
+
+    /**
+     *
      * This value is used to automatically generate agent identifiers.
      * @field serialVersionUID
      *
@@ -122,7 +137,8 @@ public class WaterPlant  {
 
             // Cleans N units of wastewater
             callSomething();
-            // Send the cleaned water to the Water Transporter agent to be dumped to the river.
+            // Send the treated water to be dumped to the river.
+            Edit Using Wizard Dialog...
 
         } else  {
 

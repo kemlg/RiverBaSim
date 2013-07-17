@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent version="1" agentcomment="This is an agent." agentclassname="Industry" agentparentclassname="" agentinterfaces="" agentimports="">
+  <behaviorsteps/>
+  <tasksteps/>
+  <decisionsteps/>
+  <joinsteps/>
+  <agentproperties>
+    <agentproperty x="125" y="109" comment="River section where this industry " visibility="0" compiledname="property" type="def" defaultvalue="0">
+      <label x="130" y="94" text="Property"/>
+    </agentproperty>
+  </agentproperties>
+  <endsteps/>
+  <connections>
+    <transitions/>
+    <booleantransitions/>
+  </connections>
+</agent>
