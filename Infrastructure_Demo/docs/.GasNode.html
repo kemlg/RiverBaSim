@@ -42,19 +42,23 @@ The following external code is referenced:<BLOCKQUOTE></p>
 The class "GasNode" is defined with visibility "public" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "pressure" with visibility "public" of type "double" and default value 300. This is an agent property. The block is tagged with the name "Node Pressure".</li></p>
+    <li>There is a field named "pressure" with visibility "public" of type "double" and default value 300. This is an agent property. The block is tagged with the name "Pressure".</li></p>
 </p>
     </p>
     </p>
-        <li>There is a method named "step" method has visibility     "public" and parameters [infrastructuredemo.GasNode watchedAgent]. This is the step behavior. The block is tagged with the name "Watch for pressure change".</li></p>
+        <li>There is a method named "step" method has visibility     "public" and parameters [infrastructuredemo.GasNode watchedAgent]. Watches the pressure state of neighbours The block is tagged with the name "Watch the pressure change".</li></p>
     </p>
     </p>
+    <BLOCKQUOTE>The step method is statically scheduled as follows:<BLOCKQUOTE></p>
+        <li>start = 1d</li></p>
+        <li>shuffle = false</li></p>
+    </BLOCKQUOTE></BLOCKQUOTE></p>
     <BLOCKQUOTE>The step method will trigger as follows:<BLOCKQUOTE></p>
         <li>watcheeClassName = 'infrastructuredemo.GasNode'</li></p>
         <li>watcheeFieldNames = 'pressure'</li></p>
         <li>query = 'linked_from'</li></p>
         <li>whenToTrigger = WatcherTriggerSchedule.LATER</li></p>
-        <li>scheduleTriggerDelta = 10d</li></p>
+        <li>scheduleTriggerDelta = 1d</li></p>
     </BLOCKQUOTE></BLOCKQUOTE></p>
  <BLOCKQUOTE>The code for the "step" method is as follows:<BLOCKQUOTE><CODE></p>
 </p>

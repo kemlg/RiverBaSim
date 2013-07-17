@@ -1074,3 +1074,37 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/RiverBaSim/src
 
 !ENTRY org.eclipse.ui 4 4 2013-07-15 23:32:40.863
 !MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+!SESSION 2013-07-17 18:14:37.393 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2013-07-17 18:14:49.192
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-17 18:15:10.957
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-17 21:31:10.657
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-17 21:31:10.657
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_in':
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@16d749e),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@1034f8d),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-17 21:31:10.660
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-17 21:31:10.660
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_out':
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@643130),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@1d96549),
+	expression=,sourcePriority=0)

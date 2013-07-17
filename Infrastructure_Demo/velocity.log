@@ -370,3 +370,594 @@
 2013-07-17 13:22:30,465 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
 2013-07-17 13:22:30,465 - Velocimacro : initialization complete.
 2013-07-17 13:22:30,465 - Velocity successfully started.
+2013-07-17 19:23:36,039 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 19:23:36,039 - ************************************************************** 
+2013-07-17 19:23:36,039 - Starting Jakarta Velocity v1.4
+2013-07-17 19:23:36,039 - RuntimeInstance initializing.
+2013-07-17 19:23:36,039 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 19:23:36,039 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 19:23:36,039 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 19:23:36,045 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 19:23:36,050 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 19:23:36,051 - ClasspathResourceLoader : initialization starting.
+2013-07-17 19:23:36,051 - ClasspathResourceLoader : initialization complete.
+2013-07-17 19:23:36,054 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 19:23:36,054 - Default ResourceManager initialization complete.
+2013-07-17 19:23:36,057 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 19:23:36,060 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 19:23:36,065 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 19:23:36,068 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 19:23:36,070 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 19:23:36,150 - Created: 20 parsers.
+2013-07-17 19:23:36,163 - Velocimacro : initialization starting.
+2013-07-17 19:23:36,163 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 19:23:36,171 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 19:23:36,171 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 19:23:36,171 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 19:23:36,171 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 19:23:36,171 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 19:23:36,171 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 19:23:36,171 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 19:23:36,171 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 19:23:36,171 - Velocimacro : initialization complete.
+2013-07-17 19:23:36,172 - Velocity successfully started.
+2013-07-17 19:26:29,622 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 19:26:29,623 - ************************************************************** 
+2013-07-17 19:26:29,623 - Starting Jakarta Velocity v1.4
+2013-07-17 19:26:29,623 - RuntimeInstance initializing.
+2013-07-17 19:26:29,623 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 19:26:29,623 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 19:26:29,623 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 19:26:29,630 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 19:26:29,637 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 19:26:29,638 - ClasspathResourceLoader : initialization starting.
+2013-07-17 19:26:29,638 - ClasspathResourceLoader : initialization complete.
+2013-07-17 19:26:29,643 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 19:26:29,643 - Default ResourceManager initialization complete.
+2013-07-17 19:26:29,646 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 19:26:29,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 19:26:29,655 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 19:26:29,658 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 19:26:29,660 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 19:26:29,741 - Created: 20 parsers.
+2013-07-17 19:26:29,761 - Velocimacro : initialization starting.
+2013-07-17 19:26:29,761 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 19:26:29,770 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 19:26:29,770 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 19:26:29,770 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 19:26:29,770 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 19:26:29,770 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 19:26:29,770 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 19:26:29,770 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 19:26:29,770 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 19:26:29,770 - Velocimacro : initialization complete.
+2013-07-17 19:26:29,770 - Velocity successfully started.
+2013-07-17 20:12:21,706 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 20:12:21,707 - ************************************************************** 
+2013-07-17 20:12:21,707 - Starting Jakarta Velocity v1.4
+2013-07-17 20:12:21,707 - RuntimeInstance initializing.
+2013-07-17 20:12:21,707 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 20:12:21,707 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:12:21,707 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:12:21,713 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 20:12:21,719 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:12:21,719 - ClasspathResourceLoader : initialization starting.
+2013-07-17 20:12:21,719 - ClasspathResourceLoader : initialization complete.
+2013-07-17 20:12:21,723 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 20:12:21,723 - Default ResourceManager initialization complete.
+2013-07-17 20:12:21,726 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 20:12:21,730 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 20:12:21,735 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 20:12:21,739 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 20:12:21,741 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 20:12:21,831 - Created: 20 parsers.
+2013-07-17 20:12:21,847 - Velocimacro : initialization starting.
+2013-07-17 20:12:21,847 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 20:12:21,856 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 20:12:21,856 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 20:12:21,856 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 20:12:21,856 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 20:12:21,857 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 20:12:21,857 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 20:12:21,857 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 20:12:21,857 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 20:12:21,857 - Velocimacro : initialization complete.
+2013-07-17 20:12:21,857 - Velocity successfully started.
+2013-07-17 20:14:59,572 - ResourceManager : found repast/simphony/scenario/Scenario.vt with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:15:03,861 - ResourceManager : found repast/simphony/scenario/Scenario.vt with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:26:29,463 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 20:26:29,463 - ************************************************************** 
+2013-07-17 20:26:29,463 - Starting Jakarta Velocity v1.4
+2013-07-17 20:26:29,463 - RuntimeInstance initializing.
+2013-07-17 20:26:29,463 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 20:26:29,464 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:26:29,464 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:26:29,470 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 20:26:29,477 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:26:29,477 - ClasspathResourceLoader : initialization starting.
+2013-07-17 20:26:29,477 - ClasspathResourceLoader : initialization complete.
+2013-07-17 20:26:29,481 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 20:26:29,481 - Default ResourceManager initialization complete.
+2013-07-17 20:26:29,484 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 20:26:29,489 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 20:26:29,495 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 20:26:29,499 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 20:26:29,501 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 20:26:29,589 - Created: 20 parsers.
+2013-07-17 20:26:29,610 - Velocimacro : initialization starting.
+2013-07-17 20:26:29,610 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 20:26:29,621 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 20:26:29,621 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 20:26:29,621 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 20:26:29,621 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 20:26:29,621 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 20:26:29,621 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 20:26:29,621 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 20:26:29,621 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 20:26:29,622 - Velocimacro : initialization complete.
+2013-07-17 20:26:29,622 - Velocity successfully started.
+2013-07-17 20:41:41,335 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 20:41:41,336 - ************************************************************** 
+2013-07-17 20:41:41,336 - Starting Jakarta Velocity v1.4
+2013-07-17 20:41:41,336 - RuntimeInstance initializing.
+2013-07-17 20:41:41,336 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 20:41:41,336 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:41:41,336 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:41:41,344 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 20:41:41,350 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:41:41,350 - ClasspathResourceLoader : initialization starting.
+2013-07-17 20:41:41,350 - ClasspathResourceLoader : initialization complete.
+2013-07-17 20:41:41,355 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 20:41:41,355 - Default ResourceManager initialization complete.
+2013-07-17 20:41:41,359 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 20:41:41,363 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 20:41:41,371 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 20:41:41,376 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 20:41:41,381 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 20:41:41,483 - Created: 20 parsers.
+2013-07-17 20:41:41,550 - Velocimacro : initialization starting.
+2013-07-17 20:41:41,550 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 20:41:41,560 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 20:41:41,560 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 20:41:41,560 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 20:41:41,560 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 20:41:41,560 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 20:41:41,560 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 20:41:41,560 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 20:41:41,560 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 20:41:41,560 - Velocimacro : initialization complete.
+2013-07-17 20:41:41,560 - Velocity successfully started.
+2013-07-17 20:44:07,291 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 20:44:07,292 - ************************************************************** 
+2013-07-17 20:44:07,292 - Starting Jakarta Velocity v1.4
+2013-07-17 20:44:07,292 - RuntimeInstance initializing.
+2013-07-17 20:44:07,292 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 20:44:07,292 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:44:07,292 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:44:07,298 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 20:44:07,304 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:44:07,304 - ClasspathResourceLoader : initialization starting.
+2013-07-17 20:44:07,304 - ClasspathResourceLoader : initialization complete.
+2013-07-17 20:44:07,308 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 20:44:07,308 - Default ResourceManager initialization complete.
+2013-07-17 20:44:07,311 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 20:44:07,315 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 20:44:07,321 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 20:44:07,324 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 20:44:07,326 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 20:44:07,413 - Created: 20 parsers.
+2013-07-17 20:44:07,429 - Velocimacro : initialization starting.
+2013-07-17 20:44:07,429 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 20:44:07,437 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 20:44:07,437 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 20:44:07,437 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 20:44:07,437 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 20:44:07,437 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 20:44:07,437 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 20:44:07,437 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 20:44:07,437 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 20:44:07,437 - Velocimacro : initialization complete.
+2013-07-17 20:44:07,437 - Velocity successfully started.
+2013-07-17 20:49:01,955 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 20:49:01,955 - ************************************************************** 
+2013-07-17 20:49:01,955 - Starting Jakarta Velocity v1.4
+2013-07-17 20:49:01,955 - RuntimeInstance initializing.
+2013-07-17 20:49:01,955 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 20:49:01,955 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:49:01,955 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 20:49:01,962 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 20:49:01,969 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 20:49:01,970 - ClasspathResourceLoader : initialization starting.
+2013-07-17 20:49:01,970 - ClasspathResourceLoader : initialization complete.
+2013-07-17 20:49:01,975 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 20:49:01,975 - Default ResourceManager initialization complete.
+2013-07-17 20:49:01,979 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 20:49:01,985 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 20:49:01,992 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 20:49:01,997 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 20:49:01,999 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 20:49:02,156 - Created: 20 parsers.
+2013-07-17 20:49:02,184 - Velocimacro : initialization starting.
+2013-07-17 20:49:02,184 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 20:49:02,195 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 20:49:02,195 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 20:49:02,195 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 20:49:02,195 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 20:49:02,195 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 20:49:02,195 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 20:49:02,195 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 20:49:02,195 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 20:49:02,195 - Velocimacro : initialization complete.
+2013-07-17 20:49:02,195 - Velocity successfully started.
+2013-07-17 21:26:41,049 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 21:26:41,049 - ************************************************************** 
+2013-07-17 21:26:41,049 - Starting Jakarta Velocity v1.4
+2013-07-17 21:26:41,049 - RuntimeInstance initializing.
+2013-07-17 21:26:41,049 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 21:26:41,049 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:26:41,050 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:26:41,056 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 21:26:41,063 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 21:26:41,063 - ClasspathResourceLoader : initialization starting.
+2013-07-17 21:26:41,063 - ClasspathResourceLoader : initialization complete.
+2013-07-17 21:26:41,069 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 21:26:41,069 - Default ResourceManager initialization complete.
+2013-07-17 21:26:41,073 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 21:26:41,078 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 21:26:41,084 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 21:26:41,088 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 21:26:41,090 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 21:26:41,176 - Created: 20 parsers.
+2013-07-17 21:26:41,195 - Velocimacro : initialization starting.
+2013-07-17 21:26:41,196 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 21:26:41,206 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 21:26:41,206 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 21:26:41,206 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 21:26:41,206 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 21:26:41,206 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 21:26:41,206 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 21:26:41,206 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 21:26:41,206 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 21:26:41,206 - Velocimacro : initialization complete.
+2013-07-17 21:26:41,206 - Velocity successfully started.
+2013-07-17 21:32:40,610 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 21:32:40,611 - ************************************************************** 
+2013-07-17 21:32:40,611 - Starting Jakarta Velocity v1.4
+2013-07-17 21:32:40,611 - RuntimeInstance initializing.
+2013-07-17 21:32:40,611 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 21:32:40,611 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:32:40,611 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:32:40,619 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 21:32:40,625 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 21:32:40,625 - ClasspathResourceLoader : initialization starting.
+2013-07-17 21:32:40,625 - ClasspathResourceLoader : initialization complete.
+2013-07-17 21:32:40,630 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 21:32:40,630 - Default ResourceManager initialization complete.
+2013-07-17 21:32:40,633 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 21:32:40,637 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 21:32:40,643 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 21:32:40,647 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 21:32:40,649 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 21:32:40,741 - Created: 20 parsers.
+2013-07-17 21:32:40,800 - Velocimacro : initialization starting.
+2013-07-17 21:32:40,800 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 21:32:40,811 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 21:32:40,811 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 21:32:40,811 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 21:32:40,811 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 21:32:40,811 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 21:32:40,811 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 21:32:40,811 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 21:32:40,811 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 21:32:40,811 - Velocimacro : initialization complete.
+2013-07-17 21:32:40,811 - Velocity successfully started.
+2013-07-17 21:32:57,291 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 21:32:57,292 - ************************************************************** 
+2013-07-17 21:32:57,292 - Starting Jakarta Velocity v1.4
+2013-07-17 21:32:57,292 - RuntimeInstance initializing.
+2013-07-17 21:32:57,292 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 21:32:57,292 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:32:57,292 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:32:57,299 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 21:32:57,305 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 21:32:57,305 - ClasspathResourceLoader : initialization starting.
+2013-07-17 21:32:57,305 - ClasspathResourceLoader : initialization complete.
+2013-07-17 21:32:57,310 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 21:32:57,310 - Default ResourceManager initialization complete.
+2013-07-17 21:32:57,313 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 21:32:57,317 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 21:32:57,323 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 21:32:57,327 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 21:32:57,329 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 21:32:57,419 - Created: 20 parsers.
+2013-07-17 21:32:57,479 - Velocimacro : initialization starting.
+2013-07-17 21:32:57,480 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 21:32:57,487 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 21:32:57,488 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 21:32:57,488 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 21:32:57,488 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 21:32:57,488 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 21:32:57,488 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 21:32:57,488 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 21:32:57,488 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 21:32:57,488 - Velocimacro : initialization complete.
+2013-07-17 21:32:57,488 - Velocity successfully started.
+2013-07-17 21:51:15,867 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 21:51:15,868 - ************************************************************** 
+2013-07-17 21:51:15,868 - Starting Jakarta Velocity v1.4
+2013-07-17 21:51:15,868 - RuntimeInstance initializing.
+2013-07-17 21:51:15,868 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 21:51:15,868 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:51:15,868 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:51:15,876 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 21:51:15,882 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 21:51:15,882 - ClasspathResourceLoader : initialization starting.
+2013-07-17 21:51:15,883 - ClasspathResourceLoader : initialization complete.
+2013-07-17 21:51:15,887 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 21:51:15,887 - Default ResourceManager initialization complete.
+2013-07-17 21:51:15,891 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 21:51:15,896 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 21:51:15,921 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 21:51:15,926 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 21:51:15,928 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 21:51:16,023 - Created: 20 parsers.
+2013-07-17 21:51:16,044 - Velocimacro : initialization starting.
+2013-07-17 21:51:16,045 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 21:51:16,066 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 21:51:16,066 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 21:51:16,066 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 21:51:16,066 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 21:51:16,066 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 21:51:16,066 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 21:51:16,066 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 21:51:16,066 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 21:51:16,066 - Velocimacro : initialization complete.
+2013-07-17 21:51:16,066 - Velocity successfully started.
+2013-07-17 21:51:22,418 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 21:51:22,418 - ************************************************************** 
+2013-07-17 21:51:22,418 - Starting Jakarta Velocity v1.4
+2013-07-17 21:51:22,418 - RuntimeInstance initializing.
+2013-07-17 21:51:22,418 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 21:51:22,418 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:51:22,418 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 21:51:22,425 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 21:51:22,431 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 21:51:22,431 - ClasspathResourceLoader : initialization starting.
+2013-07-17 21:51:22,431 - ClasspathResourceLoader : initialization complete.
+2013-07-17 21:51:22,435 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 21:51:22,435 - Default ResourceManager initialization complete.
+2013-07-17 21:51:22,438 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 21:51:22,443 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 21:51:22,450 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 21:51:22,455 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 21:51:22,457 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 21:51:22,536 - Created: 20 parsers.
+2013-07-17 21:51:22,596 - Velocimacro : initialization starting.
+2013-07-17 21:51:22,596 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 21:51:22,604 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 21:51:22,604 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 21:51:22,604 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 21:51:22,605 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 21:51:22,605 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 21:51:22,605 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 21:51:22,605 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 21:51:22,605 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 21:51:22,605 - Velocimacro : initialization complete.
+2013-07-17 21:51:22,605 - Velocity successfully started.
+2013-07-17 22:05:46,330 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 22:05:46,330 - ************************************************************** 
+2013-07-17 22:05:46,330 - Starting Jakarta Velocity v1.4
+2013-07-17 22:05:46,330 - RuntimeInstance initializing.
+2013-07-17 22:05:46,330 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 22:05:46,330 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:05:46,330 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:05:46,337 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 22:05:46,343 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 22:05:46,343 - ClasspathResourceLoader : initialization starting.
+2013-07-17 22:05:46,343 - ClasspathResourceLoader : initialization complete.
+2013-07-17 22:05:46,347 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 22:05:46,347 - Default ResourceManager initialization complete.
+2013-07-17 22:05:46,350 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 22:05:46,354 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 22:05:46,359 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 22:05:46,363 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 22:05:46,365 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 22:05:46,450 - Created: 20 parsers.
+2013-07-17 22:05:46,466 - Velocimacro : initialization starting.
+2013-07-17 22:05:46,466 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 22:05:46,476 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 22:05:46,476 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 22:05:46,476 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 22:05:46,476 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 22:05:46,476 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 22:05:46,476 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 22:05:46,476 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 22:05:46,476 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 22:05:46,476 - Velocimacro : initialization complete.
+2013-07-17 22:05:46,476 - Velocity successfully started.
+2013-07-17 22:10:14,318 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 22:10:14,319 - ************************************************************** 
+2013-07-17 22:10:14,319 - Starting Jakarta Velocity v1.4
+2013-07-17 22:10:14,319 - RuntimeInstance initializing.
+2013-07-17 22:10:14,319 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 22:10:14,319 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:10:14,319 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:10:14,328 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 22:10:14,336 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 22:10:14,336 - ClasspathResourceLoader : initialization starting.
+2013-07-17 22:10:14,336 - ClasspathResourceLoader : initialization complete.
+2013-07-17 22:10:14,342 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 22:10:14,342 - Default ResourceManager initialization complete.
+2013-07-17 22:10:14,349 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 22:10:14,356 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 22:10:14,364 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 22:10:14,369 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 22:10:14,371 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 22:10:14,480 - Created: 20 parsers.
+2013-07-17 22:10:14,544 - Velocimacro : initialization starting.
+2013-07-17 22:10:14,544 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 22:10:14,553 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 22:10:14,553 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 22:10:14,553 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 22:10:14,554 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 22:10:14,554 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 22:10:14,554 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 22:10:14,554 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 22:10:14,554 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 22:10:14,554 - Velocimacro : initialization complete.
+2013-07-17 22:10:14,554 - Velocity successfully started.
+2013-07-17 22:13:52,641 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 22:13:52,642 - ************************************************************** 
+2013-07-17 22:13:52,642 - Starting Jakarta Velocity v1.4
+2013-07-17 22:13:52,642 - RuntimeInstance initializing.
+2013-07-17 22:13:52,642 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 22:13:52,642 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:13:52,642 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:13:52,650 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 22:13:52,657 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 22:13:52,658 - ClasspathResourceLoader : initialization starting.
+2013-07-17 22:13:52,658 - ClasspathResourceLoader : initialization complete.
+2013-07-17 22:13:52,663 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 22:13:52,663 - Default ResourceManager initialization complete.
+2013-07-17 22:13:52,666 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 22:13:52,670 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 22:13:52,675 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 22:13:52,679 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 22:13:52,681 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 22:13:52,761 - Created: 20 parsers.
+2013-07-17 22:13:52,783 - Velocimacro : initialization starting.
+2013-07-17 22:13:52,783 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 22:13:52,792 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 22:13:52,793 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 22:13:52,793 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 22:13:52,793 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 22:13:52,793 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 22:13:52,793 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 22:13:52,793 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 22:13:52,793 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 22:13:52,793 - Velocimacro : initialization complete.
+2013-07-17 22:13:52,793 - Velocity successfully started.
+2013-07-17 22:18:36,416 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 22:18:36,416 - ************************************************************** 
+2013-07-17 22:18:36,417 - Starting Jakarta Velocity v1.4
+2013-07-17 22:18:36,417 - RuntimeInstance initializing.
+2013-07-17 22:18:36,417 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 22:18:36,417 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:18:36,417 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:18:36,425 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 22:18:36,433 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 22:18:36,433 - ClasspathResourceLoader : initialization starting.
+2013-07-17 22:18:36,433 - ClasspathResourceLoader : initialization complete.
+2013-07-17 22:18:36,438 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 22:18:36,438 - Default ResourceManager initialization complete.
+2013-07-17 22:18:36,442 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 22:18:36,447 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 22:18:36,454 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 22:18:36,458 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 22:18:36,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 22:18:36,541 - Created: 20 parsers.
+2013-07-17 22:18:36,558 - Velocimacro : initialization starting.
+2013-07-17 22:18:36,558 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 22:18:36,568 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 22:18:36,569 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 22:18:36,569 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 22:18:36,569 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 22:18:36,569 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 22:18:36,569 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 22:18:36,569 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 22:18:36,569 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 22:18:36,569 - Velocimacro : initialization complete.
+2013-07-17 22:18:36,569 - Velocity successfully started.
+2013-07-17 22:29:25,191 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 22:29:25,192 - ************************************************************** 
+2013-07-17 22:29:25,192 - Starting Jakarta Velocity v1.4
+2013-07-17 22:29:25,192 - RuntimeInstance initializing.
+2013-07-17 22:29:25,192 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 22:29:25,192 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:29:25,192 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:29:25,209 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 22:29:25,226 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 22:29:25,226 - ClasspathResourceLoader : initialization starting.
+2013-07-17 22:29:25,226 - ClasspathResourceLoader : initialization complete.
+2013-07-17 22:29:25,236 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 22:29:25,237 - Default ResourceManager initialization complete.
+2013-07-17 22:29:25,243 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 22:29:25,253 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 22:29:25,266 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 22:29:25,276 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 22:29:25,280 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 22:29:25,407 - Created: 20 parsers.
+2013-07-17 22:29:25,456 - Velocimacro : initialization starting.
+2013-07-17 22:29:25,456 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 22:29:25,481 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 22:29:25,481 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 22:29:25,481 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 22:29:25,481 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 22:29:25,481 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 22:29:25,481 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 22:29:25,481 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 22:29:25,481 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 22:29:25,481 - Velocimacro : initialization complete.
+2013-07-17 22:29:25,481 - Velocity successfully started.
+2013-07-17 22:52:39,825 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 22:52:39,825 - ************************************************************** 
+2013-07-17 22:52:39,825 - Starting Jakarta Velocity v1.4
+2013-07-17 22:52:39,825 - RuntimeInstance initializing.
+2013-07-17 22:52:39,825 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 22:52:39,825 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:52:39,825 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 22:52:39,835 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 22:52:39,843 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 22:52:39,843 - ClasspathResourceLoader : initialization starting.
+2013-07-17 22:52:39,843 - ClasspathResourceLoader : initialization complete.
+2013-07-17 22:52:39,850 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 22:52:39,850 - Default ResourceManager initialization complete.
+2013-07-17 22:52:39,854 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 22:52:39,859 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 22:52:39,868 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 22:52:39,873 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 22:52:39,875 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 22:52:39,997 - Created: 20 parsers.
+2013-07-17 22:52:40,071 - Velocimacro : initialization starting.
+2013-07-17 22:52:40,071 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 22:52:40,081 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 22:52:40,082 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 22:52:40,082 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 22:52:40,082 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 22:52:40,082 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 22:52:40,082 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 22:52:40,082 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 22:52:40,082 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 22:52:40,082 - Velocimacro : initialization complete.
+2013-07-17 22:52:40,082 - Velocity successfully started.
+2013-07-17 23:25:07,442 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2013-07-17 23:25:07,442 - ************************************************************** 
+2013-07-17 23:25:07,442 - Starting Jakarta Velocity v1.4
+2013-07-17 23:25:07,442 - RuntimeInstance initializing.
+2013-07-17 23:25:07,442 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2013-07-17 23:25:07,442 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 23:25:07,442 - Using logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2013-07-17 23:25:07,451 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2013-07-17 23:25:07,459 - Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2013-07-17 23:25:07,459 - ClasspathResourceLoader : initialization starting.
+2013-07-17 23:25:07,459 - ClasspathResourceLoader : initialization complete.
+2013-07-17 23:25:07,464 - ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2013-07-17 23:25:07,464 - Default ResourceManager initialization complete.
+2013-07-17 23:25:07,468 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2013-07-17 23:25:07,474 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2013-07-17 23:25:07,481 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2013-07-17 23:25:07,486 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2013-07-17 23:25:07,490 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2013-07-17 23:25:07,601 - Created: 20 parsers.
+2013-07-17 23:25:07,620 - Velocimacro : initialization starting.
+2013-07-17 23:25:07,621 - Velocimacro : adding VMs from VM library template : VM_global_library.vm
+2013-07-17 23:25:07,631 - ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+2013-07-17 23:25:07,631 - Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+2013-07-17 23:25:07,631 - Velocimacro :  VM library template macro registration complete.
+2013-07-17 23:25:07,631 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2013-07-17 23:25:07,631 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2013-07-17 23:25:07,631 - Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+2013-07-17 23:25:07,632 - Velocimacro : messages on  : VM system will output logging messages
+2013-07-17 23:25:07,632 - Velocimacro : autoload off  : VM system will not automatically reload global library macros
+2013-07-17 23:25:07,632 - Velocimacro : initialization complete.
+2013-07-17 23:25:07,632 - Velocity successfully started.

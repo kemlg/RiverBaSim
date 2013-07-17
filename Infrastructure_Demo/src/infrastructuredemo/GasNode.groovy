@@ -69,7 +69,7 @@ public class GasNode  {
      * @field pressure
      *
      */
-    @Parameter (displayName = "Node Pressure", usageName = "pressure")
+    @Parameter (displayName = "Pressure", usageName = "pressure")
     public double getPressure() {
         return pressure
     }
@@ -104,16 +104,20 @@ public class GasNode  {
 
     /**
      *
-     * This is the step behavior.
+     * Watches the pressure state of neighbours
      * @method step
      *
      */
+    @ScheduledMethod(
+        start = 1d,
+        shuffle = false
+    )
     @Watch(
         watcheeClassName = 'infrastructuredemo.GasNode',
         watcheeFieldNames = 'pressure',
         query = 'linked_from',
         whenToTrigger = WatcherTriggerSchedule.LATER,
-        scheduleTriggerDelta = 10d
+        scheduleTriggerDelta = 1d
     )
     public void step(infrastructuredemo.GasNode watchedAgent) {
 
