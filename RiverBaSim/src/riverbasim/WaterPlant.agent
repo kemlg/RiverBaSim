@@ -9,7 +9,7 @@
     <taskstep x="169" y="280" comment="Cleans N units of wastewater" command1="callSomething();" command2="" command3="" command4="" command5="">
       <label x="130" y="266" text="CleanWasteWater"/>
     </taskstep>
-    <taskstep x="169" y="375" comment="Send the treated water to be dumped to the river." command1="Edit Using Wizard Dialog..." command2="" command3="" command4="" command5="">
+    <taskstep x="169" y="375" comment="Send the treated water to be dumped to the river." command1="" command2="" command3="" command4="" command5="">
       <label x="92" y="358" text="Dump treated water to river section."/>
     </taskstep>
     <taskstep x="420" y="275" comment="Send the cleaned water to the Water Transporter agent to be dumped to the river." command1="" command2="" command3="" command4="" command5="">
@@ -31,8 +31,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="179" y="474"/>
-    <endstep x="430" y="467"/>
+    <endstep x="184" y="479"/>
+    <endstep x="435" y="472"/>
   </endsteps>
   <connections>
     <transitions>

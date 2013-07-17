@@ -1108,3 +1108,28 @@ HandlerActivation(commandId=org.eclipse.gef.zoom_out,
 HandlerActivation(commandId=org.eclipse.gef.zoom_out,
 	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@1d96549),
 	expression=,sourcePriority=0)
+
+!ENTRY repast.simphony.score.agents 4 4 2013-07-17 23:59:03.903
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at repast.simphony.agents.designer.builder.BuildDeltaVisitor.removeOutputFile(BuildDeltaVisitor.java:186)
+	at repast.simphony.agents.designer.builder.BuildDeltaVisitor.visit(BuildDeltaVisitor.java:107)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:68)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:48)
+	at repast.simphony.agents.designer.builder.AgentBuilderBuilder.build(AgentBuilderBuilder.java:159)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:633)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:170)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:201)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

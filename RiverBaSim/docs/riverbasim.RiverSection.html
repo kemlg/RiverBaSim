@@ -1,4 +1,4 @@
-<HTML><FONT FACE=Arial, Verdana, Sans><TITLE>WaterPlant.agent</TITLE><BODY><STYLE TYPE="text/css"><!--.centeralign <BLOCKQUOTE>text-align:center</BLOCKQUOTE>--></STYLE><HEAD><P CLASS="centeralign">WaterPlant.agent</P></HEAD><IMG SRC=images/riverbasim.WaterPlant.png border=1 alt="Flowchart for WaterPlant.agent" title="Flowchart for WaterPlant.agent"></P>The package name is "riverbasim".</p>
+<HTML><FONT FACE=Arial, Verdana, Sans><TITLE>RiverSection.agent</TITLE><BODY><STYLE TYPE="text/css"><!--.centeralign <BLOCKQUOTE>text-align:center</BLOCKQUOTE>--></STYLE><HEAD><P CLASS="centeralign">RiverSection.agent</P></HEAD><IMG SRC=images/riverbasim.RiverSection.png border=1 alt="Flowchart for RiverSection.agent" title="Flowchart for RiverSection.agent"></P>The package name is "riverbasim".</p>
 The following external code is referenced:<BLOCKQUOTE></p>
 <li>Components from java.io.*</li></p>
 <li>Components from java.math.*</li></p>
@@ -39,42 +39,43 @@ The following external code is referenced:<BLOCKQUOTE></p>
 <li>Components from static java.lang.Math.*</li></p>
 <li>Components from static repast.simphony.essentials.RepastEssentials.*</li></p>
 </BLOCKQUOTE><P></p>
-The class "WaterPlant" is defined with visibility "public" . This is an agent.</p>
+The class "RiverSection" is defined with visibility "public" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "raining" with visibility "public" of type "def" and default value 0. This property tells if it is raining. The block is tagged with the name "Is it raining?".</li></p>
+    <li>There is a field named "amountWater" with visibility "public" of type "double" and default value 5000. Flow (amount) of water The block is tagged with the name "Amount of water in the rive section (m3)".</li></p>
 </p>
-    <li>There is a field named "riverSectionLocation" with visibility "public" of type "def" and default value 0. River section where the WWTP dumps treated water. The block is tagged with the name "River section location".</li></p>
+    <li>There is a field named "solidConcentration" with visibility "public" of type "double" and default value 0. Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)".</li></p>
+</p>
+    <li>There is a field named "bodConcentration" with visibility "public" of type "double" and default value 0. Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)".</li></p>
+</p>
+    <li>There is a field named "codConcentration" with visibility "public" of type "double" and default value 0. Concentration of COD The block is tagged with the name "COD concentration (gr./m3)".</li></p>
+</p>
+    <li>There is a field named "ntConcentration" with visibility "public" of type "double" and default value 0. Concentration of Nt The block is tagged with the name "Nitrogen Total concentration".</li></p>
+</p>
+    <li>There is a field named "ptConcentration" with visibility "public" of type "double" and default value 0. Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration".</li></p>
 </p>
     </p>
     </p>
-        <li>There is a method named "step" method has visibility     "public" has return type "def". Treating wastewater The block is tagged with the name "Wastewater treatement".</li></p>
+        <li>There is a method named "step" method has visibility     "public" and parameters [riverbasim.RiverSection watchedAgent]. Flowing water from one section to another The block is tagged with the name "Flowing water".</li></p>
     </p>
     </p>
+    <BLOCKQUOTE>The step method will trigger as follows:<BLOCKQUOTE></p>
+        <li>watcheeClassName = 'riverbasim.RiverSection'</li></p>
+        <li>watcheeFieldNames = 'amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration'</li></p>
+        <li>query = 'linked_to'</li></p>
+        <li>whenToTrigger = WatcherTriggerSchedule.LATER</li></p>
+        <li>scheduleTriggerDelta = 1d</li></p>
+    </BLOCKQUOTE></BLOCKQUOTE></p>
  <BLOCKQUOTE>The code for the "step" method is as follows:<BLOCKQUOTE><CODE></p>
 </p>
-</p>
-         Define the return value variable.</p>
-        def returnValue</p>
 </p>
          Note the simulation time.</p>
         def time = GetTickCountInTimeUnits()</p>
 </p>
-</p>
-         The Water Plant has to decide if it cleans a certain amount of wastewater or not.</p>
-        if (cleaningWastewaterFeasible()) <BLOCKQUOTE></p>
-</p>
-             Cleans N units of wastewater</p>
-            callSomething();</p>
-             Send the treated water to be dumped to the river.</p>
-</p>
-        </BLOCKQUOTE> else  <BLOCKQUOTE></p>
-</p>
-             Send the cleaned water to the Water Transporter agent to be dumped to the river.</p>
-</p>
-        </BLOCKQUOTE></p>
-         Return the results.</p>
-        return returnValue</p>
+         Self-cleaning process of solid (MES)</p>
+        setSolidConcentration(watchedAgent.solidConcentration*0,4)</p>
+         End the method.</p>
+        return</p>
 </p>
     </BLOCKQUOTE></BLOCKQUOTE></CODE></p>
 </p>

@@ -138,7 +138,6 @@ public class WaterPlant  {
             // Cleans N units of wastewater
             callSomething();
             // Send the treated water to be dumped to the river.
-            Edit Using Wizard Dialog...
 
         } else  {
 
