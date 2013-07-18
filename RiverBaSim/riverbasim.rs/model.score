@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <score:SContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:score="http://scoreabm.org/score" label="RiverBaSim" ID="riverBaSim" pluralLabel="RiverBaSims">
   <implementation package="riverbasim" className="" basePath="../RiverBaSim" mode="AUTO"/>
+  <styles xsi:type="score:SStyle2D" label="RiverBaSimStyle2D" ID="riverBaSimStyle2D">
+    <implementation className="RiverBaSimStyle2D"/>
+  </styles>
   <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">
     <implementation className="RiverSection"/>
   </agents>

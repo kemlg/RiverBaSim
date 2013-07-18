@@ -42,38 +42,49 @@ The following external code is referenced:<BLOCKQUOTE></p>
 The class "RiverSection" is defined with visibility "public" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "amountWater" with visibility "public" of type "double" and default value 5000. Flow (amount) of water The block is tagged with the name "Amount of water in the rive section (m3)".</li></p>
+    <li>There is a field named "amountWater" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Flow (amount) of water The block is tagged with the name "Amount of water in the rive section (m3)".</li></p>
 </p>
-    <li>There is a field named "solidConcentration" with visibility "public" of type "double" and default value 0. Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)".</li></p>
+    <li>There is a field named "solidConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)".</li></p>
 </p>
-    <li>There is a field named "bodConcentration" with visibility "public" of type "double" and default value 0. Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)".</li></p>
+    <li>There is a field named "bodConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)".</li></p>
 </p>
-    <li>There is a field named "codConcentration" with visibility "public" of type "double" and default value 0. Concentration of COD The block is tagged with the name "COD concentration (gr./m3)".</li></p>
+    <li>There is a field named "codConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of COD The block is tagged with the name "COD concentration (gr./m3)".</li></p>
 </p>
-    <li>There is a field named "ntConcentration" with visibility "public" of type "double" and default value 0. Concentration of Nt The block is tagged with the name "Nitrogen Total concentration".</li></p>
+    <li>There is a field named "ntConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of Nt The block is tagged with the name "Nitrogen Total concentration".</li></p>
 </p>
-    <li>There is a field named "ptConcentration" with visibility "public" of type "double" and default value 0. Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration".</li></p>
+    <li>There is a field named "ptConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration".</li></p>
 </p>
     </p>
     </p>
-        <li>There is a method named "step" method has visibility     "public" and parameters [riverbasim.RiverSection watchedAgent]. Flowing water from one section to another The block is tagged with the name "Flowing water".</li></p>
+        <li>There is a method named "flowingWater" method has visibility     "public" and parameters [riverbasim.RiverSection watchedAgent]. Flowing water from one section to another The block is tagged with the name "Flowing water".</li></p>
     </p>
     </p>
-    <BLOCKQUOTE>The step method will trigger as follows:<BLOCKQUOTE></p>
+    <BLOCKQUOTE>The flowingWater method is statically scheduled as follows:<BLOCKQUOTE></p>
+        <li>start = 1d</li></p>
+        <li>interval = 1d</li></p>
+        <li>shuffle = false</li></p>
+    </BLOCKQUOTE></BLOCKQUOTE></p>
+    <BLOCKQUOTE>The flowingWater method will trigger as follows:<BLOCKQUOTE></p>
         <li>watcheeClassName = 'riverbasim.RiverSection'</li></p>
         <li>watcheeFieldNames = 'amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration'</li></p>
         <li>query = 'linked_to'</li></p>
         <li>whenToTrigger = WatcherTriggerSchedule.LATER</li></p>
-        <li>scheduleTriggerDelta = 1d</li></p>
+        <li>scheduleTriggerDelta = 3d</li></p>
     </BLOCKQUOTE></BLOCKQUOTE></p>
- <BLOCKQUOTE>The code for the "step" method is as follows:<BLOCKQUOTE><CODE></p>
+ <BLOCKQUOTE>The code for the "flowingWater" method is as follows:<BLOCKQUOTE><CODE></p>
 </p>
 </p>
          Note the simulation time.</p>
         def time = GetTickCountInTimeUnits()</p>
 </p>
-         Self-cleaning process of solid (MES)</p>
-        setSolidConcentration(watchedAgent.solidConcentration*0,4)</p>
+         Receiving incoming flow of water from previous river section</p>
+        amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))</p>
+         Self-cleaning process of pollutants</p>
+        solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)</p>
+        bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)</p>
+        codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)</p>
+        ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)</p>
+        ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)</p>
          End the method.</p>
         return</p>
 </p>
