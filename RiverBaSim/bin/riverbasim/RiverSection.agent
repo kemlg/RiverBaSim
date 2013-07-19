@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="RiverSection" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="362" y="59" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="linked_to" watchannotationtargetclassname="riverbasim.RiverSection" watchannotationtargetfieldnames="amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="3" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="" exceptions="">
+    <behaviorstep x="362" y="59" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="linked_to" watchannotationtargetclassname="riverbasim.RiverSection" watchannotationtargetfieldnames="amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="3" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="riverbasim.RiverSection watchedAgent" exceptions="">
       <label x="418" y="69" text="Flowing water"/>
     </behaviorstep>
   </behaviorsteps>
@@ -9,8 +9,8 @@
     <taskstep x="384" y="311" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)" command2="bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)" command3="codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)" command4="ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)" command5="ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)">
       <label x="437" y="313" text="Self-cleaning process of pollutants"/>
     </taskstep>
-    <taskstep x="384" y="208" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))" command2="" command3="" command4="" command5="">
-      <label x="437" y="217" text="Receive flow of water"/>
+    <taskstep x="386" y="214" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))" command2="" command3="" command4="" command5="">
+      <label x="439" y="223" text="Receive flow of water"/>
     </taskstep>
     <taskstep x="671" y="340" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), 0)" command2="bodConcentration.put(GetTickCount(), 0)" command3="codConcentration.put(GetTickCount(), 0)" command4="ntConcentration.put(GetTickCount(), 0)" command5="ptConcentration.put(GetTickCount(), 0)">
       <label x="724" y="342" text="Set incoming mass of water as clean water"/>
@@ -49,8 +49,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="400" y="410"/>
-    <endstep x="689" y="434"/>
+    <endstep x="405" y="415"/>
+    <endstep x="694" y="439"/>
   </endsteps>
   <connections>
     <transitions>
