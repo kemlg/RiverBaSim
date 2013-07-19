@@ -4,7 +4,7 @@
   <styles>
     <entry>
       <string>riverbasim.RiverSection</string>
-      <string>riverbasim.RiverBaSimStyle2D</string>
+      <string>repast.simphony.visualization.visualization2D.style.DefaultStyle2D</string>
     </entry>
   </styles>
   <editedStyles>

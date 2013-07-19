@@ -42,17 +42,19 @@ The following external code is referenced:<BLOCKQUOTE></p>
 The class "RiverSection" is defined with visibility "public" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "amountWater" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Flow (amount) of water The block is tagged with the name "Amount of water in the rive section (m3)".</li></p>
+    <li>There is a field named "amountWater" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 5000). Flow (amount) of water The block is tagged with the name "Amount of water in the river section (m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
 </p>
-    <li>There is a field named "solidConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)".</li></p>
+    <li>There is a field named "solidConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
 </p>
-    <li>There is a field named "bodConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)".</li></p>
+    <li>There is a field named "bodConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
 </p>
-    <li>There is a field named "codConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of COD The block is tagged with the name "COD concentration (gr./m3)".</li></p>
+    <li>There is a field named "codConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of COD The block is tagged with the name "COD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
 </p>
-    <li>There is a field named "ntConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of Nt The block is tagged with the name "Nitrogen Total concentration".</li></p>
+    <li>There is a field named "ntConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of Nt The block is tagged with the name "Nitrogen Total concentration", converter = "riverbasim.WaterFeatureConverter".</li></p>
 </p>
-    <li>There is a field named "ptConcentration" with visibility "public" of type "HashMap<Integer,Double>" and default value new HashMap<Integer, Double>(). Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration".</li></p>
+    <li>There is a field named "ptConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration", converter = "riverbasim.WaterFeatureConverter".</li></p>
+</p>
+    <li>There is a field named "defaultAmountWater" with visibility "public" of type "double" and default value 10000. Default incoming water amount The block is tagged with the name "Default incoming water".</li></p>
 </p>
     </p>
     </p>
@@ -77,14 +79,31 @@ The class "RiverSection" is defined with visibility "public" . This is an agent.
          Note the simulation time.</p>
         def time = GetTickCountInTimeUnits()</p>
 </p>
-         Receiving incoming flow of water from previous river section</p>
-        amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))</p>
-         Self-cleaning process of pollutants</p>
-        solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)</p>
-        bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)</p>
-        codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)</p>
-        ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)</p>
-        ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)</p>
+</p>
+         Decision to distinguish river section as a starting source or as a middle/end section of the river</p>
+        if (watchedAgent !=null) <BLOCKQUOTE></p>
+</p>
+             Receiving incoming flow of water from previous river section</p>
+            amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))</p>
+             Self-cleaning process of pollutants</p>
+            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)</p>
+            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)</p>
+            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)</p>
+            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)</p>
+            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)</p>
+</p>
+        </BLOCKQUOTE> else  <BLOCKQUOTE></p>
+</p>
+             Receiving incoming flow of water from previous river section</p>
+            amountWater.put(GetTickCount(), defaultAmountWater)</p>
+             Self-cleaning process of pollutants</p>
+            solidConcentration.put(GetTickCount(), 0)</p>
+            bodConcentration.put(GetTickCount(), 0)</p>
+            codConcentration.put(GetTickCount(), 0)</p>
+            ntConcentration.put(GetTickCount(), 0)</p>
+            ptConcentration.put(GetTickCount(), 0)</p>
+</p>
+        </BLOCKQUOTE></p>
          End the method.</p>
         return</p>
 </p>

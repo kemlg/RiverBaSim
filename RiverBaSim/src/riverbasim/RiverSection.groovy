@@ -69,14 +69,14 @@ public class RiverSection  {
      * @field amountWater
      *
      */
-    @Parameter (displayName = "Amount of water in the rive section (m3)", usageName = "amountWater")
-    public HashMap<Integer,Double> getAmountWater() {
+    @Parameter (displayName = "Amount of water in the river section (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
+    public riverbasim.WaterFeature getAmountWater() {
         return amountWater
     }
-    public void setAmountWater(HashMap<Integer,Double> newValue) {
+    public void setAmountWater(riverbasim.WaterFeature newValue) {
         amountWater = newValue
     }
-    public HashMap<Integer,Double> amountWater = new HashMap<Integer, Double>()
+    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 5000)
 
     /**
      *
@@ -84,14 +84,14 @@ public class RiverSection  {
      * @field solidConcentration
      *
      */
-    @Parameter (displayName = "Solid concentration (gr/m3)", usageName = "solidConcentration")
-    public HashMap<Integer,Double> getSolidConcentration() {
+    @Parameter (displayName = "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "solidConcentration")
+    public riverbasim.WaterFeature getSolidConcentration() {
         return solidConcentration
     }
-    public void setSolidConcentration(HashMap<Integer,Double> newValue) {
+    public void setSolidConcentration(riverbasim.WaterFeature newValue) {
         solidConcentration = newValue
     }
-    public HashMap<Integer,Double> solidConcentration = new HashMap<Integer, Double>()
+    public riverbasim.WaterFeature solidConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
 
     /**
      *
@@ -99,14 +99,14 @@ public class RiverSection  {
      * @field bodConcentration
      *
      */
-    @Parameter (displayName = "BOD concentration (gr./m3)", usageName = "bodConcentration")
-    public HashMap<Integer,Double> getBodConcentration() {
+    @Parameter (displayName = "BOD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "bodConcentration")
+    public riverbasim.WaterFeature getBodConcentration() {
         return bodConcentration
     }
-    public void setBodConcentration(HashMap<Integer,Double> newValue) {
+    public void setBodConcentration(riverbasim.WaterFeature newValue) {
         bodConcentration = newValue
     }
-    public HashMap<Integer,Double> bodConcentration = new HashMap<Integer, Double>()
+    public riverbasim.WaterFeature bodConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
 
     /**
      *
@@ -114,14 +114,14 @@ public class RiverSection  {
      * @field codConcentration
      *
      */
-    @Parameter (displayName = "COD concentration (gr./m3)", usageName = "codConcentration")
-    public HashMap<Integer,Double> getCodConcentration() {
+    @Parameter (displayName = "COD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "codConcentration")
+    public riverbasim.WaterFeature getCodConcentration() {
         return codConcentration
     }
-    public void setCodConcentration(HashMap<Integer,Double> newValue) {
+    public void setCodConcentration(riverbasim.WaterFeature newValue) {
         codConcentration = newValue
     }
-    public HashMap<Integer,Double> codConcentration = new HashMap<Integer, Double>()
+    public riverbasim.WaterFeature codConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
 
     /**
      *
@@ -129,14 +129,14 @@ public class RiverSection  {
      * @field ntConcentration
      *
      */
-    @Parameter (displayName = "Nitrogen Total concentration", usageName = "ntConcentration")
-    public HashMap<Integer,Double> getNtConcentration() {
+    @Parameter (displayName = "Nitrogen Total concentration", converter = "riverbasim.WaterFeatureConverter", usageName = "ntConcentration")
+    public riverbasim.WaterFeature getNtConcentration() {
         return ntConcentration
     }
-    public void setNtConcentration(HashMap<Integer,Double> newValue) {
+    public void setNtConcentration(riverbasim.WaterFeature newValue) {
         ntConcentration = newValue
     }
-    public HashMap<Integer,Double> ntConcentration = new HashMap<Integer, Double>()
+    public riverbasim.WaterFeature ntConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
 
     /**
      *
@@ -144,14 +144,29 @@ public class RiverSection  {
      * @field ptConcentration
      *
      */
-    @Parameter (displayName = "Phosphorus Total concentration", usageName = "ptConcentration")
-    public HashMap<Integer,Double> getPtConcentration() {
+    @Parameter (displayName = "Phosphorus Total concentration", converter = "riverbasim.WaterFeatureConverter", usageName = "ptConcentration")
+    public riverbasim.WaterFeature getPtConcentration() {
         return ptConcentration
     }
-    public void setPtConcentration(HashMap<Integer,Double> newValue) {
+    public void setPtConcentration(riverbasim.WaterFeature newValue) {
         ptConcentration = newValue
     }
-    public HashMap<Integer,Double> ptConcentration = new HashMap<Integer, Double>()
+    public riverbasim.WaterFeature ptConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Default incoming water amount
+     * @field defaultAmountWater
+     *
+     */
+    @Parameter (displayName = "Default incoming water", usageName = "defaultAmountWater")
+    public double getDefaultAmountWater() {
+        return defaultAmountWater
+    }
+    public void setDefaultAmountWater(double newValue) {
+        defaultAmountWater = newValue
+    }
+    public double defaultAmountWater = 10000
 
     /**
      *
@@ -191,7 +206,7 @@ public class RiverSection  {
     @Watch(
         watcheeClassName = 'riverbasim.RiverSection',
         watcheeFieldNames = 'amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration',
-        query = 'linked_to',
+        query = 'linked_from',
         whenToTrigger = WatcherTriggerSchedule.LATER,
         scheduleTriggerDelta = 3d
     )
@@ -200,14 +215,31 @@ public class RiverSection  {
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
 
-        // Receiving incoming flow of water from previous river section
-        amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))
-        // Self-cleaning process of pollutants
-        solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)
-        bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)
-        codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)
-        ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)
-        ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)
+
+        // Decision to distinguish river section as a starting source or as a middle/end section of the river
+        if (watchedAgent !=null) {
+
+            // Receiving incoming flow of water from previous river section
+            amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))
+            // Self-cleaning process of pollutants
+            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)
+            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)
+            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)
+            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)
+            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)
+
+        } else  {
+
+            // Receiving incoming flow of water from previous river section
+            amountWater.put(GetTickCount(), defaultAmountWater)
+            // Self-cleaning process of pollutants
+            solidConcentration.put(GetTickCount(), 0)
+            bodConcentration.put(GetTickCount(), 0)
+            codConcentration.put(GetTickCount(), 0)
+            ntConcentration.put(GetTickCount(), 0)
+            ptConcentration.put(GetTickCount(), 0)
+
+        }
         // End the method.
         return
 

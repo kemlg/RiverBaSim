@@ -1,0 +1,8 @@
+<parameters>
+<parameter name="amountWater" displayName="Amount of water (m3)" type="riverbasim.WaterFeature" defaultValue="new riverbasim.WaterFeature(GetTickCount(), 5000)" converter="riberbasim.WaterFeatureConverter"/>
+<parameter name="solidConcentration" displayName="Concentration of solids (gr./m3)" type="riverbasim.WaterFeature" defaultValue="" converter="riberbasim.WaterFeatureConverter"/>
+<parameter name="bodConcentration" displayName="Concentration of BOD (gr./m3)" type="riverbasim.WaterFeature" defaultValue="" converter="riberbasim.WaterFeatureConverter"/>
+<parameter name="codConcentration" displayName="Concentration of COD (gr./m3)" type="riverbasim.WaterFeature" defaultValue="" converter="riberbasim.WaterFeatureConverter"/>
+<parameter name="ntConcentration" displayName="Concentration of Total Nitrogen (gr./m3)" type="riverbasim.WaterFeature" defaultValue="" converter="riberbasim.WaterFeatureConverter"/>
+<parameter name="ptConcentration" displayName="Concentration of Total Phosphorus (gr./m3)" type="riverbasim.WaterFeature" defaultValue="" converter="riberbasim.WaterFeatureConverter"/>
+</parameters>
