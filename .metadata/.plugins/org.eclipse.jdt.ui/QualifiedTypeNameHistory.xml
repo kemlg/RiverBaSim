@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="repast.simphony.context.Context"/>
+<fullyQualifiedTypeName name="repast.simphony.util.ContextUtils"/>
+<fullyQualifiedTypeName name="repast.simphony.space.graph.Network"/>
 </qualifiedTypeNameHistroy>

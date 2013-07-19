@@ -10,7 +10,11 @@
     <string>SettingsRegistryId</string>
     <string>Repast.registry</string>
     <string>LastLoadedScenario</string>
+<<<<<<< Updated upstream
     <string>/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/riverbasim.rs</string>
+=======
+    <string>C:\Users\Luis\RiverBaSim\RiverBaSim\riverbasim.rs</string>
+>>>>>>> Stashed changes
     <string>SettingsFileName</string>
     <string>Repast.settings</string>
   </hashtable>
