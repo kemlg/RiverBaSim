@@ -1133,3 +1133,150 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2013-07-19 22:43:15.698 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 4 2 2013-07-19 22:43:30.470
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.runtime.Path.<init>(Path.java:152)
+	at repast.simphony.agents.designer.core.RepastProjectClasspathContainer.getClasspathEntries(RepastProjectClasspathContainer.java:47)
+	at org.eclipse.jdt.internal.core.JavaModelManager.containerPutIfInitializingWithSameEntries(JavaModelManager.java:563)
+	at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:49)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:709)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:775)
+	at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:4703)
+	at repast.simphony.agents.designer.core.RepastProjectClasspathContainer.initialize(RepastProjectClasspathContainer.java:31)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:2371)
+	at org.eclipse.jdt.internal.core.JavaModelManager$13.run(JavaModelManager.java:2301)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeAllContainers(JavaModelManager.java:2317)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:1679)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:2554)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:2562)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:1829)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.initializeRoots(DeltaProcessingState.java:229)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.processResourceDelta(DeltaProcessor.java:1741)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.resourceChanged(DeltaProcessor.java:1923)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:410)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:288)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:282)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:185)
+	at org.eclipse.core.internal.resources.SavedState.processResourceChangeEvents(SavedState.java:77)
+	at org.eclipse.jdt.internal.core.JavaModelManager$21.run(JavaModelManager.java:4348)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1782)
+	at org.eclipse.jdt.internal.core.JavaModelManager$20.run(JavaModelManager.java:4340)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-19 22:43:48.637
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-19 22:43:48.637
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_in':
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@118994d),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@1f8c10e),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-19 22:43:48.678
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-19 22:43:48.678
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_out':
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@1d124c),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@9c7307),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-19 22:47:20.733
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY repast.simphony.score.agents 4 4 2013-07-19 22:47:27.402
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at repast.simphony.agents.designer.builder.BuildDeltaVisitor.removeOutputFile(BuildDeltaVisitor.java:186)
+	at repast.simphony.agents.designer.builder.BuildDeltaVisitor.visit(BuildDeltaVisitor.java:107)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:68)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:48)
+	at repast.simphony.agents.designer.builder.AgentBuilderBuilder.build(AgentBuilderBuilder.java:159)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:633)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:170)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:201)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-19 23:29:51.371
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.ClassFileEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-19 23:30:45.647
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.debug.core 4 125 2013-07-19 23:47:57.485
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.debug.core.DebugException: Missing breakpoint definition for marker type org.eclipse.debug.core.breakpointMarker
+	at org.eclipse.debug.internal.core.BreakpointManager.createBreakpoint(BreakpointManager.java:490)
+	at org.eclipse.debug.internal.core.BreakpointManager.loadBreakpoints(BreakpointManager.java:223)
+	at org.eclipse.debug.internal.core.BreakpointManager.initializeBreakpoints(BreakpointManager.java:385)
+	at org.eclipse.debug.internal.core.BreakpointManager.getBreakpoints0(BreakpointManager.java:354)
+	at org.eclipse.debug.internal.core.BreakpointManager.getBreakpoints(BreakpointManager.java:339)
+	at org.codehaus.groovy.eclipse.actions.ToggleGroovyBreakpointAction.run(ToggleGroovyBreakpointAction.java:42)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.ui.texteditor.AbstractRulerActionDelegate.runWithEvent(AbstractRulerActionDelegate.java:113)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:241)
+	at org.eclipse.ui.commands.ActionHandler.execute(ActionHandler.java:185)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerWrapper.execute(LegacyHandlerWrapper.java:109)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.actions.ContributedAction.runWithEvent(ContributedAction.java:185)
+	at org.eclipse.ui.internal.actions.CommandAction.run(CommandAction.java:171)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$14.triggerAction(AbstractTextEditor.java:2891)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$14.mouseDoubleClick(AbstractTextEditor.java:2916)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:183)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3823)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3422)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:386)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:549)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:504)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
+!SUBENTRY 1 org.eclipse.debug.core 4 5014 2013-07-19 23:47:57.485
+!MESSAGE Missing breakpoint definition for marker type org.eclipse.debug.core.breakpointMarker

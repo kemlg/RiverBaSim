@@ -203,22 +203,24 @@ public class RiverSection  {
         interval = 1d,
         shuffle = false
     )
-    @Watch(
-        watcheeClassName = 'riverbasim.RiverSection',
-        watcheeFieldNames = 'amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration',
-        query = 'linked_from',
-        whenToTrigger = WatcherTriggerSchedule.LATER,
-        scheduleTriggerDelta = 3d
-    )
-    public void flowingWater(riverbasim.RiverSection watchedAgent) {
+    
+    public void flowingWater() {
 
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
 
+        
+        Context context = ContextUtils.getContext (this)
 
+        Network network = context.getProjection(Network.class, "River");
+        Iterable agents = network.getPredecessors(this)
+        
+        Iterator<RiverSection> itr = agents.iterator()
+        
+        
         // Decision to distinguish river section as a starting source or as a middle/end section of the river
-        if (watchedAgent !=null) {
-
+        if (itr.hasNext()) {
+        	RiverSection watchedAgent = itr.next();
             // Receiving incoming flow of water from previous river section
             amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))
             // Self-cleaning process of pollutants

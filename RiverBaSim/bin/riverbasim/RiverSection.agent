@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="RiverSection" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="362" y="59" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="linked_to" watchannotationtargetclassname="riverbasim.RiverSection" watchannotationtargetfieldnames="amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="3" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="riverbasim.RiverSection watchedAgent" exceptions="">
+    <behaviorstep x="362" y="59" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="linked_to" watchannotationtargetclassname="riverbasim.RiverSection" watchannotationtargetfieldnames="amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="3" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="" exceptions="">
       <label x="418" y="69" text="Flowing water"/>
     </behaviorstep>
   </behaviorsteps>
@@ -49,8 +49,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="395" y="405"/>
-    <endstep x="684" y="429"/>
+    <endstep x="400" y="410"/>
+    <endstep x="689" y="434"/>
   </endsteps>
   <connections>
     <transitions>
@@ -81,17 +81,17 @@
       </transition>
     </transitions>
     <booleantransitions>
+      <booleantransition value="true">
+        <transitionsource type="decision" index="0" anchor="1"/>
+        <transitiontarget type="task" index="1" anchor="0"/>
+        <bendpoints/>
+      </booleantransition>
       <booleantransition value="false">
         <transitionsource type="decision" index="0" anchor="3"/>
         <transitiontarget type="task" index="3" anchor="0"/>
         <bendpoints>
           <bendpoint x="797" y="139"/>
         </bendpoints>
-      </booleantransition>
-      <booleantransition value="true">
-        <transitionsource type="decision" index="0" anchor="1"/>
-        <transitiontarget type="task" index="1" anchor="0"/>
-        <bendpoints/>
       </booleantransition>
     </booleantransitions>
   </connections>

@@ -15,8 +15,8 @@ package riverbasim;
 
 import java.util.HashMap;
 
-
 import repast.simphony.engine.environment.RunEnvironment;
+
 
 /**
  * This class represents the data structure describing a feature of water 
@@ -43,12 +43,12 @@ public class WaterFeature {
 	public HashMap<Integer,Double> getFeature(){
 		return this.feature;
 	}
-	public Double get(Integer tick){
-		return this.feature.get(tick);
+	public Double get(Number tick){
+		return this.feature.get(tick.intValue());
 	}
 	
-	public void put(Integer tick, Double amount){
-		this.feature.put(tick, amount);
+	public void put(Number tick, Double amount){
+		this.feature.put(tick.intValue(), amount);
 	}
 	
 	public String toString(){

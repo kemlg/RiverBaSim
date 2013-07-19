@@ -210,7 +210,7 @@ public class RiverSection  {
         whenToTrigger = WatcherTriggerSchedule.LATER,
         scheduleTriggerDelta = 3d
     )
-    public void flowingWater(riverbasim.RiverSection watchedAgent) {
+    public void flowingWater() {
 
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
