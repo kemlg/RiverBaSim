@@ -1,3 +1,5 @@
+package tests;
+
 /*******************************************************************************
  * Copyright (c) 2013 RiverBaSim - River Basin scenario Simulator    	        
  * 

@@ -42,6 +42,25 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jdk1.7.0_25" version="1.7.0_25">
+<bootpath>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\jfr.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jdk1.7.0_25\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="C:\Program Files (x86)\RepastSimphony-1.2.0\eclipse\jre" version="1.6.0_06">
 <bootpath>
 <entry path="C:\Program Files (x86)\RepastSimphony-1.2.0\eclipse\jre\lib\resources.jar"/>
@@ -60,25 +79,22 @@
 <entry path="C:\Program Files (x86)\RepastSimphony-1.2.0\eclipse\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home" version="1.6.0_51">
+<libraryInfo home="C:\Program Files\RepastSimphony-1.2.0\eclipse" version="1.6.0_06">
 <bootpath>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar"/>
-<entry path="/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\classes"/>
 </bootpath>
 <extensionDirs>
-<entry path="/Library/Java/Extensions"/>
-<entry path="/System/Library/Java/Extensions"/>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
 </extensionDirs>
 <endorsedDirs>
-<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 <libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home" version="1.6.0_51">
@@ -102,22 +118,25 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="C:\Program Files\RepastSimphony-1.2.0\eclipse" version="1.6.0_06">
+<libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home" version="1.6.0_51">
 <bootpath>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\resources.jar"/>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\rt.jar"/>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\sunrsasign.jar"/>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\jsse.jar"/>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\jce.jar"/>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\charsets.jar"/>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\classes"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar"/>
+<entry path="/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
 </bootpath>
 <extensionDirs>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\ext"/>
-<entry path="C:\Windows\Sun\Java\lib\ext"/>
+<entry path="/Library/Java/Extensions"/>
+<entry path="/System/Library/Java/Extensions"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
 </extensionDirs>
 <endorsedDirs>
-<entry path="C:\Program Files\RepastSimphony-1.2.0\eclipse\jre\lib\endorsed"/>
+<entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 <libraryInfo home="C:\Program Files (x86)\RepastSimphony-1.2.0\eclipse" version="1.6.0_06">
@@ -136,6 +155,25 @@
 </extensionDirs>
 <endorsedDirs>
 <entry path="C:\Program Files (x86)\RepastSimphony-1.2.0\eclipse\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jdk1.6.0_45" version="1.6.0_45">
+<bootpath>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\modules\jdk.boot.jar"/>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jdk1.6.0_45\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 <libraryInfo home="/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home" version="1.6.0_51">

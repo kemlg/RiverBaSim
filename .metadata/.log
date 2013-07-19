@@ -1280,3 +1280,234 @@ org.eclipse.debug.core.DebugException: Missing breakpoint definition for marker 
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
 !SUBENTRY 1 org.eclipse.debug.core 4 5014 2013-07-19 23:47:57.485
 !MESSAGE Missing breakpoint definition for marker type org.eclipse.debug.core.breakpointMarker
+!SESSION 2013-07-20 00:46:36.905 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui.workbench 4 2 2013-07-20 00:47:17.679
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 1
+org.eclipse.ui.WorkbenchException: The content of elements must consist of well-formed character data or markup.
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:121)
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:64)
+	at org.eclipse.ui.internal.Workbench$48.run(Workbench.java:1872)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1867)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor$1.run(WorkbenchAdvisor.java:781)
+Caused by: org.xml.sax.SAXParseException: The content of elements must consist of well-formed character data or markup.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:94)
+	... 6 more
+!SUBENTRY 1 org.eclipse.ui 4 0 2013-07-20 00:47:17.680
+!MESSAGE The content of elements must consist of well-formed character data or markup.
+!STACK 0
+org.xml.sax.SAXParseException: The content of elements must consist of well-formed character data or markup.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:94)
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:64)
+	at org.eclipse.ui.internal.Workbench$48.run(Workbench.java:1872)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1867)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor$1.run(WorkbenchAdvisor.java:781)
+!SUBENTRY 1 org.eclipse.ui 4 0 2013-07-20 00:47:17.680
+!MESSAGE The content of elements must consist of well-formed character data or markup.
+!STACK 0
+org.xml.sax.SAXParseException: The content of elements must consist of well-formed character data or markup.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:94)
+	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:64)
+	at org.eclipse.ui.internal.Workbench$48.run(Workbench.java:1872)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1867)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor$1.run(WorkbenchAdvisor.java:781)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 00:47:19.239
+!MESSAGE Unable to find Action Set: org.codehaus.groovy.eclipse.junit.JUnitActionSet
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 00:47:20.459
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2013-07-20 00:47:21.249
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.jdt.internal.ui.JavaUIException: Problems reading information from XML 'OpenTypeHistory.xml'
+	at org.eclipse.jdt.internal.corext.util.History.createException(History.java:69)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:256)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:165)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.<init>(OpenTypeHistory.java:199)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.getInstance(OpenTypeHistory.java:185)
+	at org.eclipse.jdt.internal.ui.JavaPlugin.initializeAfterLoad(JavaPlugin.java:383)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:36)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.xml.sax.SAXParseException: The markup in the document preceding the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:254)
+	... 6 more
+!SUBENTRY 1 org.eclipse.jdt.ui 4 4 2013-07-20 00:47:21.249
+!MESSAGE Problems reading information from XML 'OpenTypeHistory.xml'
+!STACK 0
+org.xml.sax.SAXParseException: The markup in the document preceding the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:254)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:165)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.<init>(OpenTypeHistory.java:199)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.getInstance(OpenTypeHistory.java:185)
+	at org.eclipse.jdt.internal.ui.JavaPlugin.initializeAfterLoad(JavaPlugin.java:383)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:36)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-20 00:47:36.313
+!MESSAGE Installed JRE 'JVM 1.4' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-20 00:47:36.313
+!MESSAGE Installed JRE 'JVM 1.4.2' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-20 00:47:36.313
+!MESSAGE Installed JRE 'JVM 1.5' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-20 00:47:36.313
+!MESSAGE Installed JRE 'JVM 1.5.0' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-20 00:47:36.313
+!MESSAGE Installed JRE 'JVM 1.6' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.launching 1 0 2013-07-20 00:47:36.316
+!MESSAGE Installed JRE 'JVM 1.6.0' removed due to missing VM type extension.
+
+!ENTRY org.eclipse.jdt.core 4 4 2013-07-20 00:47:43.983
+!MESSAGE Exception while reading /RiverBaSim/.classpath
+!STACK 0
+java.io.IOException: Bad format
+	at org.eclipse.jdt.internal.core.JavaProject.decodeClasspath(JavaProject.java:812)
+	at org.eclipse.jdt.internal.core.JavaProject.readFileEntriesWithException(JavaProject.java:2355)
+	at org.eclipse.jdt.internal.core.JavaProject.readFileEntries(JavaProject.java:2365)
+	at org.eclipse.jdt.internal.core.JavaProject.writeFileEntries(JavaProject.java:2646)
+	at org.eclipse.jdt.internal.core.JavaModelManager$7.run(JavaModelManager.java:1188)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+	at org.eclipse.jdt.internal.core.JavaModelManager$PerProjectInfo.writeAndCacheClasspath(JavaModelManager.java:1182)
+	at org.eclipse.jdt.internal.core.SetClasspathOperation.executeOperation(SetClasspathOperation.java:61)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:709)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:775)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:2818)
+	at org.eclipse.jdt.internal.core.JavaProject.setRawClasspath(JavaProject.java:2834)
+	at org.eclipse.jdt.internal.corext.buildpath.ClasspathModifier.commitClassPath(ClasspathModifier.java:1042)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.AddFolderToBuildpathAction.addToClasspath(AddFolderToBuildpathAction.java:248)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.AddFolderToBuildpathAction.access$0(AddFolderToBuildpathAction.java:198)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.AddFolderToBuildpathAction$1.run(AddFolderToBuildpathAction.java:177)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:458)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:366)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:507)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:275)
+	at org.eclipse.ui.internal.progress.ProgressManager.run(ProgressManager.java:1191)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.AddFolderToBuildpathAction.run(AddFolderToBuildpathAction.java:184)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:583)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:500)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3823)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3422)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:386)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:549)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:504)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
+
+!ENTRY org.codehaus.groovy.eclipse 4 0 2013-07-20 00:51:10.567
+!MESSAGE Internal Error - please report: project = RiverBaSim
+!STACK 0
+java.lang.NoClassDefFoundError: LHashMap;
+	at java.lang.Class.getDeclaredFields0(Native Method)
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source)
+	at java.lang.Class.getDeclaredFields(Unknown Source)
+	at org.codehaus.groovy.vmplugin.v5.Java5.configureClassNode(Java5.java:154)
+	at org.codehaus.groovy.ast.ClassNode.lazyClassInit(ClassNode.java:209)
+	at org.codehaus.groovy.ast.ClassNode.getInterfaces(ClassNode.java:290)
+	at org.codehaus.groovy.ast.ClassNode.declaresInterface(ClassNode.java:785)
+	at org.codehaus.groovy.ast.ClassNode.implementsInterface(ClassNode.java:770)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.doConvertAndCast(AsmClassGenerator.java:3193)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.doConvertAndCast(AsmClassGenerator.java:3188)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.storeThisInstanceField(AsmClassGenerator.java:2154)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitFieldExpression(AsmClassGenerator.java:2081)
+	at org.codehaus.groovy.ast.expr.FieldExpression.visit(FieldExpression.java:37)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.evaluateEqual(AsmClassGenerator.java:3403)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitBinaryExpression(AsmClassGenerator.java:1186)
+	at org.codehaus.groovy.ast.expr.BinaryExpression.visit(BinaryExpression.java:49)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitAndAutoboxBoolean(AsmClassGenerator.java:3459)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitExpressionStatement(AsmClassGenerator.java:1151)
+	at org.codehaus.groovy.ast.stmt.ExpressionStatement.visit(ExpressionStatement.java:40)
+	at org.codehaus.groovy.ast.CodeVisitorSupport.visitBlockStatement(CodeVisitorSupport.java:37)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitBlockStatement(ClassCodeVisitorSupport.java:129)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitBlockStatement(AsmClassGenerator.java:532)
+	at org.codehaus.groovy.ast.stmt.BlockStatement.visit(BlockStatement.java:52)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClassCodeContainer(ClassCodeVisitorSupport.java:73)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitConstructorOrMethod(ClassCodeVisitorSupport.java:80)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitConstructorOrMethod(AsmClassGenerator.java:453)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitConstructor(ClassCodeVisitorSupport.java:84)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitConstructor(AsmClassGenerator.java:481)
+	at org.codehaus.groovy.ast.ClassNode.visitContents(ClassNode.java:902)
+	at org.codehaus.groovy.ast.ClassCodeVisitorSupport.visitClass(ClassCodeVisitorSupport.java:48)
+	at org.codehaus.groovy.classgen.AsmClassGenerator.visitClass(AsmClassGenerator.java:239)
+	at org.codehaus.groovy.control.CompilationUnit$10.call(CompilationUnit.java:691)
+	at org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(CompilationUnit.java:885)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:436)
+	at org.codehaus.groovy.eclipse.core.compiler.GroovyCompiler.compile(GroovyCompiler.java:204)
+	at org.codehaus.groovy.eclipse.core.compiler.GroovyCompiler.compile(GroovyCompiler.java:80)
+	at org.codehaus.groovy.eclipse.core.model.GroovyProject.compile(GroovyProject.java:538)
+	at org.codehaus.groovy.eclipse.core.model.GroovyProject.buildGroovyContent(GroovyProject.java:509)
+	at org.codehaus.groovy.eclipse.core.model.GroovyProject.buildGroovyContent(GroovyProject.java:460)
+	at org.codehaus.groovy.eclipse.core.builder.GroovyBuilder.build(GroovyBuilder.java:133)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:633)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:170)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:201)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.ClassNotFoundException: HashMap
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	... 52 more
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 00:51:59.973
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 00:55:00.099
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.ClassFileEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.

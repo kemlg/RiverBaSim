@@ -3,19 +3,15 @@
   <hashtable>
     <default>
       <loadFactor>0.75</loadFactor>
-      <threshold>8</threshold>
+      <threshold>5</threshold>
     </default>
+    <int>5</int>
     <int>3</int>
-    <int>3</int>
-    <string>SettingsRegistryId</string>
-    <string>Repast.registry</string>
-    <string>LastLoadedScenario</string>
-<<<<<<< Updated upstream
-    <string>/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/riverbasim.rs</string>
-=======
-    <string>C:\Users\Luis\RiverBaSim\RiverBaSim\riverbasim.rs</string>
->>>>>>> Stashed changes
     <string>SettingsFileName</string>
     <string>Repast.settings</string>
+    <string>LastLoadedScenario</string>
+    <string>C:\Users\Vielha\Documents\RiverBaSim\RiverBaSim\riverbasim.rs</string>
+    <string>SettingsRegistryId</string>
+    <string>Repast.registry</string>
   </hashtable>
 </simphony.settings.SettingsRegistry>
