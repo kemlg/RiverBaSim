@@ -58,7 +58,7 @@ The class "RiverSection" is defined with visibility "public" . This is an agent.
 </p>
     </p>
     </p>
-        <li>There is a method named "flowingWater" method has visibility     "public" and parameters [riverbasim.RiverSection watchedAgent]. Flowing water from one section to another The block is tagged with the name "Flowing water".</li></p>
+        <li>There is a method named "flowingWater" method has visibility     "public". Flowing water from one section to another The block is tagged with the name "Flowing water".</li></p>
     </p>
     </p>
     <BLOCKQUOTE>The flowingWater method is statically scheduled as follows:<BLOCKQUOTE></p>
@@ -66,24 +66,23 @@ The class "RiverSection" is defined with visibility "public" . This is an agent.
         <li>interval = 1d</li></p>
         <li>shuffle = false</li></p>
     </BLOCKQUOTE></BLOCKQUOTE></p>
-    <BLOCKQUOTE>The flowingWater method will trigger as follows:<BLOCKQUOTE></p>
-        <li>watcheeClassName = 'riverbasim.RiverSection'</li></p>
-        <li>watcheeFieldNames = 'amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration'</li></p>
-        <li>query = 'linked_to'</li></p>
-        <li>whenToTrigger = WatcherTriggerSchedule.LATER</li></p>
-        <li>scheduleTriggerDelta = 3d</li></p>
-    </BLOCKQUOTE></BLOCKQUOTE></p>
  <BLOCKQUOTE>The code for the "flowingWater" method is as follows:<BLOCKQUOTE><CODE></p>
 </p>
 </p>
          Note the simulation time.</p>
         def time = GetTickCountInTimeUnits()</p>
 </p>
+         Task to obtain previous river sections (where the water is coming from the river flow)</p>
+        Context context = ContextUtils.getContext (this)</p>
+        Network network = context.getProjection(Network.class, "River")</p>
+        Iterable agents = network.getPredecessors(this)</p>
+        Iterator<RiverSection> itr = agents.iterator()</p>
 </p>
          Decision to distinguish river section as a starting source or as a middle/end section of the river</p>
-        if (watchedAgent !=null) <BLOCKQUOTE></p>
+        if (itr.hasNext()) <BLOCKQUOTE></p>
 </p>
              Receiving incoming flow of water from previous river section</p>
+            RiverSection watchedAgent = itr.next();</p>
             amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))</p>
              Self-cleaning process of pollutants</p>
             solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)</p>
@@ -94,7 +93,7 @@ The class "RiverSection" is defined with visibility "public" . This is an agent.
 </p>
         </BLOCKQUOTE> else  <BLOCKQUOTE></p>
 </p>
-             Receiving incoming flow of water from previous river section</p>
+             Receiving incoming flow of water from river source</p>
             amountWater.put(GetTickCount(), defaultAmountWater)</p>
              Self-cleaning process of pollutants</p>
             solidConcentration.put(GetTickCount(), 0)</p>

@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="RiverSection" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="362" y="59" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="linked_to" watchannotationtargetclassname="riverbasim.RiverSection" watchannotationtargetfieldnames="amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="3" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="riverbasim.RiverSection watchedAgent" exceptions="">
-      <label x="418" y="69" text="Flowing water"/>
+    <behaviorstep x="551" y="9" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="" exceptions="">
+      <label x="607" y="19" text="Flowing water"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="384" y="311" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)" command2="bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)" command3="codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)" command4="ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)" command5="ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)">
-      <label x="437" y="313" text="Self-cleaning process of pollutants"/>
+    <taskstep x="472" y="309" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)" command2="bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)" command3="codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)" command4="ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)" command5="ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)">
+      <label x="292" y="314" text="Self-cleaning process of pollutants"/>
     </taskstep>
-    <taskstep x="386" y="214" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))" command2="" command3="" command4="" command5="">
-      <label x="439" y="223" text="Receive flow of water"/>
+    <taskstep x="477" y="238" comment="Receiving incoming flow of water from previous river section" command1="RiverSection watchedAgent = itr.next();" command2="amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))" command3="" command4="" command5="">
+      <label x="353" y="255" text="Receive flow of water"/>
     </taskstep>
-    <taskstep x="671" y="340" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), 0)" command2="bodConcentration.put(GetTickCount(), 0)" command3="codConcentration.put(GetTickCount(), 0)" command4="ntConcentration.put(GetTickCount(), 0)" command5="ptConcentration.put(GetTickCount(), 0)">
-      <label x="724" y="342" text="Set incoming mass of water as clean water"/>
+    <taskstep x="621" y="325" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), 0)" command2="bodConcentration.put(GetTickCount(), 0)" command3="codConcentration.put(GetTickCount(), 0)" command4="ntConcentration.put(GetTickCount(), 0)" command5="ptConcentration.put(GetTickCount(), 0)">
+      <label x="674" y="327" text="Set incoming mass of water as clean water"/>
     </taskstep>
-    <taskstep x="655" y="213" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), defaultAmountWater)" command2="" command3="" command4="" command5="">
-      <label x="708" y="222" text="Receive flow of water"/>
+    <taskstep x="625" y="249" comment="Receiving incoming flow of water from river source" command1="amountWater.put(GetTickCount(), defaultAmountWater)" command2="" command3="" command4="" command5="">
+      <label x="678" y="258" text="Receive flow of water"/>
+    </taskstep>
+    <taskstep x="550" y="90" comment="Task to obtain previous river sections (where the water is coming from the river flow)" command1="Context context = ContextUtils.getContext (this)" command2="Network network = context.getProjection(Network.class, &quot;River&quot;)" command3="Iterable agents = network.getPredecessors(this)" command4="Iterator&lt;RiverSection&gt; itr = agents.iterator()" command5="">
+      <label x="550" y="75" text="Obtain river section predecessors"/>
     </taskstep>
   </tasksteps>
   <decisionsteps>
-    <decisionstep x="607" y="113" comment="Decision to distinguish river section as a starting source or as a middle/end section of the river" criteria="watchedAgent !=null" branchType="if">
-      <label x="524" y="94" text="Is there a previous river section sending water?"/>
+    <decisionstep x="548" y="163" comment="Decision to distinguish river section as a starting source or as a middle/end section of the river" criteria="itr.hasNext()" branchType="if">
+      <label x="465" y="144" text="Is there a previous river section sending water?"/>
     </decisionstep>
   </decisionsteps>
   <joinsteps/>
@@ -49,14 +52,14 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="405" y="415"/>
-    <endstep x="694" y="439"/>
+    <endstep x="480" y="381"/>
+    <endstep x="627" y="397"/>
   </endsteps>
   <connections>
     <transitions>
       <transition>
         <transitionsource type="behavior" index="0" anchor="0"/>
-        <transitiontarget type="decision" index="0" anchor="0"/>
+        <transitiontarget type="task" index="4" anchor="0"/>
         <bendpoints/>
       </transition>
       <transition>
@@ -79,6 +82,11 @@
         <transitiontarget type="task" index="2" anchor="0"/>
         <bendpoints/>
       </transition>
+      <transition>
+        <transitionsource type="task" index="4" anchor="2"/>
+        <transitiontarget type="decision" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
     </transitions>
     <booleantransitions>
       <booleantransition value="true">
@@ -89,9 +97,7 @@
       <booleantransition value="false">
         <transitionsource type="decision" index="0" anchor="3"/>
         <transitiontarget type="task" index="3" anchor="0"/>
-        <bendpoints>
-          <bendpoint x="797" y="139"/>
-        </bendpoints>
+        <bendpoints/>
       </booleantransition>
     </booleantransitions>
   </connections>
