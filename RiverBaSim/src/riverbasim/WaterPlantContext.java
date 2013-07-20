@@ -25,7 +25,8 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 	private TreeMap<String,WaterPlant>	map;
 	private HashSet<WaterPlant> setBesos;
 	private HashMap<WaterPlant, WaterPlant> flow;
-
+	private Geography<WaterPlant> waterPlantGeography;
+	
 	public HashMap<WaterPlant, WaterPlant> getFlow() {
 		return flow;
 	}
@@ -34,7 +35,7 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 		this.flow = flow;
 	}
 
-	public WaterPlantContext(Set<WaterPlant> wps)
+	public WaterPlantContext()
 	{
 		super("WaterPlantContext");
 
@@ -42,13 +43,15 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 
 		/* Create a Geography to store junctions in spatially */
 		GeographyParameters<WaterPlant> geoParams = new GeographyParameters<WaterPlant>();
-		Geography<WaterPlant> waterPlantGeography = GeographyFactoryFinder
+		waterPlantGeography = GeographyFactoryFinder
 				.createGeographyFactory(null).createGeography("WaterPlantGeography",
 						this, geoParams);
 		System.out.println("Created WaterPlantGeography");
 		
 		map = new TreeMap<String,WaterPlant>();
-		
+	}
+	
+	public void setWaterPlants(Set<WaterPlant> wps) {
 		Iterator<WaterPlant> it = wps.iterator();
 		while(it.hasNext()) {
 			WaterPlant wp = it.next();
@@ -142,5 +145,9 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 			r.close();
 		} catch (IOException ex1) {
 		}
+	}
+
+	public Geography<WaterPlant> getWaterPlantGeography() {
+		return waterPlantGeography;
 	}
 }

@@ -31,16 +31,18 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 
 	public void createSubContexts()
 	{
+		WaterPlantContext wpc = new WaterPlantContext();
+		this.addSubContext(wpc);
 		RiverContext rc = new RiverContext();
 		this.addSubContext(rc);
-		WaterPlantContext wpc = new WaterPlantContext(rc.getWaterPlants());
-		this.addSubContext(wpc);
+		wpc.setWaterPlants(rc.getWaterPlants());
 		IndexedIterable<RiverSection> it = rc.getObjects(RiverSection.class);
 		Iterator<RiverSection> ite = it.iterator();
 		while(ite.hasNext()) {
 			RiverSection r = ite.next();
 			System.out.println("adding " + r);
 			this.add(r);
+			waterHolderGeography.move(r, ContextCreator.getRiverGeography().getGeometry(r));
 		}
 		IndexedIterable<WaterPlant> itw = wpc.getObjects(WaterPlant.class);
 		Iterator<WaterPlant> itwe = itw.iterator();
@@ -48,7 +50,9 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 			WaterPlant w = itwe.next();
 			System.out.println("adding " + w);
 			this.add(w);
+			waterHolderGeography.move(w, ContextCreator.getWaterPlantGeography().getGeometry(w));
 		}
 		System.out.println(this.getAgentTypes());
+		System.out.println(waterHolderGeography.getAllObjects());
 	}
 }

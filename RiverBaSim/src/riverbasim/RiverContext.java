@@ -38,7 +38,8 @@ public class RiverContext extends DefaultContext<RiverSection>
 	private HashSet<RiverSection> setBesos;
 	private HashMap<RiverSection, RiverSection> flow;
 	private HashSet<WaterPlant> waterPlants;
-
+	private Geography<RiverSection> riverGeography;
+	
 	public HashSet<WaterPlant> getWaterPlants() {
 		return waterPlants;
 	}
@@ -72,7 +73,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 
 		/* Create a Geography to store junctions in spatially */
 		GeographyParameters<RiverSection> geoParams = new GeographyParameters<RiverSection>();
-		Geography<RiverSection> riverGeography = GeographyFactoryFinder
+		riverGeography = GeographyFactoryFinder
 				.createGeographyFactory(null).createGeography("RiverGeography",
 						this, geoParams);
 		System.out.println("Created RiverGeography");
@@ -143,42 +144,52 @@ public class RiverContext extends DefaultContext<RiverSection>
 		Iterator<RiverSection> it1, it2;
 		it1 = setBesos.iterator();
 		RiverSection p1 = null;
-		if(it1.hasNext()) {
+		if (it1.hasNext()) {
 			p1 = it1.next();
 		}
 		waterPlants = new HashSet<WaterPlant>();
-		while(p1 != null) {
+		while (p1 != null) {
 			Geometry geom1 = riverGeography.getGeometry(p1);
-			Coordinate coord1 = geom1.getCoordinate();
-			MultiLineString line1 = (MultiLineString)geom1;
-			tempBesos.remove(p1);
-			it2 = tempBesos.iterator();
-			double min = Double.POSITIVE_INFINITY;
-			RiverSection nearest = null;
-			while(it2.hasNext()) {
-				RiverSection p2 = it2.next();
-				Geometry geom2 = riverGeography.getGeometry(p2);
-				Coordinate coord2 = geom2.getCoordinate();
-				MultiLineString line2 = (MultiLineString)geom2;
-				double candidate = coord1.distance(coord2);
-				if(candidate < min) {
-					nearest = p2;
-					min = candidate;
-				}
-			}
-			if(new Random().nextDouble() < 0.1) {
-				// Assigned as WWTP
-				WaterPlant	wp = new WaterPlant();
-				wp.setRiverSectionLocation(p1);
-				waterPlants.add(wp);
-				tempBesos.remove(nearest);
-			} else {
-				flow.put(p1, nearest);
-				if(it1.hasNext()) {
+			if (geom1 == null) {
+				if (it1.hasNext()) {
 					p1 = it1.next();
-				}
-				else {
+				} else {
 					p1 = null;
+				}
+			} else {
+				Coordinate coord1 = geom1.getCoordinate();
+				MultiLineString line1 = (MultiLineString) geom1;
+				tempBesos.remove(p1);
+				it2 = tempBesos.iterator();
+				double min = Double.POSITIVE_INFINITY;
+				RiverSection nearest = null;
+				while (it2.hasNext()) {
+					RiverSection p2 = it2.next();
+					Geometry geom2 = riverGeography.getGeometry(p2);
+					Coordinate coord2 = geom2.getCoordinate();
+					MultiLineString line2 = (MultiLineString) geom2;
+					double candidate = coord1.distance(coord2);
+					if (candidate < min) {
+						nearest = p2;
+						min = candidate;
+					}
+				}
+				if (new Random().nextDouble() < 0.1) {
+					// Assigned as WWTP
+					WaterPlant wp = new WaterPlant();
+					wp.setRiverSectionLocation(p1);
+					waterPlants.add(wp);
+					ContextCreator.getWaterPlantGeography().move(wp,
+							riverGeography.getGeometry(nearest));
+					tempBesos.remove(nearest);
+					this.remove(nearest);
+				} else {
+					flow.put(p1, nearest);
+					if (it1.hasNext()) {
+						p1 = it1.next();
+					} else {
+						p1 = null;
+					}
 				}
 			}
 		}
