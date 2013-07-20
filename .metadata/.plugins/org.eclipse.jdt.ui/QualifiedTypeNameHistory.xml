@@ -5,4 +5,10 @@
 <fullyQualifiedTypeName name="repast.simphony.context.Context"/>
 <fullyQualifiedTypeName name="repast.simphony.util.ContextUtils"/>
 <fullyQualifiedTypeName name="repast.simphony.space.graph.Network"/>
+<fullyQualifiedTypeName name="repast.simphony.space.gis.GeographyParameters"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Level"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="org.geotools.data.shapefile.dbf.DbaseFileReader.Row"/>
+<fullyQualifiedTypeName name="com.vividsolutions.jts.geom.Geometry"/>
 </qualifiedTypeNameHistroy>
