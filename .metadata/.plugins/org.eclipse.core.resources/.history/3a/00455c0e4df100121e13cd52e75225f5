@@ -1,0 +1,11 @@
+package riverbasim;
+
+import repast.simphony.space.graph.RepastEdge;
+
+public class RiverBlock extends RepastEdge<RiverSection>{
+
+	public RiverBlock(RiverSection origin, RiverSection destination, boolean b) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

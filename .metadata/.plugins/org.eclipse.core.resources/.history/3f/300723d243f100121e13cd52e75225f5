@@ -1,0 +1,7 @@
+package riverbasim;
+
+import repast.simphony.space.graph.RepastEdge;
+
+public class Flow extends RepastEdge<T> {
+
+}

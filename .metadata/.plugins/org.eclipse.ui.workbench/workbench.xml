@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="16" version="2.0">
+<workbench progressCount="23" version="2.0">
 <workbenchAdvisor/>
 <window height="902" maximized="true" width="1086" x="0" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -17,11 +17,12 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="156" y="26"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.codehaus.groovy.eclipse.editor.GroovyEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="repast.score.ide.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="repast.simphony.agents.rs_flow_editor" itemType="typePlaceholder" x="125" y="26"/>
+<coolItem id="repast.simphony.agents.rs_flow_editor" itemType="typeToolBarContribution" x="125" y="26"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -33,6 +34,21 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="12"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
 </presentation>
 </folder>
 </info>
@@ -40,20 +56,96 @@
 <editor id="repast.score.ide.editor" name="model.score" partName="model.score" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/riverbasim.rs/model.score" title="model.score" tooltip="RiverBaSim/riverbasim.rs/model.score" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/riverbasim.rs/model.score"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverBaSimContext.java" partName="RiverBaSimContext.java" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/RiverBaSimContext.java" title="RiverBaSimContext.java" tooltip="RiverBaSim/src/riverbasim/RiverBaSimContext.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverBaSimContext.java" partName="RiverBaSimContext.java" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/RiverBaSimContext.java" title="RiverBaSimContext.java" tooltip="RiverBaSim/src/riverbasim/RiverBaSimContext.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/RiverBaSimContext.java"/>
-<editorState selectionLength="0" selectionOffset="2484"/>
+<editorState selectionLength="0" selectionOffset="129"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="scenario.xml" partName="scenario.xml" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/riverbasim.rs/scenario.xml" title="scenario.xml" tooltip="RiverBaSim/riverbasim.rs/scenario.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/riverbasim.rs/scenario.xml"/>
+<editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="avis_legal.txt" partName="avis_legal.txt" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/contrib/CABALS_t_hid_mosaic_arc/avis_legal.txt" title="avis_legal.txt" tooltip="RiverBaSim/contrib/CABALS_t_hid_mosaic_arc/avis_legal.txt" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/contrib/CABALS_t_hid_mosaic_arc/avis_legal.txt"/>
+<editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="id_p.dbf" partName="id_p.dbf" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/contrib/CABALS_t_hid_mosaic_arc/id_p.dbf" title="id_p.dbf" tooltip="RiverBaSim/contrib/CABALS_t_hid_mosaic_arc/id_p.dbf" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/contrib/CABALS_t_hid_mosaic_arc/id_p.dbf"/>
+<editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="ShapefileLoader.class" partName="ShapefileLoader.class" title="ShapefileLoader.class" tooltip="repast.simphony.space.gis.ShapefileLoader" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=Infrastructure_Demo/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.space.gis(ShapefileLoader.class"/>
+<editorState selectionLength="41" selectionOffset="5473"/>
+</editor>
+<editor id="repast.simphony.agents.rs_flow_editor" name="RiverSection.agent" partName="RiverSection.agent" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/RiverSection.agent" title="RiverSection.agent" tooltip="RiverBaSim/src/riverbasim/RiverSection.agent" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/RiverSection.agent"/>
+</editor>
+<editor id="org.codehaus.groovy.eclipse.editor.GroovyEditor" name="RiverSection.groovy" partName="RiverSection.groovy" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/RiverSection.groovy" title="RiverSection.groovy" tooltip="RiverBaSim/src/riverbasim/RiverSection.groovy" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/RiverSection.groovy"/>
+<editorState selectionLength="0" selectionOffset="5733"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="RiverSection.class" partName="RiverSection.class" title="RiverSection.class" tooltip="riverbasim.RiverSection" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/bin-groovy&lt;riverbasim(RiverSection.class"/>
+<editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="AbstractContext.class" partName="AbstractContext.class" title="AbstractContext.class" tooltip="repast.simphony.context.AbstractContext" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.context(AbstractContext.class"/>
+<editorState selectionLength="6" selectionOffset="5000"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="NetworkBuilder.class" partName="NetworkBuilder.class" title="NetworkBuilder.class" tooltip="repast.simphony.context.space.graph.NetworkBuilder" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.context.space.graph(NetworkBuilder.class"/>
+<editorState selectionLength="12" selectionOffset="3108"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="RepastEdge.class" partName="RepastEdge.class" title="RepastEdge.class" tooltip="repast.simphony.space.graph.RepastEdge" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.space.graph(RepastEdge.class"/>
+<editorState selectionLength="10" selectionOffset="53"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FlowContext.java" partName="FlowContext.java" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/FlowContext.java" title="FlowContext.java" tooltip="RiverBaSim/src/riverbasim/FlowContext.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/FlowContext.java"/>
+<editorState selectionLength="0" selectionOffset="594"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ContextCreator.java" partName="ContextCreator.java" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/ContextCreator.java" title="ContextCreator.java" tooltip="RiverBaSim/src/riverbasim/ContextCreator.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/ContextCreator.java"/>
+<editorState selectionLength="0" selectionOffset="1626"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverBlock.java" partName="RiverBlock.java" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/RiverBlock.java" title="RiverBlock.java" tooltip="RiverBaSim/src/riverbasim/RiverBlock.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/RiverBlock.java"/>
+<editorState selectionLength="0" selectionOffset="239"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverContext.java" partName="RiverContext.java" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/RiverContext.java" title="RiverContext.java" tooltip="RiverBaSim/src/riverbasim/RiverContext.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/RiverContext.java"/>
+<editorState selectionLength="0" selectionOffset="1991"/>
+</editor>
+<editor id="repast.simphony.agents.rs_flow_editor" name="ModelInitializer.agent" partName="ModelInitializer.agent" path="/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/src/riverbasim/ModelInitializer.agent" title="ModelInitializer.agent" tooltip="RiverBaSim/src/riverbasim/ModelInitializer.agent" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RiverBaSim/src/riverbasim/ModelInitializer.agent"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
+<view id="org.eclipse.pde.runtime.LogView" partName="Error Log">
+<viewState activate="true" allSessions="true" column2="971" column3="150" column4="150" error="true" groupBy="0" info="true" limit="50" ok="true" orderType="2" orderValue="-1" show_filter_text="true" useLimit="true" warning="true"/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState>
+<isTrackingSelection value="false"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
+<category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="1117"/>
@@ -63,9 +155,6 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
-</view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" isWindowWorkingSet="true" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
@@ -96,7 +185,7 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
@@ -157,6 +246,7 @@
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.pde.runtime.LogView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
@@ -183,13 +273,14 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="254" ratioRight="762" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7141372" ratioLeft="687" ratioRight="275" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.55925155" ratioLeft="538" ratioRight="424" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
@@ -199,10 +290,11 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7493438" ratioLeft="571" ratioRight="191" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.812954" ratioLeft="1343" ratioRight="309" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
@@ -215,152 +307,247 @@
 </mainWindow>
 </layout>
 </perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7492228" ratioLeft="723" ratioRight="242" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.4495159" ratioLeft="325" ratioRight="398" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="956" ratioRight="956" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
 </perspectives>
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/riverbasim/RiverSection.agent"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/RiverBaSimContext.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.score.ide.editor" path="/RiverBaSim/riverbasim.rs/model.score"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/RiverBaSimContext.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/RiverBaSim/contrib/x_besos/x_besos.shp"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.visualization.gis(DisplayGIS.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.space.gis(Geography.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/System\/Library\/Java\/JavaVirtualMachines\/1.6.0.jdk\/Contents\/Classes\/classes.jar&lt;java.awt(EventDispatchThread.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/FlowContext.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/ContextCreator.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/RiverContext.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/RiverBlock.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/riverbasim/ModelInitializer.agent"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/RiverBaSim/riverbasim.rs/scenario.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/RiverBaSim/riverbasim.rs/repast.simphony.action.display_1.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RiverBaSim/src/riverbasim/RiverBaSimContext.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/RiverBaSim/riverbasim.rs/repast.simphony.action.display_2.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" path="/RiverBaSim/src/riverbasim/RiverSection.agent"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" path="/RiverBaSim/src/riverbasim/RiverSection.groovy"/>
 </editors>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="824" y="19"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="922" y="0"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="865" y="0"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="1814" y="0"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="962" y="19"/>
+<item historyLabel="RiverContext.java" index="4">
+<position info="not_deleted" x="1470" y="0"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1099" y="15"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="1814" y="0"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
+<item historyLabel="RiverBaSimContext.java" index="0">
 <position/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
+<item historyLabel="RiverBlock.java" index="5">
+<position info="not_deleted" x="129" y="6"/>
+</item>
+<item historyLabel="RiverBlock.java" index="5">
+<position info="not_deleted" x="124" y="0"/>
+</item>
+<item historyLabel="RiverBlock.java" index="5">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="RiverBaSimContext.java" index="0">
 <position/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2296" y="14"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="931" y="0"/>
+<item historyLabel="ContextCreator.java" index="3">
+<position info="not_deleted" x="1550" y="14"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1271" y="0"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2296" y="14"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1236" y="4"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="3129" y="0"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1317" y="0"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2296" y="14"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1459" y="5"/>
+<item historyLabel="ContextCreator.java" index="3">
+<position info="not_deleted" x="1786" y="0"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1416" y="6"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2296" y="14"/>
 </item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1317" y="0"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1433" y="1"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1442" y="0"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1459" y="6"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="2943" y="0"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1849" y="3"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1812" y="0"/>
-</item>
-<item historyLabel="x_besos.shp" index="3">
-<position/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1842" y="0"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="2743" y="0"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="2713" y="8"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="2638" y="0"/>
-</item>
-<item historyLabel="DisplayGIS.class" index="4">
-<position/>
-</item>
-<item historyLabel="Geography.class" index="5">
-<position info="not_deleted" x="4677" y="6"/>
-</item>
-<item historyLabel="EventDispatchThread.class" index="6">
-<position/>
-</item>
-<item historyLabel="Geography.class" index="5">
-<position info="not_deleted" x="4677" y="6"/>
-</item>
-<item historyLabel="DisplayGIS.class" index="4">
-<position info="not_deleted" x="7551" y="6"/>
-</item>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="2197" y="0"/>
+<item historyLabel="ContextCreator.java" index="3">
+<position info="not_deleted" x="936" y="0"/>
 </item>
 <item historyLabel="model.score" index="1"/>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="2197" y="0"/>
+<item historyLabel="ModelInitializer.agent" index="6"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2296" y="14"/>
 </item>
 <item historyLabel="model.score" index="1"/>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="856" y="0"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2301" y="0"/>
 </item>
-<item historyLabel="model.score" index="1"/>
-<item historyLabel="RiverSection.agent" index="0"/>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="800" y="12"/>
+<item historyLabel="ContextCreator.java" index="3">
+<position info="not_deleted" x="936" y="0"/>
 </item>
-<item historyLabel="model.score" index="1"/>
-<item historyLabel="RiverBaSimContext.java" index="2">
-<position info="not_deleted" x="1778" y="0"/>
+<item historyLabel="FlowContext.java" index="2">
+<position info="not_deleted" x="743" y="0"/>
 </item>
-<item historyLabel="model.score" index="1"/>
+<item historyLabel="RiverContext.java" index="4">
+<position info="not_deleted" x="1470" y="0"/>
+</item>
+<item historyLabel="ContextCreator.java" index="3">
+<position info="not_deleted" x="936" y="0"/>
+</item>
 <item historyLabel="scenario.xml" index="7">
 <position/>
 </item>
-<item historyLabel="repast.simphony.action.display_1.xml" index="8">
+<item historyLabel="repast.simphony.action.display_2.xml" index="8">
+<position info="not_deleted" x="3676" y="0"/>
+</item>
+<item historyLabel="scenario.xml" index="7">
+<position/>
+</item>
+<item historyLabel="repast.simphony.action.display_2.xml" index="8">
+<position info="not_deleted" x="3676" y="0"/>
+</item>
+<item historyLabel="RiverContext.java" index="4">
+<position info="not_deleted" x="5216" y="0"/>
+</item>
+<item historyLabel="ContextCreator.java" index="3">
+<position info="not_deleted" x="1626" y="0"/>
+</item>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2301" y="0"/>
+</item>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="2387" y="0"/>
+</item>
+<item historyLabel="scenario.xml" index="7">
 <position/>
 </item>
 <item historyLabel="model.score" index="1"/>
-<item historyLabel="RiverBaSimContext.java" index="9">
+<item historyLabel="RiverSection.agent" index="9"/>
+<item historyLabel="RiverSection.groovy" index="10">
+<position info="not_deleted" x="5733" y="0"/>
+</item>
+<item historyLabel="model.score" index="1"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="129" y="0"/>
+</item>
+<item historyLabel="FlowContext.java" index="2">
+<position info="not_deleted" x="594" y="0"/>
+</item>
+<item historyLabel="RiverContext.java" index="4">
+<position info="not_deleted" x="5216" y="0"/>
+</item>
+<item historyLabel="model.score" index="1"/>
+<item historyLabel="RiverContext.java" index="4">
 <position/>
 </item>
 <item historyLabel="model.score" index="1"/>
-<item historyLabel="RiverBaSimContext.java" index="9">
-<position info="not_deleted" x="2442" y="0"/>
+<item historyLabel="RiverBaSimContext.java" index="0">
+<position info="not_deleted" x="129" y="0"/>
+</item>
+<item historyLabel="FlowContext.java" index="2">
+<position info="not_deleted" x="594" y="0"/>
+</item>
+<item historyLabel="RiverContext.java" index="4">
+<position info="not_deleted" x="1976" y="0"/>
 </item>
 <item historyLabel="model.score" index="1"/>
-<item active="true" historyLabel="RiverBaSimContext.java" index="9">
-<position info="not_deleted" x="2442" y="0"/>
+<item active="true" historyLabel="RiverContext.java" index="4">
+<position info="not_deleted" x="1976" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -379,38 +566,44 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverBaSimContext.java" tooltip="RiverBaSim/src/riverbasim/RiverBaSimContext.java">
-<persistable path="/RiverBaSim/src/riverbasim/RiverBaSimContext.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" name="ModelInitializer.agent" tooltip="RiverBaSim/src/riverbasim/ModelInitializer.agent">
+<persistable path="/RiverBaSim/src/riverbasim/ModelInitializer.agent"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="repast.simphony.action.display_1.xml" tooltip="RiverBaSim/riverbasim.rs/repast.simphony.action.display_1.xml">
-<persistable path="/RiverBaSim/riverbasim.rs/repast.simphony.action.display_1.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverContext.java" tooltip="RiverBaSim/src/riverbasim/RiverContext.java">
+<persistable path="/RiverBaSim/src/riverbasim/RiverContext.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="scenario.xml" tooltip="RiverBaSim/riverbasim.rs/scenario.xml">
-<persistable path="/RiverBaSim/riverbasim.rs/scenario.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RiverBlock.java" tooltip="RiverBaSim/src/riverbasim/RiverBlock.java">
+<persistable path="/RiverBaSim/src/riverbasim/RiverBlock.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="EventDispatchThread.class" tooltip="java.awt.EventDispatchThread">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/System\/Library\/Java\/JavaVirtualMachines\/1.6.0.jdk\/Contents\/Classes\/classes.jar&lt;java.awt(EventDispatchThread.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ContextCreator.java" tooltip="RiverBaSim/src/riverbasim/ContextCreator.java">
+<persistable path="/RiverBaSim/src/riverbasim/ContextCreator.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Geography.class" tooltip="repast.simphony.space.gis.Geography">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.space.gis(Geography.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FlowContext.java" tooltip="RiverBaSim/src/riverbasim/FlowContext.java">
+<persistable path="/RiverBaSim/src/riverbasim/FlowContext.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="DisplayGIS.class" tooltip="repast.simphony.visualization.gis.DisplayGIS">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.visualization.gis(DisplayGIS.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Flow.java" tooltip="RiverBaSim/src/riverbasim/Flow.java">
+<persistable path="/RiverBaSim/src/riverbasim/Flow.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="x_besos.shp" tooltip="RiverBaSim/contrib/x_besos/x_besos.shp">
-<persistable path="/RiverBaSim/contrib/x_besos/x_besos.shp"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="RepastEdge.class" tooltip="repast.simphony.space.graph.RepastEdge">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.space.graph(RepastEdge.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="waterways.dbf" tooltip="RiverBaSim/contrib/spain-latest/waterways.dbf">
-<persistable path="/RiverBaSim/contrib/spain-latest/waterways.dbf"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="NetworkBuilder.class" tooltip="repast.simphony.context.space.graph.NetworkBuilder">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.context.space.graph(NetworkBuilder.class"/>
 </file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="README" tooltip="/Users/sergio/Downloads/spain-latest/README">
-<persistable uri="file:/Users/sergio/Downloads/spain-latest/README"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ScriptBytecodeAdapter.class" tooltip="org.codehaus.groovy.runtime.ScriptBytecodeAdapter">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Infrastructure_Demo/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/org.codehaus.groovy_1.5.7.20081120_2330\/groovy-all-1.5.7.jar&lt;org.codehaus.groovy.runtime(ScriptBytecodeAdapter.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="4753746.xml" tooltip="RiverBaSim/contrib/4753746.xml">
-<persistable path="/RiverBaSim/contrib/4753746.xml"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Geometry.class" tooltip="com.vividsolutions.jts.geom.Geometry">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.core_1.2.0\/lib\/jts-1.7.1.jar&lt;com.vividsolutions.jts.geom(Geometry.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.score.ide.editor" name="model.score" tooltip="RiverBaSim/riverbasim.rs/model.score">
-<persistable path="/RiverBaSim/riverbasim.rs/model.score"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="AbstractContext.class" tooltip="repast.simphony.context.AbstractContext">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/\/Users\/sergio\/Downloads\/RepastSimphony-1-1.2.0\/eclipse\/plugins\/repast.simphony.bin_and_src_1.2.0\/repast.simphony.bin_and_src.jar&lt;repast.simphony.context(AbstractContext.class"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="RiverSection.class" tooltip="riverbasim.RiverSection">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=RiverBaSim/bin-groovy&lt;riverbasim(RiverSection.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.codehaus.groovy.eclipse.editor.GroovyEditor" name="RiverSection.groovy" tooltip="RiverBaSim/src/riverbasim/RiverSection.groovy">
+<persistable path="/RiverBaSim/src/riverbasim/RiverSection.groovy"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="repast.simphony.agents.rs_flow_editor" name="RiverSection.agent" tooltip="RiverBaSim/src/riverbasim/RiverSection.agent">
 <persistable path="/RiverBaSim/src/riverbasim/RiverSection.agent"/>

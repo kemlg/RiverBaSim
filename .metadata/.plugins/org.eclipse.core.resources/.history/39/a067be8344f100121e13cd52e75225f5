@@ -1,0 +1,17 @@
+package riverbasim;
+
+import repast.simphony.context.DefaultContext;
+import repast.simphony.context.space.gis.GeographyFactoryFinder;
+import repast.simphony.space.gis.Geography;
+import repast.simphony.space.gis.GeographyParameters;
+
+public class FlowContext extends DefaultContext<Flow> {
+	public FlowContext() {
+		GeographyParameters<Flow> geoParamsFlow = new GeographyParameters<Flow>();
+		Geography<Flow> flowGeography = GeographyFactoryFinder
+				.createGeographyFactory(null).createGeography("FlowGeography",
+						this.findContext("FlowContext"), geoParamsFlow);
+		System.out.println("Created RiverGeography");
+
+	}
+}

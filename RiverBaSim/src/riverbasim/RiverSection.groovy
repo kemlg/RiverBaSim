@@ -170,6 +170,66 @@ public class RiverSection  {
 
     /**
      *
+     * Name of the section
+     * @field nom
+     *
+     */
+    @Parameter (displayName = "Nom", usageName = "nom")
+    public String getNom() {
+        return nom
+    }
+    public void setNom(String newValue) {
+        nom = newValue
+    }
+    public String nom = ""
+
+    /**
+     *
+     * This is an agent property.
+     * @field numsub
+     *
+     */
+    @Parameter (displayName = "Numsub", usageName = "numsub")
+    public int getNumsub() {
+        return numsub
+    }
+    public void setNumsub(int newValue) {
+        numsub = newValue
+    }
+    public int numsub = 0
+
+    /**
+     *
+     * This is an agent property.
+     * @field idtram
+     *
+     */
+    @Parameter (displayName = "IDTram", usageName = "idtram")
+    public int getIdtram() {
+        return idtram
+    }
+    public void setIdtram(int newValue) {
+        idtram = newValue
+    }
+    public int idtram = 0
+
+    /**
+     *
+     * Predecessor block
+     * @field watchedAgent
+     *
+     */
+    @Parameter (displayName = "Predecessor", usageName = "watchedAgent")
+    public RiverSection getWatchedAgent() {
+        return watchedAgent
+    }
+    public void setWatchedAgent(RiverSection newValue) {
+        watchedAgent = newValue
+    }
+    public RiverSection watchedAgent = null
+
+    /**
+     *
      * This value is used to automatically generate agent identifiers.
      * @field serialVersionUID
      *
@@ -210,7 +270,7 @@ public class RiverSection  {
         whenToTrigger = WatcherTriggerSchedule.LATER,
         scheduleTriggerDelta = 3d
     )
-    public void flowingWater(riverbasim.RiverSection watchedAgent) {
+    public void flowingWater() {
 
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
@@ -222,11 +282,11 @@ public class RiverSection  {
             // Receiving incoming flow of water from previous river section
             amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))
             // Self-cleaning process of pollutants
-            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)
-            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)
-            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)
-            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)
-            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)
+            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0.4)
+            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0.9)
+            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0.92)
+            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0.98)
+            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0.97)
 
         } else  {
 

@@ -56,9 +56,17 @@ The class "RiverSection" is defined with visibility "public" . This is an agent.
 </p>
     <li>There is a field named "defaultAmountWater" with visibility "public" of type "double" and default value 10000. Default incoming water amount The block is tagged with the name "Default incoming water".</li></p>
 </p>
+    <li>There is a field named "nom" with visibility "public" of type "String" and default value "". Name of the section The block is tagged with the name "Nom".</li></p>
+</p>
+    <li>There is a field named "numsub" with visibility "public" of type "int" and default value 0. This is an agent property. The block is tagged with the name "Numsub".</li></p>
+</p>
+    <li>There is a field named "idtram" with visibility "public" of type "int" and default value 0. This is an agent property. The block is tagged with the name "IDTram".</li></p>
+</p>
+    <li>There is a field named "watchedAgent" with visibility "public" of type "RiverSection" and default value null. Predecessor block The block is tagged with the name "Predecessor".</li></p>
+</p>
     </p>
     </p>
-        <li>There is a method named "flowingWater" method has visibility     "public" and parameters [riverbasim.RiverSection watchedAgent]. Flowing water from one section to another The block is tagged with the name "Flowing water".</li></p>
+        <li>There is a method named "flowingWater" method has visibility     "public". Flowing water from one section to another The block is tagged with the name "Flowing water riverbasim.RiverSection watchedAgent".</li></p>
     </p>
     </p>
     <BLOCKQUOTE>The flowingWater method is statically scheduled as follows:<BLOCKQUOTE></p>
@@ -86,11 +94,11 @@ The class "RiverSection" is defined with visibility "public" . This is an agent.
              Receiving incoming flow of water from previous river section</p>
             amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))</p>
              Self-cleaning process of pollutants</p>
-            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0,4)</p>
-            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0,9)</p>
-            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0,92)</p>
-            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0,98)</p>
-            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0,97)</p>
+            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0.4)</p>
+            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0.9)</p>
+            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0.92)</p>
+            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0.98)</p>
+            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0.97)</p>
 </p>
         </BLOCKQUOTE> else  <BLOCKQUOTE></p>
 </p>

@@ -1,16 +1,21 @@
 <repast.simphony.visualization.engine.DefaultDisplayDescriptor>
-  <name>River Display</name>
-  <type>GIS</type>
+  <name>GridDisplay</name>
+  <type>TWO_D</type>
   <styles>
     <entry>
       <string>riverbasim.RiverSection</string>
-      <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sld:UserStyle xmlns=&quot;http://www.opengis.net/sld&quot; xmlns:sld=&quot;http://www.opengis.net/sld&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:gml=&quot;http://www.opengis.net/gml&quot;&gt;&lt;sld:Name&gt;Default Styler&lt;/sld:Name&gt;&lt;sld:Title&gt;Default Styler&lt;/sld:Title&gt;&lt;sld:Abstract/&gt;&lt;sld:FeatureTypeStyle&gt;&lt;sld:Name&gt;name&lt;/sld:Name&gt;&lt;sld:Title&gt;Default Styler&lt;/sld:Title&gt;&lt;sld:Abstract&gt;abstract&lt;/sld:Abstract&gt;&lt;sld:FeatureTypeName&gt;riverbasim.RiverSection.FeatureType&lt;/sld:FeatureTypeName&gt;&lt;sld:SemanticTypeIdentifier&gt;generic:geometry&lt;/sld:SemanticTypeIdentifier&gt;&lt;sld:Rule&gt;&lt;sld:Title&gt; &lt;/sld:Title&gt;&lt;sld:MaxScaleDenominator&gt;1.7976931348623157E308&lt;/sld:MaxScaleDenominator&gt;&lt;sld:PointSymbolizer&gt;&lt;sld:Graphic&gt;&lt;sld:Mark&gt;&lt;sld:WellKnownName&gt;square&lt;/sld:WellKnownName&gt;&lt;sld:Fill&gt;&lt;sld:CssParameter name=&quot;fill&quot;&gt;&lt;ogc:Literal&gt;#0000FF&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;sld:CssParameter name=&quot;fill-opacity&quot;&gt;&lt;ogc:Literal&gt;1.0&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;/sld:Fill&gt;&lt;sld:Stroke&gt;&lt;sld:CssParameter name=&quot;stroke&quot;&gt;&lt;ogc:Literal&gt;#000000&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;sld:CssParameter name=&quot;stroke-linecap&quot;&gt;&lt;ogc:Literal&gt;butt&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;sld:CssParameter name=&quot;stroke-linejoin&quot;&gt;&lt;ogc:Literal&gt;miter&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;sld:CssParameter name=&quot;stroke-opacity&quot;&gt;&lt;ogc:Literal&gt;1.0&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;sld:CssParameter name=&quot;stroke-width&quot;&gt;&lt;ogc:Literal&gt;1.0&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;sld:CssParameter name=&quot;stroke-dashoffset&quot;&gt;&lt;ogc:Literal&gt;0.0&lt;/ogc:Literal&gt;&lt;/sld:CssParameter&gt;&lt;/sld:Stroke&gt;&lt;/sld:Mark&gt;&lt;sld:Opacity&gt;&lt;ogc:Literal&gt;1.0&lt;/ogc:Literal&gt;&lt;/sld:Opacity&gt;&lt;sld:Size&gt;&lt;ogc:Literal&gt;6&lt;/ogc:Literal&gt;&lt;/sld:Size&gt;&lt;sld:Rotation&gt;&lt;ogc:Literal&gt;0.0&lt;/ogc:Literal&gt;&lt;/sld:Rotation&gt;&lt;/sld:Graphic&gt;&lt;/sld:PointSymbolizer&gt;&lt;/sld:Rule&gt;&lt;/sld:FeatureTypeStyle&gt;&lt;/sld:UserStyle&gt;</string>
+      <string>repast.simphony.visualization.visualization2D.style.DefaultStyle2D</string>
     </entry>
   </styles>
-  <editedStyles/>
+  <editedStyles>
+    <entry>
+      <string>riverbasim.RiverSection</string>
+      <null/>
+    </entry>
+  </editedStyles>
   <netStyles/>
   <editedNetStyles/>
-  <frequency>ON_NEW</frequency>
+  <frequency>ON_MOVE</frequency>
   <schedParams>
     <start>1.0</start>
     <interval>1.0</interval>
@@ -18,41 +23,56 @@
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
   </schedParams>
+  <layoutClassName>foo.bar.baz</layoutClassName>
+  <layoutProjection>Grid2D</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
-    <entry>
-      <string>/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/contrib/spain-latest/waterways.shp</string>
-      <int>1</int>
-    </entry>
     <entry>
       <string>riverbasim.RiverSection</string>
       <int>0</int>
     </entry>
   </layerOrder>
   <projections>
-    <repast.score.impl.SGeographyImpl>
-      <name>RiverGeography</name>
-    </repast.score.impl.SGeographyImpl>
+    <repast.score.impl.SGridImpl>
+      <name>Grid2D</name>
+    </repast.score.impl.SGridImpl>
   </projections>
   <valueLayers/>
+  <visualizationProperties class="repast.simphony.visualization.UnitSizeLayoutProperties">
+    <unitSize>15.0</unitSize>
+  </visualizationProperties>
   <projectionDescriptors>
     <entry>
-      <string>RiverGeography</string>
-      <repast.simphony.visualization.engine.DefaultProjectionDescriptor>
-        <proj class="repast.score.impl.SGeographyImpl" reference="../../../../projections/repast.score.impl.SGeographyImpl"/>
-        <props/>
-      </repast.simphony.visualization.engine.DefaultProjectionDescriptor>
+      <string>Grid2D</string>
+      <repast.simphony.visualization.grid.GridProjectionDescriptor>
+        <proj class="repast.score.impl.SGridImpl" reference="../../../../projections/repast.score.impl.SGridImpl"/>
+        <props>
+          <entry>
+            <string>repast.simphony.visualization.grid.GridDecorator</string>
+            <map>
+              <entry>
+                <string>UNIT_SIZE</string>
+                <float>15.0</float>
+              </entry>
+              <entry>
+                <string>SHOW</string>
+                <boolean>true</boolean>
+              </entry>
+              <entry>
+                <string>COLOR</string>
+                <int>-16777216</int>
+              </entry>
+            </map>
+          </entry>
+        </props>
+      </repast.simphony.visualization.grid.GridProjectionDescriptor>
     </entry>
   </projectionDescriptors>
-  <props>
-    <entry>
-      <string>class repast.simphony.visualization.gis.DisplayGIS.SHP_FILE_STYLE_PROP</string>
-      <map>
-        <entry>
-          <string>/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/contrib/spain-latest/waterways.shp</string>
-          <string></string>
-        </entry>
-      </map>
-    </entry>
-  </props>
+  <props/>
+  <backgroundColor>
+    <red>255</red>
+    <green>255</green>
+    <blue>255</blue>
+    <alpha>255</alpha>
+  </backgroundColor>
 </repast.simphony.visualization.engine.DefaultDisplayDescriptor>

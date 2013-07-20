@@ -1,0 +1,9 @@
+package riverbasim;
+
+public class RiverBlock extends RepastEdge<RiverSection>{
+
+	public RiverBlock(RiverSection origin, RiverSection destination, boolean b) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

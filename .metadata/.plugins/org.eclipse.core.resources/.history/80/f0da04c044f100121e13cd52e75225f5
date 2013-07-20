@@ -1,0 +1,40 @@
+package riverbasim;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+import repast.simphony.context.DefaultContext;
+import repast.simphony.context.space.gis.GeographyFactoryFinder;
+import repast.simphony.context.space.graph.NetworkBuilder;
+import repast.simphony.space.gis.Geography;
+import repast.simphony.space.gis.GeographyParameters;
+import repast.simphony.space.graph.Network;
+import repast.simphony.space.graph.RepastEdge;
+
+public class FlowContext extends DefaultContext<Flow> {
+	public FlowContext() {
+		GeographyParameters<Flow> geoParamsFlow = new GeographyParameters<Flow>();
+		Geography<Flow> flowGeography = GeographyFactoryFinder
+				.createGeographyFactory(null).createGeography("FlowGeography",
+						this, geoParamsFlow);
+		System.out.println("Created FlowGeography");
+		NetworkBuilder<Flow> builder = new NetworkBuilder<Flow>("FlowNetwork", this, true);
+		Network<Flow> network = builder.buildNetwork();
+
+	}
+
+	public void assignEdges(HashMap<RiverSection, RiverSection> flow) {
+		Iterator<Entry<RiverSection,RiverSection>> itMap = flow.entrySet().iterator();
+		while(itMap.hasNext()) {
+			Entry<RiverSection,RiverSection> entry = itMap.next();
+			RiverSection origin, destination;
+			origin = entry.getKey();
+			destination = entry.getValue();
+			if(origin != null && destination != null) {
+				RepastEdge<RiverSection> edge = new RepastEdge<RiverSection>(origin, destination, true);
+				network.addEdge(edge);
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<score:SContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:score="http://scoreabm.org/score" label="RiverBaSim" ID="riverBaSim" pluralLabel="RiverBaSims">
+  <implementation package="riverbasim" className="" basePath="../RiverBaSim" mode="AUTO"/>
+  <agents xsi:type="score:SContext" label="RiverBaSimContext" ID="riverBaSimContext" pluralLabel="RiverBaSimContexts">
+    <implementation package="" className="RiverBaSimContext" basePath=""/>
+    <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">
+      <implementation className="RiverSection"/>
+    </agents>
+    <projections xsi:type="score:SGeography" label="RiverGeography" ID="riverGeography" pluralLabel="RiverGeographies"/>
+    <projections xsi:type="score:SNetwork" label="RiverNetwork" ID="riverNetwork" pluralLabel="RiverNetworks"/>
+  </agents>
+  <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">
+    <implementation className="RiverSection"/>
+  </agents>
+  <projections xsi:type="score:SGrid" label="Grid2D" ID="grid2D" pluralLabel="Grid2Ds" dimensionality="2">
+    <attributes xsi:type="score:SAttributeArray" label="Dimensions" ID="dimensions" pluralLabel="Dimensionss" description="The size of each dimension." sType="INTEGER" size="2"/>
+    <attributes label="Width" ID="width" pluralLabel="Widths" description="The horizontal extent of the space." sType="INTEGER" defaultValue="20"/>
+    <attributes label="Height" ID="height" pluralLabel="Heights" description="The vertical extent of the space." sType="INTEGER" defaultValue="20"/>
+  </projections>
+  <projections xsi:type="score:SNetwork" label="River" ID="river" pluralLabel="Rivers" directed="true"/>
+</score:SContext>

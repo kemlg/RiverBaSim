@@ -1,0 +1,54 @@
+package verdesim.citycontext;
+
+import java.util.HashMap;
+import java.util.TreeMap;
+
+import repast.simphony.context.DefaultContext;
+import repast.simphony.context.space.gis.GeographyFactoryFinder;
+import repast.simphony.context.space.graph.NetworkFactory;
+import repast.simphony.context.space.graph.NetworkFactoryFinder;
+import repast.simphony.space.gis.GeographyParameters;
+
+import com.vividsolutions.jts.geom.Coordinate;
+
+public class JunctionContext extends DefaultContext<Junction>
+{
+	private TreeMap<String,Junction>	map;
+
+	public JunctionContext()
+	{
+		super("JunctionContext");
+
+		System.out.println("JunctionContext building junction context and projections");
+
+		/* Create a Network projection for the road network */
+		NetworkFactory netFac = NetworkFactoryFinder.createNetworkFactory(new HashMap<String, Object>());
+		netFac.createNetwork("RoadNetwork", this, false);
+
+		/* Create a Geography to store junctions in spatially */
+		GeographyParameters<Junction> geoParams = new GeographyParameters<Junction>();
+		GeographyFactoryFinder.createGeographyFactory(null).createGeography("JunctionGeography", this, geoParams);
+		
+		map = new TreeMap<String,Junction>();
+	}
+	
+	/*
+	 * Runs through all the junctions in the context. If it finds one with
+	 * coordinates which are the same as the Junction passed to this functions
+	 * it returns true.
+	 */
+	public boolean existsInContext(Junction j)
+	{
+		return map.get(j.getCoordinate() + "") != null;
+	}
+
+	public Junction getJunctionWithCoordinates(Coordinate c)
+	{
+		return map.get(c + "");
+	}
+
+	public void addToMap(Junction j)
+	{
+		map.put(j.getCoordinate() + "", j);
+	}
+}
