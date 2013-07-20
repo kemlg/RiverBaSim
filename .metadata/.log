@@ -2707,3 +2707,6 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 
 !ENTRY org.eclipse.ui 4 4 2013-07-20 06:26:12.885
 !MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 07:23:38.245
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.ClassFileEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.

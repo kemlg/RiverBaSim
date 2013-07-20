@@ -1,0 +1,72 @@
+package riverbasim;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.geotools.data.shapefile.dbf.DbaseFileReader;
+
+import repast.simphony.context.DefaultContext;
+import repast.simphony.context.space.gis.GeographyFactoryFinder;
+import repast.simphony.space.gis.Geography;
+import repast.simphony.space.gis.GeographyParameters;
+
+public class RiverBaSimContext extends DefaultContext<RiverSection> {
+	public RiverBaSimContext() {
+		super("RiverBaSimContext"); // must match name in model.score
+		GeographyParameters<RiverSection> geoParams = new GeographyParameters<RiverSection>();
+		// These lines actually create our Geography.
+		// Tell Repast to create a new geography projection
+		// called "PeopleGeography" in this context.
+		Geography<RiverSection> riverGeography = GeographyFactoryFinder
+				.createGeographyFactory(null).createGeography("RiverGeography",
+						this, geoParams);
+		System.out.println("Created RiverGeography");
+
+		File selectedFile = new File("./contrib/spain-latest/waterways.dbf");
+		FileChannel in = null;
+		try {
+			in = new FileInputStream(selectedFile).getChannel(); // read the DBF
+																	// file
+																	// //Dynamic
+																	// path
+			// in = new FileInputStream("c://jal.dbf").getChannel(); //Static
+			// path
+		} catch (FileNotFoundException ex) {
+			Logger.getLogger(getClass().getName()).log(
+					Level.DEBUG, null, ex);
+		}
+		DbaseFileReader r = null;
+		try {
+			r = new DbaseFileReader(in, false, Charset.forName("ISO-8859-1")); // line
+																				// was
+																				// wrong
+																				// in
+																				// original
+																				// code
+		} catch (IOException ex1) {
+		}
+
+		Object[] fields = new Object[r.getHeader().getNumFields()];
+		while (r.hasNext()) {
+			try {
+				r.readEntry(fields);
+				System.out.println(r.readRow()); // display the row on console
+			} catch (IOException ex) {
+				Logger.getLogger(SearchengineView.class.getName()).log(
+						Level.SEVERE, null, ex);
+			}
+		}
+		try {
+			r.close();
+		} catch (IOException ex) {
+			Logger.getLogger(SearchengineView.class.getName()).log(
+					Level.SEVERE, null, ex);
+		}
+	}
+}
