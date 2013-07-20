@@ -9,9 +9,9 @@
     <int>3</int>
     <string>SettingsFileName</string>
     <string>Repast.settings</string>
+    <string>LastLoadedScenario</string>
+    <string>C:\Users\Luis\RiverBaSim\RiverBaSim\riverbasim.rs</string>
     <string>SettingsRegistryId</string>
     <string>Repast.registry</string>
-    <string>LastLoadedScenario</string>
-    <string>/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/riverbasim.rs</string>
   </hashtable>
 </simphony.settings.SettingsRegistry>
