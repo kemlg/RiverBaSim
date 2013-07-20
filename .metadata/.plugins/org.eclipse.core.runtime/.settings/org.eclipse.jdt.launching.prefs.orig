@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-#Sat Jul 20 13:17:32 CEST 2013
-eclipse.preferences.version=1
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="52,org.eclipse.jdt.internal.launching.macosx.MacOSXType3,1.4" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.launching.macosx.MacOSXType">\n<vm id\="1.4" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="JVM 1.4" path\="/System/Library/Frameworks/JavaVM.framework/Versions/1.4/Home"/>\n<vm id\="1.4.2" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="JVM 1.4.2" path\="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Home"/>\n<vm id\="1.5" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="JVM 1.5" path\="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home"/>\n<vm id\="1.5.0" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="JVM 1.5.0" path\="/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home"/>\n<vm id\="1.6" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="JVM 1.6" path\="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home"/>\n<vm id\="1.6.0" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="JVM 1.6.0" path\="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home"/>\n</vmType>\n</vmSettings>\n
-=======
-#Sat Jul 20 09:55:12 CEST 2013
-eclipse.preferences.version=1
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1374306611355" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1374306611355" javadocURL\="http\://java.sun.com/javase/6/docs/api/" name\="eclipse" path\="C\:\\Program Files\\RepastSimphony-1.2.0\\eclipse"/>\r\n</vmType>\r\n</vmSettings>\r\n
->>>>>>> 0e88991fdf382f1eaf2ff9c7813e0e88a6684231

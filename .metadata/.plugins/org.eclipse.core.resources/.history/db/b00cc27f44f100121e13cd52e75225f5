@@ -1,7 +1,0 @@
-package riverbasim;
-
-import repast.simphony.context.DefaultContext;
-
-public class FlowContext extends DefaultContext<Flow> {
-
-}
