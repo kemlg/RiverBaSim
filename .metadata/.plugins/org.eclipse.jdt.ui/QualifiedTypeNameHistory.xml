@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="repast.simphony.context.Context"/>
 <fullyQualifiedTypeName name="repast.simphony.util.ContextUtils"/>
 <fullyQualifiedTypeName name="repast.simphony.space.graph.Network"/>
@@ -23,4 +22,5 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="repast.simphony.space.graph.RepastEdge"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>

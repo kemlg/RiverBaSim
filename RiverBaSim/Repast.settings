@@ -12,6 +12,6 @@
     <string>SettingsRegistryId</string>
     <string>Repast.registry</string>
     <string>LastLoadedScenario</string>
-    <string>C:\Users\Luis\RiverBaSim\RiverBaSim\riverbasim.rs</string>
+    <string>/Users/sergio/Documents/Research/RiverBaSim/RiverBaSim/riverbasim.rs</string>
   </hashtable>
 </simphony.settings.SettingsRegistry>

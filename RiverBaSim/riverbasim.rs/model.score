@@ -10,18 +10,29 @@
       </agents>
       <projections xsi:type="score:SGeography" label="FlowGeography" ID="flowGeography" pluralLabel="FlowGeographies"/>
     </agents>
-    <agents xsi:type="score:SContext" label="RiverContext" ID="riverContext" pluralLabel="RiverContexts">
-      <implementation className="RiverContext"/>
-      <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">
-        <implementation className="RiverSection"/>
+    <agents xsi:type="score:SContext" label="WaterHolderContext" ID="waterHolderContext" pluralLabel="WaterHolderContexts">
+      <implementation className="WaterHolderContext"/>
+      <agents xsi:type="score:SContext" label="RiverContext" ID="riverContext" pluralLabel="RiverContexts">
+        <implementation className="RiverContext"/>
+        <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">
+          <implementation className="RiverSection"/>
+        </agents>
+        <projections xsi:type="score:SGeography" label="RiverGeography" ID="riverGeography" pluralLabel="RiverGeographies"/>
       </agents>
-      <projections xsi:type="score:SGeography" label="RiverGeography" ID="riverGeography" pluralLabel="RiverGeographies"/>
+      <agents xsi:type="score:SContext" label="WaterPlantContext" ID="waterPlantContext" pluralLabel="WaterPlantContexts">
+        <implementation className="WaterPlantContext"/>
+        <agents label="WaterPlant" ID="waterPlant" pluralLabel="WaterPlants">
+          <implementation className="WaterPlant"/>
+        </agents>
+        <projections xsi:type="score:SGeography" label="WaterPlantGeography" ID="waterPlantGeography" pluralLabel="WaterPlantGeographies"/>
+      </agents>
       <projections xsi:type="score:SNetwork" label="FlowNetwork" ID="flowNetwork" pluralLabel="FlowNetworks" directed="true"/>
       <projections xsi:type="score:SGrid" label="Grid2D" ID="grid2D" pluralLabel="Grid2Ds" dimensionality="2">
         <attributes xsi:type="score:SAttributeArray" label="Dimensions" ID="dimensions" pluralLabel="Dimensionss" description="The size of each dimension." sType="INTEGER" size="2"/>
         <attributes label="Width" ID="width" pluralLabel="Widths" description="The horizontal extent of the space." sType="INTEGER" defaultValue="20"/>
         <attributes label="Height" ID="height" pluralLabel="Heights" description="The vertical extent of the space." sType="INTEGER" defaultValue="20"/>
       </projections>
+      <projections xsi:type="score:SGeography" label="WaterHolderGeography" ID="waterHolderGeography" pluralLabel="WaterHolderGeographies"/>
     </agents>
   </agents>
   <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">

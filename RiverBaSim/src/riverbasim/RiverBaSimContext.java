@@ -37,11 +37,14 @@ public class RiverBaSimContext extends DefaultContext<Object> {
 
 	public void createSubContexts()
 	{
-		this.addSubContext(new RiverContext());
+		WaterHolderContext whc = new WaterHolderContext();
+		this.addSubContext(whc);
+		whc.createSubContexts();
 		this.addSubContext(new FlowContext());
 		
 		buildRiverFlow();
 	}
+	
 	
 	public void buildRiverFlow()
 	{

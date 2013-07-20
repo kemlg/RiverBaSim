@@ -9,6 +9,7 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.TreeMap;
 
 import org.apache.log4j.Level;
@@ -36,6 +37,15 @@ public class RiverContext extends DefaultContext<RiverSection>
 	private TreeMap<String,RiverSection>	map;
 	private HashSet<RiverSection> setBesos;
 	private HashMap<RiverSection, RiverSection> flow;
+	private HashSet<WaterPlant> waterPlants;
+
+	public HashSet<WaterPlant> getWaterPlants() {
+		return waterPlants;
+	}
+
+	public void setWaterPlants(HashSet<WaterPlant> waterPlants) {
+		this.waterPlants = waterPlants;
+	}
 
 	public HashMap<RiverSection, RiverSection> getFlow() {
 		return flow;
@@ -118,7 +128,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 			Geometry geom = riverGeography.getGeometry(p);
 			Coordinate coord = geom.getCoordinate();
 			MultiLineString line = (MultiLineString)geom;
-			if(p.getNom().startsWith("el Besòs")) {
+			if(p.getNom().startsWith("el Bes√≤s")) {
 				setBesos.add(p);
 				System.out.println(p.getNom() + " is at: (" + coord.x + ","
 						+ coord.y + ") [size of set: " + setBesos.size() + "]");
@@ -132,8 +142,12 @@ public class RiverContext extends DefaultContext<RiverSection>
 		tempBesos.addAll(setBesos);
 		Iterator<RiverSection> it1, it2;
 		it1 = setBesos.iterator();
-		while(it1.hasNext()) {
-			RiverSection p1 = it1.next();
+		RiverSection p1 = null;
+		if(it1.hasNext()) {
+			p1 = it1.next();
+		}
+		waterPlants = new HashSet<WaterPlant>();
+		while(p1 != null) {
 			Geometry geom1 = riverGeography.getGeometry(p1);
 			Coordinate coord1 = geom1.getCoordinate();
 			MultiLineString line1 = (MultiLineString)geom1;
@@ -152,7 +166,52 @@ public class RiverContext extends DefaultContext<RiverSection>
 					min = candidate;
 				}
 			}
-			flow.put(p1, nearest);
+			if(new Random().nextDouble() < 0.1) {
+				// Assigned as WWTP
+				WaterPlant	wp = new WaterPlant();
+				wp.setRiverSectionLocation(p1);
+				waterPlants.add(wp);
+				tempBesos.remove(nearest);
+			} else {
+				flow.put(p1, nearest);
+				if(it1.hasNext()) {
+					p1 = it1.next();
+				}
+				else {
+					p1 = null;
+				}
+			}
+		}
+	}
+	
+	public static void main(String args[]) {
+		File selectedFile = new File("/Users/sergio/Downloads/spain-latest/buildings.dbf");
+		FileChannel in = null;
+		try {
+			in = new FileInputStream(selectedFile).getChannel();
+		} catch (FileNotFoundException ex) {
+		}
+		DbaseFileReader r = null;
+		try {
+			r = new DbaseFileReader(in, false, Charset.forName("ISO-8859-1"));
+		} catch (IOException ex1) {
+		}
+
+		Object[] fields = new Object[r.getHeader().getNumFields()];
+		while (r.hasNext()) {
+			try {
+				r.readEntry(fields);
+				Row row = r.readRow();
+				String type = (String) row.read(2);
+				if(type.toLowerCase().contains("water")) {
+					System.out.println(type);
+				}
+			} catch (IOException ex1) {
+			}
+		}
+		try {
+			r.close();
+		} catch (IOException ex1) {
 		}
 	}
 }

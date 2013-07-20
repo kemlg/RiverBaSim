@@ -39,12 +39,12 @@ The following external code is referenced:<BLOCKQUOTE></p>
 <li>Components from static java.lang.Math.*</li></p>
 <li>Components from static repast.simphony.essentials.RepastEssentials.*</li></p>
 </BLOCKQUOTE><P></p>
-The class "WaterPlant" is defined with visibility "public" . This is an agent.</p>
+The class "WaterPlant" is defined with visibility "public" which extends parent class "riverbasim.WaterHolder" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
     <li>There is a field named "raining" with visibility "public" of type "def" and default value 0. This property tells if it is raining. The block is tagged with the name "Is it raining?".</li></p>
 </p>
-    <li>There is a field named "riverSectionLocation" with visibility "public" of type "def" and default value 0. River section where the WWTP dumps treated water. The block is tagged with the name "River section location".</li></p>
+    <li>There is a field named "riverSectionLocation" with visibility "public" of type "riverbasim.RiverSection" and default value null. River section where the WWTP dumps treated water. The block is tagged with the name "River section location".</li></p>
 </p>
     </p>
     </p>

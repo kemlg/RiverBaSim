@@ -3289,3 +3289,85 @@ java.lang.StringIndexOutOfBoundsException: String index out of range: 51
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:504)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
 >>>>>>> 0e88991fdf382f1eaf2ff9c7813e0e88a6684231
+!SESSION 2013-07-20 19:17:19.385 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/sergio/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/sergio/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 19:17:23.001
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.core.net 1 0 2013-07-20 19:17:23.886
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 19:17:30.897
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-20 20:28:27.162
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-20 20:28:27.162
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_in':
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@2bce61),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@1fa5d09),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-20 20:28:27.165
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-20 20:28:27.166
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_out':
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@15f0c55),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@122ad76),
+	expression=,sourcePriority=0)
+!SESSION 2013-07-20 20:31:51.308 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/sergio/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/sergio/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-07-20 20:31:52.086
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 20:31:54.451
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.CompilationUnitEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.core.net 1 0 2013-07-20 20:31:55.451
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 20:31:58.586
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.PackageExplorer. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui 4 4 2013-07-20 20:38:34.449
+!MESSAGE Unable to associate action set with part: org.eclipse.jdt.ui.ClassFileEditor. Action set org.codehaus.groovy.eclipse.junit.JUnitActionSet not found.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-20 21:15:50.688
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-20 21:15:50.688
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_in':
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@b6e149),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_in,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomInAction@809273),
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-20 21:15:50.694
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-20 21:15:50.694
+!MESSAGE Conflict for 'org.eclipse.gef.zoom_out':
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@42e26),
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=org.eclipse.gef.zoom_out,
+	handler=ActionHandler(action=org.eclipse.gef.ui.actions.ZoomOutAction@720065),
+	expression=,sourcePriority=0)

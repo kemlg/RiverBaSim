@@ -71,6 +71,30 @@ public class ContextCreator implements ContextBuilder<Object>
 				"RiverGeography");
 	}
 	
+	public static WaterHolderContext getWaterHolderContext()
+	{
+		return (WaterHolderContext) mainContext.findContext("WaterHolderContext");
+	}
+
+	public static WaterPlantContext getWaterPlantContext()
+	{
+		return (WaterPlantContext) mainContext.findContext("WaterPlantContext");
+	}
+
+	@SuppressWarnings("unchecked")
+	public static Geography<WaterPlant> getWaterPlantGeography()
+	{
+		return (Geography<WaterPlant>) ContextCreator.getWaterPlantContext().getProjection(
+				"WaterPlantGeography");
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static Geography<WaterHolder> getWaterHolderGeography()
+	{
+		return (Geography<WaterHolder>) ContextCreator.getWaterHolderContext().getProjection(
+				"WaterHolderGeography");
+	}
+	
 	public static void main(String args[])
 	{
 		ContextCreator	cc;

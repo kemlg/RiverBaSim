@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agent version="1" agentcomment="This is an agent." agentclassname="RiverSection" agentparentclassname="" agentinterfaces="" agentimports="">
+<agent version="1" agentcomment="This is an agent." agentclassname="RiverSection" agentparentclassname="riverbasim.WaterHolder" agentinterfaces="" agentimports="">
   <behaviorsteps>
     <behaviorstep x="362" y="59" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="linked_to" watchannotationtargetclassname="riverbasim.RiverSection" watchannotationtargetfieldnames="amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="3" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="" exceptions="">
       <label x="418" y="69" text="Flowing water riverbasim.RiverSection watchedAgent"/>
@@ -61,8 +61,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="410" y="420"/>
-    <endstep x="699" y="444"/>
+    <endstep x="420" y="430"/>
+    <endstep x="709" y="454"/>
   </endsteps>
   <connections>
     <transitions>

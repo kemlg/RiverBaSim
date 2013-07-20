@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agent version="1" agentcomment="This is an agent." agentclassname="WaterPlant" agentparentclassname="" agentinterfaces="" agentimports="">
+<agent version="1" agentcomment="This is an agent." agentclassname="WaterPlant" agentparentclassname="riverbasim.WaterHolder" agentinterfaces="" agentimports="">
   <behaviorsteps>
     <behaviorstep x="310" y="57" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Treating wastewater" visibility="0" returntype="def" compiledname="step" parameters="" exceptions="">
       <label x="310" y="42" text="Wastewater treatement"/>
@@ -26,13 +26,13 @@
     <agentproperty x="38" y="26" comment="This property tells if it is raining." visibility="0" compiledname="raining" type="def" defaultvalue="0">
       <label x="43" y="11" text="Is it raining?"/>
     </agentproperty>
-    <agentproperty x="134" y="35" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="def" defaultvalue="0">
+    <agentproperty x="134" y="35" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="riverbasim.RiverSection" defaultvalue="null">
       <label x="139" y="20" text="River section location"/>
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="184" y="479"/>
-    <endstep x="435" y="472"/>
+    <endstep x="194" y="489"/>
+    <endstep x="445" y="482"/>
   </endsteps>
   <connections>
     <transitions>

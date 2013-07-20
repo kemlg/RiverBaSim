@@ -61,7 +61,7 @@ import static repast.simphony.essentials.RepastEssentials.*
  * This is an agent.
  *
  */
-public class WaterPlant  {
+public class WaterPlant extends riverbasim.WaterHolder  {
 
     /**
      *
@@ -85,13 +85,13 @@ public class WaterPlant  {
      *
      */
     @Parameter (displayName = "River section location", usageName = "riverSectionLocation")
-    public def getRiverSectionLocation() {
+    public riverbasim.RiverSection getRiverSectionLocation() {
         return riverSectionLocation
     }
-    public void setRiverSectionLocation(def newValue) {
+    public void setRiverSectionLocation(riverbasim.RiverSection newValue) {
         riverSectionLocation = newValue
     }
-    public def riverSectionLocation = 0
+    public riverbasim.RiverSection riverSectionLocation = null
 
     /**
      *
