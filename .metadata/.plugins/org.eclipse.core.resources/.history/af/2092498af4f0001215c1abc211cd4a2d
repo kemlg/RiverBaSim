@@ -1,0 +1,5 @@
+package riverbasim;
+
+public class RiverBaSimContext extends DefaultContext {
+
+}
