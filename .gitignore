@@ -1,1 +1,6 @@
 target/
+.metadata/
+*/target/*
+target
+*/.metadata/*
+.metadata
