@@ -120,10 +120,10 @@ public class WaterPlant extends riverbasim.WaterHolder  {
     /**
      *
      * Treating wastewater
-     * @method step
+     * @method wastewaterTreatement
      *
      */
-    public def step() {
+    public def wastewaterTreatement() {
 
         // Define the return value variable.
         def returnValue
@@ -132,15 +132,27 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         def time = GetTickCountInTimeUnits()
 
         // Cleans N units of wastewater
-        riverSectionLocation.mix
+        double waterToRiver = amountWater.get(GetTickCount());
+        if (capacity< waterToRiver) {
+         waterToRiver = capacity;
+        }
+        double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
+        double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
+        double codToRiver =codConcentration.get(GetTickCount())*0.1:
+        double ntToRiver = ntConcentration.get(GetTickCount())*0.02
+        double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
+        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
+        amountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);
 
-        // The Water Plant has to dump any remaining wastewater that was not possible to treat
-        if (amountWater>0) {
+        // This is an agent decision.
+        if (amountWater.get(GetTickCount())==0) {
 
-            // Send the remaining wastewater directly to the river
-            riverSectionLocation.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration )
-            amountWater = 0
-            solidConcentration=0; bodConcentration=0; codConcentration=0; ntConcentration=0; ptConcentration=0
+            // Remove pollutants if there's no remaining water
+            solidConcentration.put(GitTickCount(), 0);
+            bodConcentration.put(GitTickCount(), 0);
+            codConcentration.put(GitTickCount(), 0);
+            ntConcentration.put(GitTickCount(), 0);
+            ptConcentration.put(GitTickCount(), 0);
 
         } else  {
 
@@ -148,6 +160,45 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         }
         // Return the results.
         return returnValue
+
+    }
+
+    /**
+     *
+     * Dumping water beyond capacity
+     * @method overloadDump
+     *
+     */
+    @ScheduledMethod(
+        start = 1d,
+        interval = 1d,
+        shuffle = false
+    )
+    public void overloadDump() {
+
+        // Note the simulation time.
+        def time = GetTickCountInTimeUnits()
+
+
+        // This is an agent decision.
+        if (amountWater.get(GetTickCount())>capacity) {
+
+            // Dump surplus water to river
+            double waterToRiver = amountWater.get(GetTickCount())-capacity;
+            double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
+            double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
+            double codToRiver =codConcentration.get(GetTickCount())*0.1:
+            double ntToRiver = ntConcentration.get(GetTickCount())*0.02
+            double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
+            riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
+            amountWater.put(GetTickCount(), capacity);
+
+        } else  {
+
+
+        }
+        // End the method.
+        return
 
     }
 

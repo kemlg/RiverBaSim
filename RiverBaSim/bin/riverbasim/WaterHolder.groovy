@@ -183,7 +183,7 @@ public class WaterHolder  {
      * @method mixIncomingWater
      *
      */
-    public def mixIncomingWater(amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived) {
+    public def mixIncomingWater(double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived) {
 
         // Define the return value variable.
         def returnValue
@@ -192,11 +192,18 @@ public class WaterHolder  {
         def time = GetTickCountInTimeUnits()
 
         // Mix water
-        ((solidConcentration*amountWater)+(solidConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)
-        ((bodConcentration*amountWater)+(bodConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)
-        ((codConcentration*amountWater)+(codConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)
-        ((ntConcentration*amountWater)+(ntConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)
-        ((ptConcentration*amountWater)+(ptConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived); amountWater +=amountWaterReceived
+        double solid = solidConcentration.get(GetTickCount());
+        double bod=bodConcentration.get(GetTickCount());
+        double cod=codConcentration.get(GetTickCount());
+        double nt = ntConcentration.get(GetTickCount());
+        double pt = ptConcentration.get(GetTickCount());
+        double water = amountWater.get(GetTickCount());
+        solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        ntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        ptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        amountWater.put(GetTickCount(), water+amountWaterReceived);
         // Return the results.
         return returnValue
 

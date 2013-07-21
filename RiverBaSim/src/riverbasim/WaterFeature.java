@@ -14,6 +14,7 @@
 package riverbasim;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import repast.simphony.engine.environment.RunEnvironment;
 
@@ -27,17 +28,17 @@ import repast.simphony.engine.environment.RunEnvironment;
  *
  */
 public class WaterFeature {
-	private HashMap<Integer,Double>  feature;
+	private LinkedHashMap<Integer,Double>  feature;
 
 	public WaterFeature(Number tick, Double amount){
-		this.feature = new HashMap<Integer, Double>();
-		this.feature.put(0, amount);
+		this.feature = new LinkedHashMap<Integer, Double>();
+		//this.feature.put(0, amount);
 		this.feature.put(tick.intValue(), amount);
 		this.feature.put(tick.intValue()+1, amount);
 	}
 	
 	public WaterFeature(){
-		this.feature = new HashMap<Integer, Double>();
+		this.feature = new LinkedHashMap<Integer, Double>();
 	}
 	
 	public HashMap<Integer,Double> getFeature(){
@@ -49,6 +50,8 @@ public class WaterFeature {
 	
 	public void put(Number tick, Double amount){
 		this.feature.put(tick.intValue(), amount);
+		// Remove old values; we only keep two values
+		this.feature.remove(tick.intValue()-2);
 	}
 	
 	public String toString(){

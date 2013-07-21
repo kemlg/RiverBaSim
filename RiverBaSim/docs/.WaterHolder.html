@@ -56,7 +56,7 @@ The class "WaterHolder" is defined with visibility "public" . This is an agent.<
 </p>
     </p>
     </p>
-        <li>There is a method named "mixIncomingWater" method has visibility     "public" has return type "def" and parameters [amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived]. Mixing water The block is tagged with the name "Receives a mass of water to be mixed with the current water in the Water holder".</li></p>
+        <li>There is a method named "mixIncomingWater" method has visibility     "public" has return type "def" and parameters [double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived]. Mixing water The block is tagged with the name "Receives a mass of water to be mixed with the current water in the Water holder".</li></p>
     </p>
     </p>
  <BLOCKQUOTE>The code for the "mixIncomingWater" method is as follows:<BLOCKQUOTE><CODE></p>
@@ -69,11 +69,18 @@ The class "WaterHolder" is defined with visibility "public" . This is an agent.<
         def time = GetTickCountInTimeUnits()</p>
 </p>
          Mix water</p>
-        ((solidConcentration*amountWater)+(solidConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)</p>
-        ((bodConcentration*amountWater)+(bodConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)</p>
-        ((codConcentration*amountWater)+(codConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)</p>
-        ((ntConcentration*amountWater)+(ntConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)</p>
-        ((ptConcentration*amountWater)+(ptConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived); amountWater +=amountWaterReceived</p>
+        double solid = solidConcentration.get(GetTickCount());</p>
+        double bod=bodConcentration.get(GetTickCount());</p>
+        double cod=codConcentration.get(GetTickCount());</p>
+        double nt = ntConcentration.get(GetTickCount());</p>
+        double pt = ptConcentration.get(GetTickCount());</p>
+        double water = amountWater.get(GetTickCount());</p>
+        solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        ntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        ptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        amountWater.put(GetTickCount(), water+amountWaterReceived);</p>
          Return the results.</p>
         return returnValue</p>
 </p>

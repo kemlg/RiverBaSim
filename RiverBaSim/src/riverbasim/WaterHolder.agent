@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="WaterHolder" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="261" y="68" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived" exceptions="">
-      <label x="99" y="47" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
+    <behaviorstep x="276" y="84" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived" exceptions="">
+      <label x="114" y="63" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="266" y="181" comment="Mix water" command1="((solidConcentration*amountWater)+(solidConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)" command2="((bodConcentration*amountWater)+(bodConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)" command3="((codConcentration*amountWater)+(codConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)" command4="((ntConcentration*amountWater)+(ntConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived)" command5="((ptConcentration*amountWater)+(ptConcentrationReceived*amountWaterReceived))/(amontWater+amountWaterReceived); amountWater +=amountWaterReceived">
-      <label x="266" y="166" text="Mix incoming water"/>
+    <taskstep x="264" y="185" comment="Mix water" command1="double solid = solidConcentration.get(GetTickCount());\fdouble bod=bodConcentration.get(GetTickCount());\fdouble cod=codConcentration.get(GetTickCount());\fdouble nt = ntConcentration.get(GetTickCount());\fdouble pt = ptConcentration.get(GetTickCount());\fdouble water = amountWater.get(GetTickCount());\fsolidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fbodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fcodConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\famountWater.put(GetTickCount(), water+amountWaterReceived);" command2="" command3="" command4="" command5="">
+      <label x="264" y="170" text="Mixing a mass of water received with the one being held."/>
     </taskstep>
   </tasksteps>
   <decisionsteps/>
   <joinsteps/>
   <agentproperties>
-    <agentproperty x="984" y="218" comment="Concentration of BOD" visibility="0" compiledname="bodConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1039" y="226" text="BOD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="651" y="175" comment="Concentration of BOD" visibility="0" compiledname="bodConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="706" y="183" text="BOD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
-    <agentproperty x="984" y="327" comment="Concentration of Nt" visibility="0" compiledname="ntConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1033" y="336" text="Nitrogen Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="651" y="284" comment="Concentration of Nt" visibility="0" compiledname="ntConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="700" y="293" text="Nitrogen Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
-    <agentproperty x="984" y="161" comment="Concentration of solids (MES)" visibility="0" compiledname="solidConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1033" y="171" text="Solid concentration (gr/m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="651" y="118" comment="Concentration of solids (MES)" visibility="0" compiledname="solidConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="700" y="128" text="Solid concentration (gr/m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
-    <agentproperty x="984" y="384" comment="Concentration of Phosphorus Total" visibility="0" compiledname="ptConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1037" y="397" text="Phosphorus Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="651" y="341" comment="Concentration of Phosphorus Total" visibility="0" compiledname="ptConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="704" y="354" text="Phosphorus Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
-    <agentproperty x="984" y="105" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 5000)">
-      <label x="1040" y="116" text="Amount of water (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="651" y="62" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 5000)">
+      <label x="707" y="73" text="Amount of water (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
-    <agentproperty x="985" y="273" comment="Concentration of COD" visibility="0" compiledname="codConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1036" y="284" text="COD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="652" y="230" comment="Concentration of COD" visibility="0" compiledname="codConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="703" y="241" text="COD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="297" y="349"/>
+    <endstep x="280" y="292"/>
   </endsteps>
   <connections>
     <transitions>
