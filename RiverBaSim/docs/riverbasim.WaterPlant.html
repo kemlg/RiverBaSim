@@ -42,9 +42,9 @@ The following external code is referenced:<BLOCKQUOTE></p>
 The class "WaterPlant" is defined with visibility "public" which extends parent class "riverbasim.WaterHolder" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "raining" with visibility "public" of type "def" and default value 0. This property tells if it is raining. The block is tagged with the name "Is it raining?".</li></p>
-</p>
     <li>There is a field named "riverSectionLocation" with visibility "public" of type "riverbasim.RiverSection" and default value null. River section where the WWTP dumps treated water. The block is tagged with the name "River section location".</li></p>
+</p>
+    <li>There is a field named "capacity" with visibility "public" of type "double" and default value 50000. Treatment capacity of the WWTP The block is tagged with the name "Capacity".</li></p>
 </p>
     </p>
     </p>
@@ -60,17 +60,19 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
          Note the simulation time.</p>
         def time = GetTickCountInTimeUnits()</p>
 </p>
+         Cleans N units of wastewater</p>
+        riverSectionLocation.mix</p>
 </p>
-         The Water Plant has to decide if it cleans a certain amount of wastewater or not.</p>
-        if (cleaningWastewaterFeasible()) <BLOCKQUOTE></p>
+         The Water Plant has to dump any remaining wastewater that was not possible to treat</p>
+        if (amountWater>0) <BLOCKQUOTE></p>
 </p>
-             Cleans N units of wastewater</p>
-            callSomething();</p>
-             Send the treated water to be dumped to the river.</p>
+             Send the remaining wastewater directly to the river</p>
+            riverSectionLocation.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration )</p>
+            amountWater = 0</p>
+            solidConcentration=0; bodConcentration=0; codConcentration=0; ntConcentration=0; ptConcentration=0</p>
 </p>
         </BLOCKQUOTE> else  <BLOCKQUOTE></p>
 </p>
-             Send the cleaned water to the Water Transporter agent to be dumped to the river.</p>
 </p>
         </BLOCKQUOTE></p>
          Return the results.</p>

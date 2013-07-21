@@ -65,18 +65,108 @@ public class Industry  {
 
     /**
      *
-     * River section where this industry 
-     * @field property
+     * Concentration of BOD
+     * @field bodConcentration
      *
      */
-    @Parameter (displayName = "Property", usageName = "property")
-    public def getProperty() {
-        return property
+    @Parameter (displayName = "BOD concentration (gr./m3)", usageName = "bodConcentration")
+    public double getBodConcentration() {
+        return bodConcentration
     }
-    public void setProperty(def newValue) {
-        property = newValue
+    public void setBodConcentration(double newValue) {
+        bodConcentration = newValue
     }
-    public def property = 0
+    public double bodConcentration = 350
+
+    /**
+     *
+     * Concentration of Nt
+     * @field ntConcentration
+     *
+     */
+    @Parameter (displayName = "Nitrogen Total concentration", usageName = "ntConcentration")
+    public double getNtConcentration() {
+        return ntConcentration
+    }
+    public void setNtConcentration(double newValue) {
+        ntConcentration = newValue
+    }
+    public double ntConcentration = 38
+
+    /**
+     *
+     * Concentration of solids (MES)
+     * @field solidConcentration
+     *
+     */
+    @Parameter (displayName = "Solid concentration (gr/m3)", usageName = "solidConcentration")
+    public double getSolidConcentration() {
+        return solidConcentration
+    }
+    public void setSolidConcentration(double newValue) {
+        solidConcentration = newValue
+    }
+    public double solidConcentration = 150
+
+    /**
+     *
+     * Concentration of Phosphorus Total
+     * @field ptConcentration
+     *
+     */
+    @Parameter (displayName = "Phosphorus Total concentration", usageName = "ptConcentration")
+    public double getPtConcentration() {
+        return ptConcentration
+    }
+    public void setPtConcentration(double newValue) {
+        ptConcentration = newValue
+    }
+    public double ptConcentration = 2
+
+    /**
+     *
+     * Flow (amount) of water
+     * @field amountWater
+     *
+     */
+    @Parameter (displayName = "Amount of water (m3)", usageName = "amountWater")
+    public double getAmountWater() {
+        return amountWater
+    }
+    public void setAmountWater(double newValue) {
+        amountWater = newValue
+    }
+    public double amountWater = 2000
+
+    /**
+     *
+     * Concentration of COD
+     * @field codConcentration
+     *
+     */
+    @Parameter (displayName = "COD concentration (gr./m3)", usageName = "codConcentration")
+    public double getCodConcentration() {
+        return codConcentration
+    }
+    public void setCodConcentration(double newValue) {
+        codConcentration = newValue
+    }
+    public double codConcentration = 540
+
+    /**
+     *
+     * Assigned WWTP
+     * @field assignedWWTP
+     *
+     */
+    @Parameter (displayName = "Assigned WWTP where this Industry will send the wastewater", usageName = "assignedWWTP")
+    public riverbasim.WaterPlant getAssignedWWTP() {
+        return assignedWWTP
+    }
+    public void setAssignedWWTP(riverbasim.WaterPlant newValue) {
+        assignedWWTP = newValue
+    }
+    public riverbasim.WaterPlant assignedWWTP = null
 
     /**
      *
@@ -101,6 +191,32 @@ public class Industry  {
      *
      */
     protected String agentID = "Industry " + (agentIDCounter++)
+
+    /**
+     *
+     * Dump wastewater
+     * @method dumpWastewater
+     *
+     */
+    @ScheduledMethod(
+        start = 1d,
+        interval = 2d,
+        shuffle = false
+    )
+    public def dumpWastewater() {
+
+        // Define the return value variable.
+        def returnValue
+
+        // Note the simulation time.
+        def time = GetTickCountInTimeUnits()
+
+        // Dump wastewater to WWTP
+        assignedWWTP.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration)
+        // Return the results.
+        return returnValue
+
+    }
 
     /**
      *

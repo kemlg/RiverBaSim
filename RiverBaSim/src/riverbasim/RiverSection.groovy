@@ -263,13 +263,6 @@ public class RiverSection extends riverbasim.WaterHolder  {
         interval = 1d,
         shuffle = false
     )
-    @Watch(
-        watcheeClassName = 'riverbasim.RiverSection',
-        watcheeFieldNames = 'amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration',
-        query = 'linked_to',
-        whenToTrigger = WatcherTriggerSchedule.LATER,
-        scheduleTriggerDelta = 3d
-    )
     public void flowingWater() {
 
         // Note the simulation time.

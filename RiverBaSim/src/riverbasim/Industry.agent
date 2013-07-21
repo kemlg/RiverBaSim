@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="Industry" agentparentclassname="" agentinterfaces="" agentimports="">
-  <behaviorsteps/>
-  <tasksteps/>
+  <behaviorsteps>
+    <behaviorstep x="345" y="102" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="2" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Dump wastewater" visibility="0" returntype="def" compiledname="dumpWastewater" parameters="" exceptions="">
+      <label x="345" y="87" text="Dump wastewater"/>
+    </behaviorstep>
+  </behaviorsteps>
+  <tasksteps>
+    <taskstep x="344" y="188" comment="Dump wastewater to WWTP" command1="assignedWWTP.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration)" command2="" command3="" command4="" command5="">
+      <label x="411" y="200" text="Send wastewater to WWTP"/>
+    </taskstep>
+  </tasksteps>
   <decisionsteps/>
   <joinsteps/>
   <agentproperties>
-    <agentproperty x="125" y="109" comment="River section where this industry " visibility="0" compiledname="property" type="def" defaultvalue="0">
-      <label x="130" y="94" text="Property"/>
+    <agentproperty x="984" y="218" comment="Concentration of BOD" visibility="0" compiledname="bodConcentration" type="double" defaultvalue="350">
+      <label x="1039" y="226" text="BOD concentration (gr./m3)"/>
+    </agentproperty>
+    <agentproperty x="984" y="327" comment="Concentration of Nt" visibility="0" compiledname="ntConcentration" type="double" defaultvalue="38">
+      <label x="1033" y="336" text="Nitrogen Total concentration"/>
+    </agentproperty>
+    <agentproperty x="984" y="161" comment="Concentration of solids (MES)" visibility="0" compiledname="solidConcentration" type="double" defaultvalue="150">
+      <label x="1033" y="171" text="Solid concentration (gr/m3)"/>
+    </agentproperty>
+    <agentproperty x="984" y="384" comment="Concentration of Phosphorus Total" visibility="0" compiledname="ptConcentration" type="double" defaultvalue="2">
+      <label x="1037" y="397" text="Phosphorus Total concentration"/>
+    </agentproperty>
+    <agentproperty x="984" y="105" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="double" defaultvalue="2000">
+      <label x="1040" y="116" text="Amount of water (m3)"/>
+    </agentproperty>
+    <agentproperty x="985" y="273" comment="Concentration of COD" visibility="0" compiledname="codConcentration" type="double" defaultvalue="540">
+      <label x="1036" y="284" text="COD concentration (gr./m3)"/>
+    </agentproperty>
+    <agentproperty x="987" y="466" comment="Assigned WWTP" visibility="0" compiledname="assignedWWTP" type="riverbasim.WaterPlant" defaultvalue="null">
+      <label x="992" y="451" text="Assigned WWTP where this Industry will send the wastewater"/>
     </agentproperty>
   </agentproperties>
-  <endsteps/>
+  <endsteps>
+    <endstep x="354" y="291"/>
+  </endsteps>
   <connections>
-    <transitions/>
+    <transitions>
+      <transition>
+        <transitionsource type="behavior" index="0" anchor="0"/>
+        <transitiontarget type="task" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="0" anchor="2"/>
+        <transitiontarget type="end" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+    </transitions>
     <booleantransitions/>
   </connections>
 </agent>

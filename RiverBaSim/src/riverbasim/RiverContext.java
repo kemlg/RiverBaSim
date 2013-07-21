@@ -9,8 +9,10 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -32,11 +34,15 @@ import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.MultiLineString;
 
+
+
+
 public class RiverContext extends DefaultContext<RiverSection>
 {
 	private TreeMap<String,RiverSection>	map;
-	private HashSet<RiverSection> setBesos;
-	private HashMap<RiverSection, RiverSection> flow;
+	//private HashSet<RiverSection> setBesos;
+	private TreeSet<RiverSection> setBesos;
+	private LinkedHashMap<RiverSection, RiverSection> flow;
 	private HashSet<WaterPlant> waterPlants;
 	private Geography<RiverSection> riverGeography;
 	
@@ -52,12 +58,11 @@ public class RiverContext extends DefaultContext<RiverSection>
 		return flow;
 	}
 
-	public void setFlow(HashMap<RiverSection, RiverSection> flow) {
+	public void setFlow(LinkedHashMap<RiverSection, RiverSection> flow) {
 		this.flow = flow;
 	}
 
-	public RiverContext()
-	{
+	public RiverContext()	{
 		super("RiverContext");
 
 		System.out.println("RiverContext building river section context and projections");
@@ -124,31 +129,65 @@ public class RiverContext extends DefaultContext<RiverSection>
 			riverLoader.next();
 		}
 
-		setBesos = new HashSet<RiverSection>();
+		//setBesos = new HashSet<RiverSection>();
+		setBesos = new TreeSet<RiverSection>(new RiverSectionCmp());
 		for (RiverSection p : riverGeography.getAllObjects()) {
 			Geometry geom = riverGeography.getGeometry(p);
 			Coordinate coord = geom.getCoordinate();
 			MultiLineString line = (MultiLineString)geom;
 			if(p.getNom().startsWith("el Besòs")) {
 				setBesos.add(p);
-				System.out.println(p.getNom() + " is at: (" + coord.x + ","
+				System.out.println(p.agentID + " is at: (" + coord.x + ","
 						+ coord.y + ") [size of set: " + setBesos.size() + "]");
 			} else {
 				this.remove(p);
 			}
 		}
 		
-		flow = new HashMap<RiverSection,RiverSection>();
-		HashSet<RiverSection> tempBesos = new HashSet<RiverSection>();
+		flow = new LinkedHashMap<RiverSection,RiverSection>();
+		TreeSet<RiverSection> tempBesos = new TreeSet<RiverSection>(new RiverSectionCmp());
 		tempBesos.addAll(setBesos);
-		Iterator<RiverSection> it1, it2;
+		Iterator<RiverSection> it1;
 		it1 = setBesos.iterator();
-		RiverSection p1 = null;
+	
+		RiverSection p1 = null, p2 = null;
+		
+		
+		waterPlants = new HashSet<WaterPlant>();
 		if (it1.hasNext()) {
 			p1 = it1.next();
 		}
-		waterPlants = new HashSet<WaterPlant>();
+		
+		while (it1.hasNext()){
+			p2 = it1.next();
+			this.flow.put(p1, p2);
+			p1 = p2;
+		}
+		/*
+			if (new Random().nextDouble() < 0.1) {
+				// Assigned as WWTP
+				WaterPlant wp = new WaterPlant();
+				wp.setRiverSectionLocation(p1);
+				waterPlants.add(wp);
+				ContextCreator.getWaterPlantGeography().move(wp,
+						riverGeography.getGeometry(nearest));
+				tempBesos.remove(nearest);
+				this.remove(nearest);
+			} else {
+				this.flow.put(p1, nearest);
+				if (it1.hasNext()) {
+					p1 = it1.next();
+				} else {
+					p1 = null;
+				}
+			}
+		}
+		
+		
+		
+		
 		while (p1 != null) {
+			
 			Geometry geom1 = riverGeography.getGeometry(p1);
 			if (geom1 == null) {
 				if (it1.hasNext()) {
@@ -169,6 +208,11 @@ public class RiverContext extends DefaultContext<RiverSection>
 					Coordinate coord2 = geom2.getCoordinate();
 					MultiLineString line2 = (MultiLineString) geom2;
 					double candidate = coord1.distance(coord2);
+					/*if (p1.agentID.equals("RiverSection 5") || p1.agentID.equals("RiverSection 9")){
+					System.out.println(p1.agentID + " is at: (" + coord1.x + ","
+							+ coord1.y + ")"+ p2.agentID + " is at: (" + coord2.x + ","
+							+ coord2.y + ") Distance: "+candidate);
+					}
 					if (candidate < min) {
 						nearest = p2;
 						min = candidate;
@@ -184,7 +228,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 					tempBesos.remove(nearest);
 					this.remove(nearest);
 				} else {
-					flow.put(p1, nearest);
+					this.flow.put(p1, nearest);
 					if (it1.hasNext()) {
 						p1 = it1.next();
 					} else {
@@ -193,10 +237,12 @@ public class RiverContext extends DefaultContext<RiverSection>
 				}
 			}
 		}
+		*/
+		System.out.println("Flow: "+this.flow.toString());
 	}
 	
 	public static void main(String args[]) {
-		File selectedFile = new File("/Users/sergio/Downloads/spain-latest/buildings.dbf");
+		File selectedFile = new File("./contrib/spain-latest/buildings.dbf");
 		FileChannel in = null;
 		try {
 			in = new FileInputStream(selectedFile).getChannel();

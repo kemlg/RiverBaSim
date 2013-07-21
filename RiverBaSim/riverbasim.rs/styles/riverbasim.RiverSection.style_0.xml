@@ -1,11 +1,12 @@
 <repast.simphony.visualization.editedStyle.DefaultEditedStyleData2D>
   <shapeWkt>square</shapeWkt>
   <size>15.0</size>
-  <sizeMax>200.0</sizeMax>
+  <sizeMax>20000.0</sizeMax>
   <sizeMin>0.0</sizeMin>
-  <sizeScale>10.0</sizeScale>
-  <sizeMethodName>getSolidConcentration</sizeMethodName>
+  <sizeScale>1000.0</sizeScale>
+  <sizeMethodName>hashCode</sizeMethodName>
   <label></label>
+  <labelMethod>getSolidConcentration</labelMethod>
   <labelPosition>bottom</labelPosition>
   <labelPrecision>3</labelPrecision>
   <labelOffset>5.0</labelOffset>

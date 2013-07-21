@@ -42,7 +42,46 @@ The following external code is referenced:<BLOCKQUOTE></p>
 The class "Industry" is defined with visibility "public" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "property" with visibility "public" of type "def" and default value 0. River section where this industry  The block is tagged with the name "Property".</li></p>
+    <li>There is a field named "bodConcentration" with visibility "public" of type "double" and default value 350. Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)".</li></p>
+</p>
+    <li>There is a field named "ntConcentration" with visibility "public" of type "double" and default value 38. Concentration of Nt The block is tagged with the name "Nitrogen Total concentration".</li></p>
+</p>
+    <li>There is a field named "solidConcentration" with visibility "public" of type "double" and default value 150. Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)".</li></p>
+</p>
+    <li>There is a field named "ptConcentration" with visibility "public" of type "double" and default value 2. Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration".</li></p>
+</p>
+    <li>There is a field named "amountWater" with visibility "public" of type "double" and default value 2000. Flow (amount) of water The block is tagged with the name "Amount of water (m3)".</li></p>
+</p>
+    <li>There is a field named "codConcentration" with visibility "public" of type "double" and default value 540. Concentration of COD The block is tagged with the name "COD concentration (gr./m3)".</li></p>
+</p>
+    <li>There is a field named "assignedWWTP" with visibility "public" of type "riverbasim.WaterPlant" and default value null. Assigned WWTP The block is tagged with the name "Assigned WWTP where this Industry will send the wastewater".</li></p>
+</p>
+    </p>
+    </p>
+        <li>There is a method named "dumpWastewater" method has visibility     "public" has return type "def". Dump wastewater The block is tagged with the name "Dump wastewater".</li></p>
+    </p>
+    </p>
+    <BLOCKQUOTE>The dumpWastewater method is statically scheduled as follows:<BLOCKQUOTE></p>
+        <li>start = 1d</li></p>
+        <li>interval = 2d</li></p>
+        <li>shuffle = false</li></p>
+    </BLOCKQUOTE></BLOCKQUOTE></p>
+ <BLOCKQUOTE>The code for the "dumpWastewater" method is as follows:<BLOCKQUOTE><CODE></p>
+</p>
+</p>
+         Define the return value variable.</p>
+        def returnValue</p>
+</p>
+         Note the simulation time.</p>
+        def time = GetTickCountInTimeUnits()</p>
+</p>
+         Dump wastewater to WWTP</p>
+        assignedWWTP.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration)</p>
+         Return the results.</p>
+        return returnValue</p>
+</p>
+    </BLOCKQUOTE></BLOCKQUOTE></CODE></p>
+</p>
 </p>
 </p>
 </BLOCKQUOTE></p>

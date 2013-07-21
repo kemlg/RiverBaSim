@@ -65,21 +65,6 @@ public class WaterPlant extends riverbasim.WaterHolder  {
 
     /**
      *
-     * This property tells if it is raining.
-     * @field raining
-     *
-     */
-    @Parameter (displayName = "Is it raining?", usageName = "raining")
-    public def getRaining() {
-        return raining
-    }
-    public void setRaining(def newValue) {
-        raining = newValue
-    }
-    public def raining = 0
-
-    /**
-     *
      * River section where the WWTP dumps treated water.
      * @field riverSectionLocation
      *
@@ -92,6 +77,21 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         riverSectionLocation = newValue
     }
     public riverbasim.RiverSection riverSectionLocation = null
+
+    /**
+     *
+     * Treatment capacity of the WWTP
+     * @field capacity
+     *
+     */
+    @Parameter (displayName = "Capacity", usageName = "capacity")
+    public double getCapacity() {
+        return capacity
+    }
+    public void setCapacity(double newValue) {
+        capacity = newValue
+    }
+    public double capacity = 50000
 
     /**
      *
@@ -137,13 +137,12 @@ public class WaterPlant extends riverbasim.WaterHolder  {
 
             // Cleans N units of wastewater
             callSomething();
-            // Send the treated water to be dumped to the river.
 
         } else  {
 
-            // Send the cleaned water to the Water Transporter agent to be dumped to the river.
 
         }
+        // Send the treated water to be dumped to the river.
         // Return the results.
         return returnValue
 
