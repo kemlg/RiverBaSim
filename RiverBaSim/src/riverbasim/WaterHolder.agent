@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="WaterHolder" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="276" y="84" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived" exceptions="">
-      <label x="114" y="63" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
+    <behaviorstep x="259" y="88" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived" exceptions="">
+      <label x="97" y="67" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
@@ -33,7 +33,7 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="280" y="292"/>
+    <endstep x="285" y="297"/>
   </endsteps>
   <connections>
     <transitions>

@@ -48,7 +48,7 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 		Iterator<RiverSection> ite = it.iterator();
 		while(ite.hasNext()) {
 			RiverSection r = ite.next();
-			System.out.println("adding " + r);
+			System.out.println("Adding to WaterHolderContext: " + r);
 			this.add(r);
 			waterHolderGeography.move(r, ContextCreator.getRiverGeography().getGeometry(r));
 		}
@@ -57,7 +57,7 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 		Iterator<WaterPlant> itwe = itw.iterator();
 		while(itwe.hasNext()) {
 			WaterPlant w = itwe.next();
-			System.out.println("adding " + w);
+			System.out.println("Adding to WaterHolderContext: " + w);
 			this.add(w);
 			waterHolderGeography.move(w, ContextCreator.getWaterPlantGeography().getGeometry(w));
 		}

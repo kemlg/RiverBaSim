@@ -41,11 +41,13 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 
 		System.out.println("WaterPlantContext building river section context and projections");
 
+
+		
+		
 		/* Create a Geography to store junctions in spatially */
 		GeographyParameters<WaterPlant> geoParams = new GeographyParameters<WaterPlant>();
-		waterPlantGeography = GeographyFactoryFinder
-				.createGeographyFactory(null).createGeography("WaterPlantGeography",
-						this, geoParams);
+		waterPlantGeography = GeographyFactoryFinder.createGeographyFactory(null).createGeography("WaterPlantGeography", this, geoParams);
+		
 		System.out.println("Created WaterPlantGeography");
 		
 		map = new TreeMap<String,WaterPlant>();
@@ -57,6 +59,8 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 			WaterPlant wp = it.next();
 			
 			System.out.println("Adding " + wp + " attached to "+wp.getRiverSectionLocation().toString());
+			System.out.println(wp);
+			
 			this.add(wp);
 		}
 
