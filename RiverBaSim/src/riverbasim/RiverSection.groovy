@@ -140,6 +140,96 @@ public class RiverSection extends riverbasim.WaterHolder  {
 
     /**
      *
+     * Concentration of BOD
+     * @field bodConcentration
+     *
+     */
+    @Parameter (displayName = "BOD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "bodConcentration")
+    public riverbasim.WaterFeature getBodConcentration() {
+        return bodConcentration
+    }
+    public void setBodConcentration(riverbasim.WaterFeature newValue) {
+        bodConcentration = newValue
+    }
+    public riverbasim.WaterFeature bodConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Concentration of solids (MES)
+     * @field solidConcentration
+     *
+     */
+    @Parameter (displayName = "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "solidConcentration")
+    public riverbasim.WaterFeature getSolidConcentration() {
+        return solidConcentration
+    }
+    public void setSolidConcentration(riverbasim.WaterFeature newValue) {
+        solidConcentration = newValue
+    }
+    public riverbasim.WaterFeature solidConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Flow (amount) of water
+     * @field amountWater
+     *
+     */
+    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
+    public riverbasim.WaterFeature getAmountWater() {
+        return amountWater
+    }
+    public void setAmountWater(riverbasim.WaterFeature newValue) {
+        amountWater = newValue
+    }
+    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 5000)
+
+    /**
+     *
+     * Concentration of Nt
+     * @field ntConcentration
+     *
+     */
+    @Parameter (displayName = "Nitrogen Total concentration", converter = "riverbasim.WaterFeatureConverter", usageName = "ntConcentration")
+    public riverbasim.WaterFeature getNtConcentration() {
+        return ntConcentration
+    }
+    public void setNtConcentration(riverbasim.WaterFeature newValue) {
+        ntConcentration = newValue
+    }
+    public riverbasim.WaterFeature ntConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Concentration of Phosphorus Total
+     * @field ptConcentration
+     *
+     */
+    @Parameter (displayName = "Phosphorus Total concentration", converter = "riverbasim.WaterFeatureConverter", usageName = "ptConcentration")
+    public riverbasim.WaterFeature getPtConcentration() {
+        return ptConcentration
+    }
+    public void setPtConcentration(riverbasim.WaterFeature newValue) {
+        ptConcentration = newValue
+    }
+    public riverbasim.WaterFeature ptConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Concentration of COD
+     * @field codConcentration
+     *
+     */
+    @Parameter (displayName = "COD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "codConcentration")
+    public riverbasim.WaterFeature getCodConcentration() {
+        return codConcentration
+    }
+    public void setCodConcentration(riverbasim.WaterFeature newValue) {
+        codConcentration = newValue
+    }
+    public riverbasim.WaterFeature codConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
      * This value is used to automatically generate agent identifiers.
      * @field serialVersionUID
      *
@@ -205,6 +295,38 @@ public class RiverSection extends riverbasim.WaterHolder  {
         }
         // End the method.
         return
+
+    }
+
+    /**
+     *
+     * Mixing water
+     * @method mixIncomingWater
+     *
+     */
+    public def mixIncomingWater(double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived) {
+
+        // Define the return value variable.
+        def returnValue
+
+        // Note the simulation time.
+        def time = GetTickCountInTimeUnits()
+
+        // Mix water
+        double solid = solidConcentration.get(GetTickCount());
+        double bod=bodConcentration.get(GetTickCount());
+        double cod=codConcentration.get(GetTickCount());
+        double nt = ntConcentration.get(GetTickCount());
+        double pt = ptConcentration.get(GetTickCount());
+        double water = amountWater.get(GetTickCount());
+        solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        ntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        ptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
+        amountWater.put(GetTickCount(), water+amountWaterReceived);
+        // Return the results.
+        return returnValue
 
     }
 

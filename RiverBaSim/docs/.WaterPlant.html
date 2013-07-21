@@ -48,6 +48,16 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
 </p>
     <li>There is a field named "capacity" with visibility "public" of type "double" and default value 50000. Treatement capacity of the WWTP The block is tagged with the name "Capacity".</li></p>
 </p>
+    <li>There is a field named "bodConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
+</p>
+    <li>There is a field named "solidConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of solids (MES) The block is tagged with the name "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
+</p>
+    <li>There is a field named "ntConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of Nt The block is tagged with the name "Nitrogen Total concentration", converter = "riverbasim.WaterFeatureConverter".</li></p>
+</p>
+    <li>There is a field named "ptConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of Phosphorus Total The block is tagged with the name "Phosphorus Total concentration", converter = "riverbasim.WaterFeatureConverter".</li></p>
+</p>
+    <li>There is a field named "codConcentration" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Concentration of COD The block is tagged with the name "COD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
+</p>
     </p>
     </p>
         <li>There is a method named "overloadDump" method has visibility     "public". Dumping water beyond capacity The block is tagged with the name "Dumping water beyond capacity".</li></p>
@@ -72,8 +82,8 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
             double waterToRiver = amountWater.get(GetTickCount())-capacity;</p>
             double solidToRiver = solidConcentration.get(GetTickCount())*0.01;</p>
             double bodToRiver = bodConcentration.get(GetTickCount())*0.01;</p>
-            double codToRiver =codConcentration.get(GetTickCount())*0.1:</p>
-            double ntToRiver = ntConcentration.get(GetTickCount())*0.02</p>
+            double codToRiver =codConcentration.get(GetTickCount())*0.1;</p>
+            double ntToRiver = ntConcentration.get(GetTickCount())*0.02;</p>
             double ptToRiver = ptConcentration.get(GetTickCount())*0.3;</p>
             riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);</p>
             amountWater.put(GetTickCount(), capacity);</p>
@@ -109,8 +119,8 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
         </BLOCKQUOTE></p>
         double solidToRiver = solidConcentration.get(GetTickCount())*0.01;</p>
         double bodToRiver = bodConcentration.get(GetTickCount())*0.01;</p>
-        double codToRiver =codConcentration.get(GetTickCount())*0.1:</p>
-        double ntToRiver = ntConcentration.get(GetTickCount())*0.02</p>
+        double codToRiver =codConcentration.get(GetTickCount())*0.1;</p>
+        double ntToRiver = ntConcentration.get(GetTickCount())*0.02;</p>
         double ptToRiver = ptConcentration.get(GetTickCount())*0.3;</p>
         riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);</p>
         amountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);</p>
@@ -129,6 +139,39 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
 </p>
 </p>
         </BLOCKQUOTE></p>
+         Return the results.</p>
+        return returnValue</p>
+</p>
+    </BLOCKQUOTE></BLOCKQUOTE></CODE></p>
+</p>
+</p>
+    </p>
+    </p>
+        <li>There is a method named "mixIncomingWater" method has visibility     "public" has return type "def" and parameters [double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived]. Mixing water The block is tagged with the name "Receives a mass of water to be mixed with the current water in the Water holder".</li></p>
+    </p>
+    </p>
+ <BLOCKQUOTE>The code for the "mixIncomingWater" method is as follows:<BLOCKQUOTE><CODE></p>
+</p>
+</p>
+         Define the return value variable.</p>
+        def returnValue</p>
+</p>
+         Note the simulation time.</p>
+        def time = GetTickCountInTimeUnits()</p>
+</p>
+         Mix water</p>
+        double solid = solidConcentration.get(GetTickCount());</p>
+        double bod=bodConcentration.get(GetTickCount());</p>
+        double cod=codConcentration.get(GetTickCount());</p>
+        double nt = ntConcentration.get(GetTickCount());</p>
+        double pt = ptConcentration.get(GetTickCount());</p>
+        double water = amountWater.get(GetTickCount());</p>
+        solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        ntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        ptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));</p>
+        amountWater.put(GetTickCount(), water+amountWaterReceived);</p>
          Return the results.</p>
         return returnValue</p>
 </p>

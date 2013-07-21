@@ -10,7 +10,7 @@
  * Set the package name.
  *
  */
-package riverbasim
+package bin.riverbasim
 
 /**
  *
@@ -61,52 +61,82 @@ import static repast.simphony.essentials.RepastEssentials.*
  * This is an agent.
  *
  */
-public class WaterPlant extends riverbasim.WaterHolder  {
+public class RiverSection extends riverbasim.WaterHolder  {
 
     /**
      *
-     * River section where the WWTP dumps treated water.
-     * @field riverSectionLocation
+     * Default incoming water amount
+     * @field defaultAmountWater
      *
      */
-    @Parameter (displayName = "River section location", usageName = "riverSectionLocation")
-    public RiverSection getRiverSectionLocation() {
-        return riverSectionLocation
+    @Parameter (displayName = "Default incoming water", usageName = "defaultAmountWater")
+    public double getDefaultAmountWater() {
+        return defaultAmountWater
     }
-    public void setRiverSectionLocation(RiverSection newValue) {
-        riverSectionLocation = newValue
+    public void setDefaultAmountWater(double newValue) {
+        defaultAmountWater = newValue
     }
-    public RiverSection riverSectionLocation = null
+    public double defaultAmountWater = 10000
 
     /**
      *
-     * Flow (amount) of water
-     * @field amountWater
+     * Name of the section
+     * @field nom
      *
      */
-    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
-    public riverbasim.WaterFeature getAmountWater() {
-        return amountWater
+    @Parameter (displayName = "Nom", usageName = "nom")
+    public String getNom() {
+        return nom
     }
-    public void setAmountWater(riverbasim.WaterFeature newValue) {
-        amountWater = newValue
+    public void setNom(String newValue) {
+        nom = newValue
     }
-    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public String nom = ""
 
     /**
      *
-     * Treatement capacity of the WWTP
-     * @field capacity
+     * This is an agent property.
+     * @field numsub
      *
      */
-    @Parameter (displayName = "Capacity", usageName = "capacity")
-    public double getCapacity() {
-        return capacity
+    @Parameter (displayName = "Numsub", usageName = "numsub")
+    public int getNumsub() {
+        return numsub
     }
-    public void setCapacity(double newValue) {
-        capacity = newValue
+    public void setNumsub(int newValue) {
+        numsub = newValue
     }
-    public double capacity = 50000
+    public int numsub = 0
+
+    /**
+     *
+     * This is an agent property.
+     * @field idtram
+     *
+     */
+    @Parameter (displayName = "IDTram", usageName = "idtram")
+    public int getIdtram() {
+        return idtram
+    }
+    public void setIdtram(int newValue) {
+        idtram = newValue
+    }
+    public int idtram = 0
+
+    /**
+     *
+     * Predecessor block
+     * @field watchedAgent
+     *
+     */
+    @Parameter (displayName = "Predecessor", usageName = "watchedAgent")
+    public RiverSection getWatchedAgent() {
+        return watchedAgent
+    }
+    public void setWatchedAgent(RiverSection newValue) {
+        watchedAgent = newValue
+    }
+    public RiverSection watchedAgent = null
 
     /**
      *
@@ -137,6 +167,21 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         solidConcentration = newValue
     }
     public riverbasim.WaterFeature solidConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Flow (amount) of water
+     * @field amountWater
+     *
+     */
+    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
+    public riverbasim.WaterFeature getAmountWater() {
+        return amountWater
+    }
+    public void setAmountWater(riverbasim.WaterFeature newValue) {
+        amountWater = newValue
+    }
+    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 5000)
 
     /**
      *
@@ -205,12 +250,12 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field agentID
      *
      */
-    protected String agentID = "WaterPlant " + (agentIDCounter++)
+    protected String agentID = "RiverSection " + (agentIDCounter++)
 
     /**
      *
-     * Dumping water beyond capacity
-     * @method overloadDump
+     * Flowing water from one section to another
+     * @method flowingWater
      *
      */
     @ScheduledMethod(
@@ -218,77 +263,38 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         interval = 1d,
         shuffle = false
     )
-    public void overloadDump() {
+    public void flowingWater() {
 
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
 
 
-        // This is an agent decision.
-        if (amountWater.get(GetTickCount())>capacity) {
+        // Decision to distinguish river section as a starting source or as a middle/end section of the river
+        if (watchedAgent !=null) {
 
-            // Dump surplus water to river
-            double waterToRiver = amountWater.get(GetTickCount())-capacity;
-            double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
-            double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
-            double codToRiver =codConcentration.get(GetTickCount())*0.1;
-            double ntToRiver = ntConcentration.get(GetTickCount())*0.02;
-            double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
-            riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
-            amountWater.put(GetTickCount(), capacity);
+            // Receiving incoming flow of water from previous river section
+            amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))
+            // Self-cleaning process of pollutants
+            solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0.4)
+            bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0.9)
+            codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0.92)
+            ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0.98)
+            ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0.97)
 
         } else  {
 
+            // Receiving incoming flow of water from previous river section
+            amountWater.put(GetTickCount(), defaultAmountWater)
+            // Self-cleaning process of pollutants
+            solidConcentration.put(GetTickCount(), 0)
+            bodConcentration.put(GetTickCount(), 0)
+            codConcentration.put(GetTickCount(), 0)
+            ntConcentration.put(GetTickCount(), 0)
+            ptConcentration.put(GetTickCount(), 0)
 
         }
         // End the method.
         return
-
-    }
-
-    /**
-     *
-     * Treating wastewater
-     * @method wastewaterTreatement
-     *
-     */
-    public def wastewaterTreatement() {
-
-        // Define the return value variable.
-        def returnValue
-
-        // Note the simulation time.
-        def time = GetTickCountInTimeUnits()
-
-        // Cleans N units of wastewater
-        double waterToRiver = amountWater.get(GetTickCount());
-        if (capacity< waterToRiver) {
-         waterToRiver = capacity;
-        }
-        double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
-        double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
-        double codToRiver =codConcentration.get(GetTickCount())*0.1;
-        double ntToRiver = ntConcentration.get(GetTickCount())*0.02;
-        double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
-        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
-        amountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);
-
-        // This is an agent decision.
-        if (amountWater.get(GetTickCount())==0) {
-
-            // Remove pollutants if there's no remaining water
-            solidConcentration.put(GitTickCount(), 0);
-            bodConcentration.put(GitTickCount(), 0);
-            codConcentration.put(GitTickCount(), 0);
-            ntConcentration.put(GitTickCount(), 0);
-            ptConcentration.put(GitTickCount(), 0);
-
-        } else  {
-
-
-        }
-        // Return the results.
-        return returnValue
 
     }
 

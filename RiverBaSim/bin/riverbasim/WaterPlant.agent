@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="WaterPlant" agentparentclassname="riverbasim.WaterHolder" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="89" y="82" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Dumping water beyond capacity" visibility="0" returntype="" compiledname="overloadDump" parameters="" exceptions="">
-      <label x="89" y="67" text="Dumping water beyond capacity"/>
+    <behaviorstep x="51" y="67" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Dumping water beyond capacity" visibility="0" returntype="" compiledname="overloadDump" parameters="" exceptions="">
+      <label x="51" y="52" text="Dumping water beyond capacity"/>
     </behaviorstep>
     <behaviorstep x="593" y="54" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Treating wastewater" visibility="0" returntype="def" compiledname="wastewaterTreatement" parameters="" exceptions="">
       <label x="570" y="40" text="Wastewater treatement"/>
     </behaviorstep>
+    <behaviorstep x="322" y="144" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived" exceptions="">
+      <label x="160" y="123" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
+    </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="107" y="325" comment="Dump surplus water to river" command1="double waterToRiver = amountWater.get(GetTickCount())-capacity;\fdouble solidToRiver = solidConcentration.get(GetTickCount())*0.01;\fdouble bodToRiver = bodConcentration.get(GetTickCount())*0.01;\fdouble codToRiver =codConcentration.get(GetTickCount())*0.1:\fdouble ntToRiver = ntConcentration.get(GetTickCount())*0.02\fdouble ptToRiver = ptConcentration.get(GetTickCount())*0.3;\friverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);\famountWater.put(GetTickCount(), capacity);" command2="" command3="" command4="" command5="">
-      <label x="70" y="378" text="Dump surplus water to river"/>
+    <taskstep x="41" y="313" comment="Dump surplus water to river" command1="double waterToRiver = amountWater.get(GetTickCount())-capacity;\fdouble solidToRiver = solidConcentration.get(GetTickCount())*0.01;\fdouble bodToRiver = bodConcentration.get(GetTickCount())*0.01;\fdouble codToRiver =codConcentration.get(GetTickCount())*0.1;\fdouble ntToRiver = ntConcentration.get(GetTickCount())*0.02;\fdouble ptToRiver = ptConcentration.get(GetTickCount())*0.3;\friverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);\famountWater.put(GetTickCount(), capacity);" command2="" command3="" command4="" command5="">
+      <label x="4" y="366" text="Dump surplus water to river"/>
     </taskstep>
     <taskstep x="546" y="380" comment="Remove pollutants if there&apos;s no remaining water" command1="solidConcentration.put(GitTickCount(), 0);" command2="bodConcentration.put(GitTickCount(), 0);" command3="codConcentration.put(GitTickCount(), 0);" command4="ntConcentration.put(GitTickCount(), 0);" command5="ptConcentration.put(GitTickCount(), 0);">
-      <label x="469" y="363" text="Set pollutants to zero if there is no more water in the WWTP"/>
+      <label x="434" y="433" text="Set pollutants to zero if there is no more water in the WWTP"/>
     </taskstep>
-    <taskstep x="593" y="164" comment="Cleans N units of wastewater" command1="double waterToRiver = amountWater.get(GetTickCount());\fif (capacity&lt; waterToRiver) {\f waterToRiver = capacity;\f}\fdouble solidToRiver = solidConcentration.get(GetTickCount())*0.01;\fdouble bodToRiver = bodConcentration.get(GetTickCount())*0.01;\fdouble codToRiver =codConcentration.get(GetTickCount())*0.1:\fdouble ntToRiver = ntConcentration.get(GetTickCount())*0.02\fdouble ptToRiver = ptConcentration.get(GetTickCount())*0.3;\friverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);\famountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);" command2="" command3="" command4="" command5="">
+    <taskstep x="593" y="164" comment="Cleans N units of wastewater" command1="double waterToRiver = amountWater.get(GetTickCount());\fif (capacity&lt; waterToRiver) {\f waterToRiver = capacity;\f}\fdouble solidToRiver = solidConcentration.get(GetTickCount())*0.01;\fdouble bodToRiver = bodConcentration.get(GetTickCount())*0.01;\fdouble codToRiver =codConcentration.get(GetTickCount())*0.1;\fdouble ntToRiver = ntConcentration.get(GetTickCount())*0.02;\fdouble ptToRiver = ptConcentration.get(GetTickCount())*0.3;\friverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);\famountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);" command2="" command3="" command4="" command5="">
       <label x="497" y="180" text="CleanWasteWater"/>
+    </taskstep>
+    <taskstep x="315" y="240" comment="Mix water" command1="double solid = solidConcentration.get(GetTickCount());\fdouble bod=bodConcentration.get(GetTickCount());\fdouble cod=codConcentration.get(GetTickCount());\fdouble nt = ntConcentration.get(GetTickCount());\fdouble pt = ptConcentration.get(GetTickCount());\fdouble water = amountWater.get(GetTickCount());\fsolidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fbodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fcodConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\famountWater.put(GetTickCount(), water+amountWaterReceived);" command2="" command3="" command4="" command5="">
+      <label x="220" y="291" text="Mixing a mass of water received with the one being held."/>
     </taskstep>
   </tasksteps>
   <decisionsteps>
@@ -28,23 +34,39 @@
     </decisionstep>
   </decisionsteps>
   <joinsteps>
-    <joinstep x="297" y="362"/>
-    <joinstep x="693" y="516"/>
+    <joinstep x="165" y="337"/>
+    <joinstep x="662" y="528"/>
   </joinsteps>
   <agentproperties>
-    <agentproperty x="130" y="533" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="RiverSection" defaultvalue="null">
-      <label x="135" y="518" text="River section location"/>
+    <agentproperty x="810" y="505" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="RiverSection" defaultvalue="null">
+      <label x="815" y="490" text="River section location"/>
     </agentproperty>
-    <agentproperty x="127" y="458" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="183" y="469" text="Amount of water (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    <agentproperty x="801" y="435" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="857" y="446" text="Amount of water (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
-    <agentproperty x="132" y="602" comment="Treatement capacity of the WWTP" visibility="0" compiledname="capacity" type="double" defaultvalue="50000">
-      <label x="137" y="587" text="Capacity"/>
+    <agentproperty x="812" y="574" comment="Treatement capacity of the WWTP" visibility="0" compiledname="capacity" type="double" defaultvalue="50000">
+      <label x="817" y="559" text="Capacity"/>
+    </agentproperty>
+    <agentproperty x="797" y="204" comment="Concentration of BOD" visibility="0" compiledname="bodConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="852" y="212" text="BOD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="797" y="147" comment="Concentration of solids (MES)" visibility="0" compiledname="solidConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="846" y="157" text="Solid concentration (gr/m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="797" y="313" comment="Concentration of Nt" visibility="0" compiledname="ntConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="846" y="322" text="Nitrogen Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="797" y="370" comment="Concentration of Phosphorus Total" visibility="0" compiledname="ptConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="850" y="383" text="Phosphorus Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="798" y="259" comment="Concentration of COD" visibility="0" compiledname="codConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="849" y="270" text="COD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="300" y="433"/>
-    <endstep x="703" y="601"/>
+    <endstep x="171" y="439"/>
+    <endstep x="708" y="606"/>
+    <endstep x="318" y="425"/>
   </endsteps>
   <connections>
     <transitions>
@@ -81,6 +103,16 @@
       <transition>
         <transitionsource type="join" index="1" anchor="2"/>
         <transitiontarget type="end" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="behavior" index="2" anchor="0"/>
+        <transitiontarget type="task" index="3" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="3" anchor="2"/>
+        <transitiontarget type="end" index="2" anchor="0"/>
         <bendpoints/>
       </transition>
     </transitions>

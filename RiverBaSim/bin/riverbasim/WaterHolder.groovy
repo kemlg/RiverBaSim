@@ -10,7 +10,7 @@
  * Set the package name.
  *
  */
-package riverbasim
+package bin.riverbasim
 
 /**
  *
@@ -61,52 +61,7 @@ import static repast.simphony.essentials.RepastEssentials.*
  * This is an agent.
  *
  */
-public class WaterPlant extends riverbasim.WaterHolder  {
-
-    /**
-     *
-     * River section where the WWTP dumps treated water.
-     * @field riverSectionLocation
-     *
-     */
-    @Parameter (displayName = "River section location", usageName = "riverSectionLocation")
-    public RiverSection getRiverSectionLocation() {
-        return riverSectionLocation
-    }
-    public void setRiverSectionLocation(RiverSection newValue) {
-        riverSectionLocation = newValue
-    }
-    public RiverSection riverSectionLocation = null
-
-    /**
-     *
-     * Flow (amount) of water
-     * @field amountWater
-     *
-     */
-    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
-    public riverbasim.WaterFeature getAmountWater() {
-        return amountWater
-    }
-    public void setAmountWater(riverbasim.WaterFeature newValue) {
-        amountWater = newValue
-    }
-    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 0)
-
-    /**
-     *
-     * Treatement capacity of the WWTP
-     * @field capacity
-     *
-     */
-    @Parameter (displayName = "Capacity", usageName = "capacity")
-    public double getCapacity() {
-        return capacity
-    }
-    public void setCapacity(double newValue) {
-        capacity = newValue
-    }
-    public double capacity = 50000
+public class WaterHolder  {
 
     /**
      *
@@ -125,21 +80,6 @@ public class WaterPlant extends riverbasim.WaterHolder  {
 
     /**
      *
-     * Concentration of solids (MES)
-     * @field solidConcentration
-     *
-     */
-    @Parameter (displayName = "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "solidConcentration")
-    public riverbasim.WaterFeature getSolidConcentration() {
-        return solidConcentration
-    }
-    public void setSolidConcentration(riverbasim.WaterFeature newValue) {
-        solidConcentration = newValue
-    }
-    public riverbasim.WaterFeature solidConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
-
-    /**
-     *
      * Concentration of Nt
      * @field ntConcentration
      *
@@ -155,6 +95,21 @@ public class WaterPlant extends riverbasim.WaterHolder  {
 
     /**
      *
+     * Concentration of solids (MES)
+     * @field solidConcentration
+     *
+     */
+    @Parameter (displayName = "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "solidConcentration")
+    public riverbasim.WaterFeature getSolidConcentration() {
+        return solidConcentration
+    }
+    public void setSolidConcentration(riverbasim.WaterFeature newValue) {
+        solidConcentration = newValue
+    }
+    public riverbasim.WaterFeature solidConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
      * Concentration of Phosphorus Total
      * @field ptConcentration
      *
@@ -167,6 +122,21 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         ptConcentration = newValue
     }
     public riverbasim.WaterFeature ptConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+
+    /**
+     *
+     * Flow (amount) of water
+     * @field amountWater
+     *
+     */
+    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
+    public riverbasim.WaterFeature getAmountWater() {
+        return amountWater
+    }
+    public void setAmountWater(riverbasim.WaterFeature newValue) {
+        amountWater = newValue
+    }
+    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 5000)
 
     /**
      *
@@ -205,92 +175,7 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field agentID
      *
      */
-    protected String agentID = "WaterPlant " + (agentIDCounter++)
-
-    /**
-     *
-     * Dumping water beyond capacity
-     * @method overloadDump
-     *
-     */
-    @ScheduledMethod(
-        start = 1d,
-        interval = 1d,
-        shuffle = false
-    )
-    public void overloadDump() {
-
-        // Note the simulation time.
-        def time = GetTickCountInTimeUnits()
-
-
-        // This is an agent decision.
-        if (amountWater.get(GetTickCount())>capacity) {
-
-            // Dump surplus water to river
-            double waterToRiver = amountWater.get(GetTickCount())-capacity;
-            double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
-            double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
-            double codToRiver =codConcentration.get(GetTickCount())*0.1;
-            double ntToRiver = ntConcentration.get(GetTickCount())*0.02;
-            double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
-            riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
-            amountWater.put(GetTickCount(), capacity);
-
-        } else  {
-
-
-        }
-        // End the method.
-        return
-
-    }
-
-    /**
-     *
-     * Treating wastewater
-     * @method wastewaterTreatement
-     *
-     */
-    public def wastewaterTreatement() {
-
-        // Define the return value variable.
-        def returnValue
-
-        // Note the simulation time.
-        def time = GetTickCountInTimeUnits()
-
-        // Cleans N units of wastewater
-        double waterToRiver = amountWater.get(GetTickCount());
-        if (capacity< waterToRiver) {
-         waterToRiver = capacity;
-        }
-        double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
-        double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
-        double codToRiver =codConcentration.get(GetTickCount())*0.1;
-        double ntToRiver = ntConcentration.get(GetTickCount())*0.02;
-        double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
-        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
-        amountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);
-
-        // This is an agent decision.
-        if (amountWater.get(GetTickCount())==0) {
-
-            // Remove pollutants if there's no remaining water
-            solidConcentration.put(GitTickCount(), 0);
-            bodConcentration.put(GitTickCount(), 0);
-            codConcentration.put(GitTickCount(), 0);
-            ntConcentration.put(GitTickCount(), 0);
-            ptConcentration.put(GitTickCount(), 0);
-
-        } else  {
-
-
-        }
-        // Return the results.
-        return returnValue
-
-    }
+    protected String agentID = "WaterHolder " + (agentIDCounter++)
 
     /**
      *

@@ -4,19 +4,25 @@
     <behaviorstep x="611" y="30" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="" exceptions="">
       <label x="667" y="40" text="Flowing water riverbasim.RiverSection watchedAgent"/>
     </behaviorstep>
+    <behaviorstep x="160" y="111" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived" exceptions="">
+      <label x="-2" y="90" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
+    </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="384" y="311" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0.4)" command2="bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0.9)" command3="codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0.92)" command4="ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0.98)" command5="ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0.97)">
-      <label x="437" y="313" text="Self-cleaning process of pollutants"/>
+    <taskstep x="510" y="313" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), watchedAgent.solidConcentration.get(GetTickCount()-1)*0.4)" command2="bodConcentration.put(GetTickCount(), watchedAgent.bodConcentration.get(GetTickCount()-1)*0.9)" command3="codConcentration.put(GetTickCount(), watchedAgent.codConcentration.get(GetTickCount()-1)*0.92)" command4="ntConcentration.put(GetTickCount(), watchedAgent.ntConcentration.get(GetTickCount()-1)*0.98)" command5="ptConcentration.put(GetTickCount(), watchedAgent.ptConcentration.get(GetTickCount()-1)*0.97)">
+      <label x="563" y="315" text="Self-cleaning process of pollutants"/>
     </taskstep>
-    <taskstep x="386" y="214" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))" command2="" command3="" command4="" command5="">
-      <label x="439" y="223" text="Receive flow of water"/>
+    <taskstep x="499" y="223" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), watchedAgent.amountWater.get(GetTickCount()-1))" command2="" command3="" command4="" command5="">
+      <label x="552" y="232" text="Receive flow of water"/>
     </taskstep>
     <taskstep x="671" y="340" comment="Self-cleaning process of pollutants" command1="solidConcentration.put(GetTickCount(), 0)" command2="bodConcentration.put(GetTickCount(), 0)" command3="codConcentration.put(GetTickCount(), 0)" command4="ntConcentration.put(GetTickCount(), 0)" command5="ptConcentration.put(GetTickCount(), 0)">
       <label x="724" y="342" text="Set incoming mass of water as clean water"/>
     </taskstep>
     <taskstep x="655" y="213" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), defaultAmountWater)" command2="" command3="" command4="" command5="">
       <label x="708" y="222" text="Receive flow of water"/>
+    </taskstep>
+    <taskstep x="165" y="208" comment="Mix water" command1="double solid = solidConcentration.get(GetTickCount());\fdouble bod=bodConcentration.get(GetTickCount());\fdouble cod=codConcentration.get(GetTickCount());\fdouble nt = ntConcentration.get(GetTickCount());\fdouble pt = ptConcentration.get(GetTickCount());\fdouble water = amountWater.get(GetTickCount());\fsolidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fbodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fcodConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\famountWater.put(GetTickCount(), water+amountWaterReceived);" command2="" command3="" command4="" command5="">
+      <label x="165" y="193" text="Mixing a mass of water received with the one being held."/>
     </taskstep>
   </tasksteps>
   <decisionsteps>
@@ -26,8 +32,8 @@
   </decisionsteps>
   <joinsteps/>
   <agentproperties>
-    <agentproperty x="968" y="30" comment="Default incoming water amount" visibility="0" compiledname="defaultAmountWater" type="double" defaultvalue="10000">
-      <label x="1020" y="46" text="Default incoming water"/>
+    <agentproperty x="1070" y="356" comment="Default incoming water amount" visibility="0" compiledname="defaultAmountWater" type="double" defaultvalue="10000">
+      <label x="1137" y="385" text="Default incoming water"/>
     </agentproperty>
     <agentproperty x="978" y="452" comment="Name of the section" visibility="0" compiledname="nom" type="String" defaultvalue="&quot;&quot;">
       <label x="983" y="437" text="Nom"/>
@@ -41,10 +47,29 @@
     <agentproperty x="1265" y="451" comment="Predecessor block" visibility="0" compiledname="watchedAgent" type="RiverSection" defaultvalue="null">
       <label x="1270" y="436" text="Predecessor"/>
     </agentproperty>
+    <agentproperty x="1063" y="122" comment="Concentration of BOD" visibility="0" compiledname="bodConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="1118" y="130" text="BOD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="1063" y="65" comment="Concentration of solids (MES)" visibility="0" compiledname="solidConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="1112" y="75" text="Solid concentration (gr/m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="1063" y="9" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 5000)">
+      <label x="1119" y="20" text="Amount of water (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="1063" y="231" comment="Concentration of Nt" visibility="0" compiledname="ntConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="1112" y="240" text="Nitrogen Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="1063" y="288" comment="Concentration of Phosphorus Total" visibility="0" compiledname="ptConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="1116" y="301" text="Phosphorus Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
+    <agentproperty x="1064" y="177" comment="Concentration of COD" visibility="0" compiledname="codConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="1115" y="188" text="COD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
+    </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="435" y="445"/>
-    <endstep x="724" y="469"/>
+    <endstep x="475" y="437"/>
+    <endstep x="729" y="474"/>
+    <endstep x="201" y="335"/>
   </endsteps>
   <connections>
     <transitions>
@@ -71,6 +96,16 @@
       <transition>
         <transitionsource type="task" index="3" anchor="2"/>
         <transitiontarget type="task" index="2" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="behavior" index="1" anchor="0"/>
+        <transitiontarget type="task" index="4" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="4" anchor="2"/>
+        <transitiontarget type="end" index="2" anchor="0"/>
         <bendpoints/>
       </transition>
     </transitions>
