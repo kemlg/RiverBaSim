@@ -55,7 +55,8 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 		Iterator<WaterPlant> it = wps.iterator();
 		while(it.hasNext()) {
 			WaterPlant wp = it.next();
-			System.out.println("Adding " + wp);
+			
+			System.out.println("Adding " + wp + " attached to "+wp.getRiverSectionLocation().toString());
 			this.add(wp);
 		}
 
@@ -117,7 +118,7 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 	}
 	
 	public static void main(String args[]) {
-		File selectedFile = new File("/Users/sergio/Downloads/spain-latest/buildings.dbf");
+		File selectedFile = new File("C:/Users/Luis/RiverBaSim/RiverBaSim/contrib/spain-latest/buildings.dbf");
 		FileChannel in = null;
 		try {
 			in = new FileInputStream(selectedFile).getChannel();
@@ -135,7 +136,7 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 				r.readEntry(fields);
 				Row row = r.readRow();
 				String type = (String) row.read(2);
-				if(type.toLowerCase().contains("water")) {
+				if(type.toLowerCase().contains("industrial")) {
 					System.out.println(type);
 				}
 			} catch (IOException ex1) {

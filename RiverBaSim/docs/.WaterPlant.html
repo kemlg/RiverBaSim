@@ -42,9 +42,11 @@ The following external code is referenced:<BLOCKQUOTE></p>
 The class "WaterPlant" is defined with visibility "public" which extends parent class "riverbasim.WaterHolder" . This is an agent.</p>
  <BLOCKQUOTE></p>
 </p>
-    <li>There is a field named "riverSectionLocation" with visibility "public" of type "riverbasim.RiverSection" and default value null. River section where the WWTP dumps treated water. The block is tagged with the name "River section location".</li></p>
+    <li>There is a field named "riverSectionLocation" with visibility "public" of type "RiverSection" and default value null. River section where the WWTP dumps treated water. The block is tagged with the name "River section location".</li></p>
 </p>
-    <li>There is a field named "capacity" with visibility "public" of type "double" and default value 50000. Treatment capacity of the WWTP The block is tagged with the name "Capacity".</li></p>
+    <li>There is a field named "capacity" with visibility "public" of type "double" and default value 50000. Treatement capacity of the WWTP The block is tagged with the name "Capacity".</li></p>
+</p>
+    <li>There is a field named "amountWater" with visibility "public" of type "riverbasim.WaterFeature" and default value new riverbasim.WaterFeature(GetTickCount(), 0). Flow (amount) of water The block is tagged with the name "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter".</li></p>
 </p>
     </p>
     </p>

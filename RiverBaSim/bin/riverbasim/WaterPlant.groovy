@@ -70,17 +70,17 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      *
      */
     @Parameter (displayName = "River section location", usageName = "riverSectionLocation")
-    public riverbasim.RiverSection getRiverSectionLocation() {
+    public RiverSection getRiverSectionLocation() {
         return riverSectionLocation
     }
-    public void setRiverSectionLocation(riverbasim.RiverSection newValue) {
+    public void setRiverSectionLocation(RiverSection newValue) {
         riverSectionLocation = newValue
     }
-    public riverbasim.RiverSection riverSectionLocation = null
+    public RiverSection riverSectionLocation = null
 
     /**
      *
-     * Treatment capacity of the WWTP
+     * Treatement capacity of the WWTP
      * @field capacity
      *
      */
@@ -92,6 +92,21 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         capacity = newValue
     }
     public double capacity = 50000
+
+    /**
+     *
+     * Flow (amount) of water
+     * @field amountWater
+     *
+     */
+    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
+    public riverbasim.WaterFeature getAmountWater() {
+        return amountWater
+    }
+    public void setAmountWater(riverbasim.WaterFeature newValue) {
+        amountWater = newValue
+    }
+    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 0)
 
     /**
      *

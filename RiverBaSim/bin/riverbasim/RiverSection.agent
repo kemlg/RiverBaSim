@@ -26,24 +26,6 @@
   </decisionsteps>
   <joinsteps/>
   <agentproperties>
-    <agentproperty x="969" y="90" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 5000)">
-      <label x="1025" y="101" text="Amount of water in the river section (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
-    </agentproperty>
-    <agentproperty x="969" y="146" comment="Concentration of solids (MES)" visibility="0" compiledname="solidConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1018" y="156" text="Solid concentration (gr/m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
-    </agentproperty>
-    <agentproperty x="969" y="203" comment="Concentration of BOD" visibility="0" compiledname="bodConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1024" y="211" text="BOD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
-    </agentproperty>
-    <agentproperty x="970" y="258" comment="Concentration of COD" visibility="0" compiledname="codConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1021" y="269" text="COD concentration (gr./m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
-    </agentproperty>
-    <agentproperty x="969" y="312" comment="Concentration of Nt" visibility="0" compiledname="ntConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1018" y="321" text="Nitrogen Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
-    </agentproperty>
-    <agentproperty x="969" y="369" comment="Concentration of Phosphorus Total" visibility="0" compiledname="ptConcentration" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
-      <label x="1022" y="382" text="Phosphorus Total concentration&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
-    </agentproperty>
     <agentproperty x="968" y="30" comment="Default incoming water amount" visibility="0" compiledname="defaultAmountWater" type="double" defaultvalue="10000">
       <label x="1020" y="46" text="Default incoming water"/>
     </agentproperty>
@@ -61,8 +43,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="430" y="440"/>
-    <endstep x="719" y="464"/>
+    <endstep x="435" y="445"/>
+    <endstep x="724" y="469"/>
   </endsteps>
   <connections>
     <transitions>

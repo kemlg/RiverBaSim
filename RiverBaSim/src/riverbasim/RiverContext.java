@@ -40,7 +40,7 @@ import com.vividsolutions.jts.geom.MultiLineString;
 public class RiverContext extends DefaultContext<RiverSection>
 {
 	private TreeMap<String,RiverSection>	map;
-	//private HashSet<RiverSection> setBesos;
+
 	private TreeSet<RiverSection> setBesos;
 	private LinkedHashMap<RiverSection, RiverSection> flow;
 	private HashSet<WaterPlant> waterPlants;
@@ -54,7 +54,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 		this.waterPlants = waterPlants;
 	}
 
-	public HashMap<RiverSection, RiverSection> getFlow() {
+	public LinkedHashMap<RiverSection, RiverSection> getFlow() {
 		return flow;
 	}
 
@@ -71,11 +71,11 @@ public class RiverContext extends DefaultContext<RiverSection>
 		NetworkFactory netFac = NetworkFactoryFinder
 				.createNetworkFactory(new HashMap<String, Object>());
 		netFac.createNetwork("FlowNetwork", this, false);
-
+/*
 		GridFactoryFinder.createGridFactory(null).createGrid("Grid2D", this,
 				new GridBuilderParameters(new repast.simphony.space.grid.WrapAroundBorders(), 
                 new RandomGridAdder(), true, 100, 100)); 
-
+*/
 		/* Create a Geography to store junctions in spatially */
 		GeographyParameters<RiverSection> geoParams = new GeographyParameters<RiverSection>();
 		riverGeography = GeographyFactoryFinder
@@ -137,8 +137,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 			MultiLineString line = (MultiLineString)geom;
 			if(p.getNom().startsWith("el Besòs")) {
 				setBesos.add(p);
-				System.out.println(p.agentID + " is at: (" + coord.x + ","
-						+ coord.y + ") [size of set: " + setBesos.size() + "]");
+				System.out.println(p.agentID + " is at: (" + coord.x + ","+ coord.y + ") [size of set: " + setBesos.size() + "]");
 			} else {
 				this.remove(p);
 			}
@@ -160,32 +159,22 @@ public class RiverContext extends DefaultContext<RiverSection>
 		
 		while (it1.hasNext()){
 			p2 = it1.next();
-			this.flow.put(p1, p2);
-			p1 = p2;
-		}
-		/*
 			if (new Random().nextDouble() < 0.1) {
 				// Assigned as WWTP
 				WaterPlant wp = new WaterPlant();
 				wp.setRiverSectionLocation(p1);
 				waterPlants.add(wp);
-				ContextCreator.getWaterPlantGeography().move(wp,
-						riverGeography.getGeometry(nearest));
-				tempBesos.remove(nearest);
-				this.remove(nearest);
-			} else {
-				this.flow.put(p1, nearest);
-				if (it1.hasNext()) {
-					p1 = it1.next();
-				} else {
-					p1 = null;
-				}
+				ContextCreator.getWaterPlantGeography().move(wp,riverGeography.getGeometry(p2));
+				// Here we should add industries
+				// industries.addIndustries(p2);
+				this.remove(p2);
+			}
+			else{
+				this.flow.put(p1, p2);
+				p1 = p2;
 			}
 		}
-		
-		
-		
-		
+		/*
 		while (p1 != null) {
 			
 			Geometry geom1 = riverGeography.getGeometry(p1);

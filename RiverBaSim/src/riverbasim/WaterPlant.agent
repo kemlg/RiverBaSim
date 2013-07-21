@@ -28,26 +28,34 @@
     </decisionstep>
   </decisionsteps>
   <joinsteps>
-    <joinstep x="653" y="476"/>
-    <joinstep x="257" y="322"/>
+    <joinstep x="663" y="486"/>
+    <joinstep x="267" y="332"/>
   </joinsteps>
   <agentproperties>
-    <agentproperty x="1039" y="42" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="riverbasim.RiverSection" defaultvalue="null">
-      <label x="1044" y="27" text="River section location"/>
+    <agentproperty x="839" y="156" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="RiverSection" defaultvalue="null">
+      <label x="844" y="141" text="River section location"/>
     </agentproperty>
-    <agentproperty x="1046" y="122" comment="Treatment capacity of the WWTP" visibility="0" compiledname="capacity" type="double" defaultvalue="50000">
-      <label x="1051" y="107" text="Capacity"/>
+    <agentproperty x="841" y="225" comment="Treatement capacity of the WWTP" visibility="0" compiledname="capacity" type="double" defaultvalue="50000">
+      <label x="846" y="210" text="Capacity"/>
+    </agentproperty>
+    <agentproperty x="836" y="81" comment="Flow (amount) of water" visibility="0" compiledname="amountWater" type="riverbasim.WaterFeature" defaultvalue="new riverbasim.WaterFeature(GetTickCount(), 0)">
+      <label x="892" y="92" text="Amount of water (m3)&quot;, converter = &quot;riverbasim.WaterFeatureConverter"/>
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="663" y="561"/>
-    <endstep x="260" y="393"/>
+    <endstep x="673" y="571"/>
+    <endstep x="270" y="403"/>
   </endsteps>
   <connections>
     <transitions>
       <transition>
         <transitionsource type="behavior" index="0" anchor="0"/>
         <transitiontarget type="task" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="behavior" index="1" anchor="0"/>
+        <transitiontarget type="decision" index="0" anchor="0"/>
         <bendpoints/>
       </transition>
       <transition>
@@ -61,18 +69,13 @@
         <bendpoints/>
       </transition>
       <transition>
-        <transitionsource type="join" index="0" anchor="2"/>
-        <transitiontarget type="end" index="0" anchor="0"/>
-        <bendpoints/>
-      </transition>
-      <transition>
-        <transitionsource type="behavior" index="1" anchor="0"/>
-        <transitiontarget type="decision" index="0" anchor="0"/>
-        <bendpoints/>
-      </transition>
-      <transition>
         <transitionsource type="task" index="2" anchor="3"/>
         <transitiontarget type="join" index="1" anchor="1"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="join" index="0" anchor="2"/>
+        <transitiontarget type="end" index="0" anchor="0"/>
         <bendpoints/>
       </transition>
       <transition>

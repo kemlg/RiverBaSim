@@ -58,7 +58,7 @@ import static repast.simphony.essentials.RepastEssentials.*
 
 /**
  *
- * This is an agent.
+ * Agent representing a Industry.
  *
  */
 public class Industry  {

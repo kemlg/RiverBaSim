@@ -35,7 +35,15 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 		this.addSubContext(wpc);
 		RiverContext rc = new RiverContext();
 		this.addSubContext(rc);
+		// here we should place:
+		// IndustryContext ic = new IndustryContext();
+		// this.addSubContext(ic);
+		// ic.setIndustries(rc.getIndustries());
+		
+		// getWaterPlants returns the set of WWTP that were randomly selected from the RiverSections that compose the river
 		wpc.setWaterPlants(rc.getWaterPlants());
+
+
 		IndexedIterable<RiverSection> it = rc.getObjects(RiverSection.class);
 		Iterator<RiverSection> ite = it.iterator();
 		while(ite.hasNext()) {
@@ -44,6 +52,7 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 			this.add(r);
 			waterHolderGeography.move(r, ContextCreator.getRiverGeography().getGeometry(r));
 		}
+		
 		IndexedIterable<WaterPlant> itw = wpc.getObjects(WaterPlant.class);
 		Iterator<WaterPlant> itwe = itw.iterator();
 		while(itwe.hasNext()) {
@@ -52,6 +61,21 @@ public class WaterHolderContext extends DefaultContext<WaterHolder> {
 			this.add(w);
 			waterHolderGeography.move(w, ContextCreator.getWaterPlantGeography().getGeometry(w));
 		}
+		
+		// getIndustries() returns the set of Industries that were placed near the WWTP and, therefore, they are associated to them in their RiverSection Location property
+		// wpc.setIndustries(rc.getIndustries());
+		/*
+		 IndexedIterable<Industry> iti = rc.getObjects(Industry.class);
+		 Iterator<Industry> itie = it.iterator();
+		 while(ite.hasNext()) {
+			Industry i = itie.next();
+			System.out.println("adding " + i);
+			this.add(i);
+			waterHolderGeography.move(i, ContextCreator.getIndustryGeography().getGeometry(i));
+		}
+		 */
+		
+		
 		System.out.println(this.getAgentTypes());
 		System.out.println(waterHolderGeography.getAllObjects());
 	}

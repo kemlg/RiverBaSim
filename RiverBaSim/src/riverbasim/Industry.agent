@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agent version="1" agentcomment="This is an agent." agentclassname="Industry" agentparentclassname="" agentinterfaces="" agentimports="">
+<agent version="1" agentcomment="Agent representing a Industry." agentclassname="Industry" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
     <behaviorstep x="345" y="102" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="2" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Dump wastewater" visibility="0" returntype="def" compiledname="dumpWastewater" parameters="" exceptions="">
       <label x="345" y="87" text="Dump wastewater"/>
@@ -36,7 +36,7 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="354" y="291"/>
+    <endstep x="359" y="296"/>
   </endsteps>
   <connections>
     <transitions>
