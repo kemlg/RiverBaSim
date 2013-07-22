@@ -84,14 +84,14 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field amountWater
      *
      */
-    @Parameter (displayName = "Amount of water (m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "amountWater")
-    public riverbasim.WaterFeature getAmountWater() {
+    @Parameter (displayName = "Amount of water (m3)", usageName = "amountWater")
+    public double getAmountWater() {
         return amountWater
     }
-    public void setAmountWater(riverbasim.WaterFeature newValue) {
+    public void setAmountWater(double newValue) {
         amountWater = newValue
     }
-    public riverbasim.WaterFeature amountWater = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public double amountWater = 0
 
     /**
      *
@@ -114,14 +114,14 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field bodConcentration
      *
      */
-    @Parameter (displayName = "BOD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "bodConcentration")
-    public riverbasim.WaterFeature getBodConcentration() {
+    @Parameter (displayName = "BOD concentration (gr./m3)", usageName = "bodConcentration")
+    public double getBodConcentration() {
         return bodConcentration
     }
-    public void setBodConcentration(riverbasim.WaterFeature newValue) {
+    public void setBodConcentration(double newValue) {
         bodConcentration = newValue
     }
-    public riverbasim.WaterFeature bodConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public double bodConcentration = 0
 
     /**
      *
@@ -129,14 +129,14 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field solidConcentration
      *
      */
-    @Parameter (displayName = "Solid concentration (gr/m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "solidConcentration")
-    public riverbasim.WaterFeature getSolidConcentration() {
+    @Parameter (displayName = "Solid concentration (gr/m3)", usageName = "solidConcentration")
+    public double getSolidConcentration() {
         return solidConcentration
     }
-    public void setSolidConcentration(riverbasim.WaterFeature newValue) {
+    public void setSolidConcentration(double newValue) {
         solidConcentration = newValue
     }
-    public riverbasim.WaterFeature solidConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public double solidConcentration = 0
 
     /**
      *
@@ -144,14 +144,14 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field ntConcentration
      *
      */
-    @Parameter (displayName = "Nitrogen Total concentration", converter = "riverbasim.WaterFeatureConverter", usageName = "ntConcentration")
-    public riverbasim.WaterFeature getNtConcentration() {
+    @Parameter (displayName = "Nitrogen Total concentration", usageName = "ntConcentration")
+    public double getNtConcentration() {
         return ntConcentration
     }
-    public void setNtConcentration(riverbasim.WaterFeature newValue) {
+    public void setNtConcentration(double newValue) {
         ntConcentration = newValue
     }
-    public riverbasim.WaterFeature ntConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public double ntConcentration = 0
 
     /**
      *
@@ -159,14 +159,14 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field ptConcentration
      *
      */
-    @Parameter (displayName = "Phosphorus Total concentration", converter = "riverbasim.WaterFeatureConverter", usageName = "ptConcentration")
-    public riverbasim.WaterFeature getPtConcentration() {
+    @Parameter (displayName = "Phosphorus Total concentration", usageName = "ptConcentration")
+    public double getPtConcentration() {
         return ptConcentration
     }
-    public void setPtConcentration(riverbasim.WaterFeature newValue) {
+    public void setPtConcentration(double newValue) {
         ptConcentration = newValue
     }
-    public riverbasim.WaterFeature ptConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public double ptConcentration = 0
 
     /**
      *
@@ -174,14 +174,29 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @field codConcentration
      *
      */
-    @Parameter (displayName = "COD concentration (gr./m3)", converter = "riverbasim.WaterFeatureConverter", usageName = "codConcentration")
-    public riverbasim.WaterFeature getCodConcentration() {
+    @Parameter (displayName = "COD concentration (gr./m3)", usageName = "codConcentration")
+    public double getCodConcentration() {
         return codConcentration
     }
-    public void setCodConcentration(riverbasim.WaterFeature newValue) {
+    public void setCodConcentration(double newValue) {
         codConcentration = newValue
     }
-    public riverbasim.WaterFeature codConcentration = new riverbasim.WaterFeature(GetTickCount(), 0)
+    public double codConcentration = 0
+
+    /**
+     *
+     * Alert mode: the WWTP is dumping water
+     * @field alertLevel
+     *
+     */
+    @Parameter (displayName = "Alert level", usageName = "alertLevel")
+    public double getAlertLevel() {
+        return alertLevel
+    }
+    public void setAlertLevel(double newValue) {
+        alertLevel = newValue
+    }
+    public double alertLevel = 0
 
     /**
      *
@@ -225,17 +240,12 @@ public class WaterPlant extends riverbasim.WaterHolder  {
 
 
         // This is an agent decision.
-        if (amountWater.get(GetTickCount())>capacity) {
+        if (amountWater>capacity) {
 
             // Dump surplus water to river
-            double waterToRiver = amountWater.get(GetTickCount())-capacity;
-            double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
-            double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
-            double codToRiver =codConcentration.get(GetTickCount())*0.1;
-            double ntToRiver = ntConcentration.get(GetTickCount())*0.02;
-            double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
-            riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
-            amountWater.put(GetTickCount(), capacity);
+            Double amountToSend = new Double(amountWater-capacity)
+            riverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(ntConcentration), new Double(ptConcentration))
+            setAmountWater(capacity)
 
         } else  {
 
@@ -261,27 +271,27 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         def time = GetTickCountInTimeUnits()
 
         // Cleans N units of wastewater
-        double waterToRiver = amountWater.get(GetTickCount());
+        double waterToRiver = amountWater;
         if (capacity< waterToRiver) {
          waterToRiver = capacity;
         }
-        double solidToRiver = solidConcentration.get(GetTickCount())*0.01;
-        double bodToRiver = bodConcentration.get(GetTickCount())*0.01;
-        double codToRiver =codConcentration.get(GetTickCount())*0.1;
-        double ntToRiver = ntConcentration.get(GetTickCount())*0.02;
-        double ptToRiver = ptConcentration.get(GetTickCount())*0.3;
+        double solidToRiver = solidConcentration*0.01;
+        double bodToRiver = bodConcentration*0.01;
+        double codToRiver =codConcentration*0.1;
+        double ntToRiver = ntConcentration*0.02;
+        double ptToRiver = ptConcentration*0.3;
         riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
-        amountWater.put(GetTickCount(), amountWater.get(GetTickCount()) - waterToRiver);
+        amountWater -=waterToRiver;
 
         // This is an agent decision.
-        if (amountWater.get(GetTickCount())==0) {
+        if (amountWater==0) {
 
             // Remove pollutants if there's no remaining water
-            solidConcentration.put(GitTickCount(), 0);
-            bodConcentration.put(GitTickCount(), 0);
-            codConcentration.put(GitTickCount(), 0);
-            ntConcentration.put(GitTickCount(), 0);
-            ptConcentration.put(GitTickCount(), 0);
+            setSolidConcentration(0;)
+            setBodConcentration(0;)
+            setCodConcentration(0;)
+            setNtConcentration(0;)
+            setPtConcentration(0;)
 
         } else  {
 
@@ -298,7 +308,7 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @method mixIncomingWater
      *
      */
-    public def mixIncomingWater(double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived) {
+    public def mixIncomingWater(amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived) {
 
         // Define the return value variable.
         def returnValue
@@ -307,18 +317,38 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         def time = GetTickCountInTimeUnits()
 
         // Mix water
-        double solid = solidConcentration.get(GetTickCount());
-        double bod=bodConcentration.get(GetTickCount());
-        double cod=codConcentration.get(GetTickCount());
-        double nt = ntConcentration.get(GetTickCount());
-        double pt = ptConcentration.get(GetTickCount());
-        double water = amountWater.get(GetTickCount());
-        solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
-        bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
-        codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
-        ntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
-        ptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
-        amountWater.put(GetTickCount(), water+amountWaterReceived);
+        setSolidConcentration((solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
+        bodConcentration= (bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
+        codConcentration= (codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
+        ntConcentration= (ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
+        ptConcentration= (ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
+        amountWater+= amountWaterReceived;)
+        // Return the results.
+        return returnValue
+
+    }
+
+    /**
+     *
+     * Update alert level
+     * @method alertLevel
+     *
+     */
+    @ScheduledMethod(
+        start = 1d,
+        interval = 1d,
+        shuffle = false
+    )
+    public def alertLevel() {
+
+        // Define the return value variable.
+        def returnValue
+
+        // Note the simulation time.
+        def time = GetTickCountInTimeUnits()
+
+        // Measure alert level
+        setAlertLevel(min(2, amountWater/capacity))
         // Return the results.
         return returnValue
 

@@ -230,6 +230,21 @@ public class RiverSection extends riverbasim.WaterHolder  {
 
     /**
      *
+     * Level of pollution in the river. Aggregates all the pollutants information into one parameter.
+     * @field pollutionLevel
+     *
+     */
+    @Parameter (displayName = "Pollution level", usageName = "pollutionLevel")
+    public double getPollutionLevel() {
+        return pollutionLevel
+    }
+    public void setPollutionLevel(double newValue) {
+        pollutionLevel = newValue
+    }
+    public double pollutionLevel = 0
+
+    /**
+     *
      * This value is used to automatically generate agent identifiers.
      * @field serialVersionUID
      *
@@ -293,6 +308,12 @@ public class RiverSection extends riverbasim.WaterHolder  {
             ptConcentration.put(GetTickCount(), 0)
 
         }
+        // Measure pollution level
+        int tick = GetTickCount().intValue(); pollutionLevel = solidConcentration.get(tick)*amountWater.get(tick)
+        pollutionLevel += bodConcentration.get(tick)*amountWater.get(tick)
+        pollutionLevel += codConcentration.get(tick)*amountWater.get(tick)
+        pollutionLevel += ntConcentration.get(tick)*amountWater.get(tick)
+        pollutionLevel += ptConcentration.get(tick)*amountWater.get(tick)
         // End the method.
         return
 
@@ -304,29 +325,26 @@ public class RiverSection extends riverbasim.WaterHolder  {
      * @method mixIncomingWater
      *
      */
-    public def mixIncomingWater(double amountWaterReceived, double solidConcentrationReceived, double bodConcentrationReceived, double codConcentrationReceived, double ntConcentrationReceived, double ptConcentrationReceived) {
-
-        // Define the return value variable.
-        def returnValue
+    public void mixIncomingWater(amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived) {
 
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
 
         // Mix water
-        double solid = solidConcentration.get(GetTickCount());
-        double bod=bodConcentration.get(GetTickCount());
-        double cod=codConcentration.get(GetTickCount());
-        double nt = ntConcentration.get(GetTickCount());
-        double pt = ptConcentration.get(GetTickCount());
-        double water = amountWater.get(GetTickCount());
+        solid = solidConcentration.get(GetTickCount());
+         bod=bodConcentration.get(GetTickCount());
+        cod=codConcentration.get(GetTickCount());
+         nt = ntConcentration.get(GetTickCount());
+         pt = ptConcentration.get(GetTickCount());
+         water = amountWater.get(GetTickCount());
         solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         ntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         ptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         amountWater.put(GetTickCount(), water+amountWaterReceived);
-        // Return the results.
-        return returnValue
+        // End the method.
+        return
 
     }
 
