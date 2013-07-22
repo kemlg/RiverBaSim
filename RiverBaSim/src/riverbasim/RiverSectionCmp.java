@@ -4,7 +4,6 @@ import java.util.Comparator;
 
 public class RiverSectionCmp implements Comparator<RiverSection>{
 
-	@Override
 	public int compare(RiverSection arg0, RiverSection arg1) {
 		// return -1 if `this` is less than `o`
 	     //         0 if `this` is equal to `o`

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agent version="1" agentcomment="Agent representing a Industry." agentclassname="Industry" agentparentclassname="" agentinterfaces="" agentimports="">
+<agent version="1" agentcomment="Agent representing a Industry." agentclassname="Industry" agentparentclassname="riverbasim.WaterHolder" agentinterfaces="" agentimports="">
   <behaviorsteps>
     <behaviorstep x="345" y="102" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="2" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Dump wastewater" visibility="0" returntype="def" compiledname="dumpWastewater" parameters="" exceptions="">
       <label x="345" y="87" text="Dump wastewater"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="344" y="188" comment="Dump wastewater to WWTP" command1="assignedWWTP.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration)" command2="" command3="" command4="" command5="">
+    <taskstep x="344" y="188" comment="Dump wastewater to WWTP" command1="assignedWWTP.mixIncomingWater(new Double(amountWater), new Double(solidConcentration), new Double(bodConcentration), new Double(codConcentration), new Double(ntConcentration), new Double(ptConcentration))" command2="" command3="" command4="" command5="">
       <label x="411" y="200" text="Send wastewater to WWTP"/>
     </taskstep>
   </tasksteps>
@@ -34,9 +34,12 @@
     <agentproperty x="987" y="466" comment="Assigned WWTP" visibility="0" compiledname="assignedWWTP" type="riverbasim.WaterPlant" defaultvalue="null">
       <label x="992" y="451" text="Assigned WWTP where this Industry will send the wastewater"/>
     </agentproperty>
+    <agentproperty x="71" y="132" comment="Location of the industry" visibility="0" compiledname="location" type="com.vividsolutions.jts.geom.Geometry" defaultvalue="null">
+      <label x="76" y="117" text="Location"/>
+    </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="359" y="296"/>
+    <endstep x="369" y="306"/>
   </endsteps>
   <connections>
     <transitions>

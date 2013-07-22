@@ -61,7 +61,7 @@ import static repast.simphony.essentials.RepastEssentials.*
  * Agent representing a Industry.
  *
  */
-public class Industry  {
+public class Industry extends riverbasim.WaterHolder  {
 
     /**
      *
@@ -170,6 +170,21 @@ public class Industry  {
 
     /**
      *
+     * Location of the industry
+     * @field location
+     *
+     */
+    @Parameter (displayName = "Location", usageName = "location")
+    public com.vividsolutions.jts.geom.Geometry getLocation() {
+        return location
+    }
+    public void setLocation(com.vividsolutions.jts.geom.Geometry newValue) {
+        location = newValue
+    }
+    public com.vividsolutions.jts.geom.Geometry location = null
+
+    /**
+     *
      * This value is used to automatically generate agent identifiers.
      * @field serialVersionUID
      *
@@ -212,7 +227,7 @@ public class Industry  {
         def time = GetTickCountInTimeUnits()
 
         // Dump wastewater to WWTP
-        assignedWWTP.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration)
+        assignedWWTP.mixIncomingWater(new Double(amountWater), new Double(solidConcentration), new Double(bodConcentration), new Double(codConcentration), new Double(ntConcentration), new Double(ptConcentration))
         // Return the results.
         return returnValue
 

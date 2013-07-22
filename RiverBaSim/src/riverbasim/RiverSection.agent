@@ -4,8 +4,8 @@
     <behaviorstep x="611" y="30" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Flowing water from one section to another" visibility="0" returntype="" compiledname="flowingWater" parameters="" exceptions="">
       <label x="667" y="40" text="Flowing water riverbasim.RiverSection watchedAgent"/>
     </behaviorstep>
-    <behaviorstep x="272" y="55" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="" compiledname="mixIncomingWater" parameters="amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived" exceptions="">
-      <label x="110" y="34" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
+    <behaviorstep x="231" y="55" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="" compiledname="mixIncomingWater" parameters="Double amountWaterReceived, Double solidConcentrationReceived, Double bodConcentrationReceived, Double codConcentrationReceived, Double ntConcentrationReceived, Double ptConcentrationReceived" exceptions="">
+      <label x="69" y="34" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
@@ -21,7 +21,7 @@
     <taskstep x="655" y="213" comment="Receiving incoming flow of water from previous river section" command1="amountWater.put(GetTickCount(), defaultAmountWater)" command2="" command3="" command4="" command5="">
       <label x="708" y="222" text="Receive flow of water"/>
     </taskstep>
-    <taskstep x="270" y="174" comment="Mix water" command1="solid = solidConcentration.get(GetTickCount());\f bod=bodConcentration.get(GetTickCount());\fcod=codConcentration.get(GetTickCount());\f nt = ntConcentration.get(GetTickCount());\f pt = ptConcentration.get(GetTickCount());\f water = amountWater.get(GetTickCount());\fsolidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fbodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fcodConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\famountWater.put(GetTickCount(), water+amountWaterReceived);" command2="" command3="" command4="" command5="">
+    <taskstep x="270" y="174" comment="Mix water" command1="def solid = solidConcentration.get(GetTickCount()-1);\fdef bod=bodConcentration.get(GetTickCount()-1);\fdef cod=codConcentration.get(GetTickCount()-1);\fdef nt = ntConcentration.get(GetTickCount()-1);\fdef pt = ptConcentration.get(GetTickCount()-1);\fdef water = amountWater.get(GetTickCount()-1);\fsolidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fbodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fcodConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fntConcentration.put(GetTickCount(), (nt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\fptConcentration.put(GetTickCount(), (pt*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));\famountWater.put(GetTickCount(), water+amountWaterReceived);" command2="" command3="" command4="" command5="">
       <label x="270" y="159" text="Mixing a mass of water received with the one being held."/>
     </taskstep>
     <taskstep x="591" y="480" comment="Measure pollution level" command1="int tick = GetTickCount().intValue(); pollutionLevel = solidConcentration.get(tick)*amountWater.get(tick)" command2="pollutionLevel += bodConcentration.get(tick)*amountWater.get(tick)" command3="pollutionLevel += codConcentration.get(tick)*amountWater.get(tick)" command4="pollutionLevel += ntConcentration.get(tick)*amountWater.get(tick)" command5="pollutionLevel += ptConcentration.get(tick)*amountWater.get(tick)">
@@ -34,7 +34,7 @@
     </decisionstep>
   </decisionsteps>
   <joinsteps>
-    <joinstep x="588" y="418"/>
+    <joinstep x="593" y="423"/>
   </joinsteps>
   <agentproperties>
     <agentproperty x="1070" y="356" comment="Default incoming water amount" visibility="0" compiledname="defaultAmountWater" type="double" defaultvalue="10000">
@@ -75,8 +75,8 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="599" y="552"/>
-    <endstep x="288" y="306"/>
+    <endstep x="604" y="557"/>
+    <endstep x="293" y="311"/>
   </endsteps>
   <connections>
     <transitions>

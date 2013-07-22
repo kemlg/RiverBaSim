@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agent version="1" agentcomment="This is an agent." agentclassname="ModelInitializer" agentparentclassname="" agentinterfaces="" agentimports="">
   <behaviorsteps>
-    <behaviorstep x="101" y="86" scheduleannotationstart="0" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="0" watchannotationtriggerdelta="" watchannotationtriggerpriority="" watchannotationpick="" comment="This is the user model builder" visibility="4" returntype="def" compiledname="initializeModel" parameters="" exceptions="">
-      <label x="92" y="70" text="Initialize Model"/>
+    <behaviorstep x="128" y="89" scheduleannotationstart="0" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="0" watchannotationtriggerdelta="" watchannotationtriggerpriority="" watchannotationpick="" comment="This is the user model builder" visibility="4" returntype="def" compiledname="initializeModel" parameters="" exceptions="">
+      <label x="119" y="73" text="Initialize Model"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps/>
@@ -10,7 +10,7 @@
   <joinsteps/>
   <agentproperties/>
   <endsteps>
-    <endstep x="105" y="202"/>
+    <endstep x="110" y="207"/>
   </endsteps>
   <connections>
     <transitions>

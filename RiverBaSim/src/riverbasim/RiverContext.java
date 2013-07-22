@@ -23,37 +23,44 @@ import repast.simphony.context.DefaultContext;
 import repast.simphony.context.space.gis.GeographyFactoryFinder;
 import repast.simphony.context.space.graph.NetworkFactory;
 import repast.simphony.context.space.graph.NetworkFactoryFinder;
-import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.space.gis.Geography;
 import repast.simphony.space.gis.GeographyParameters;
 import repast.simphony.space.gis.ShapefileLoader;
-import repast.simphony.space.grid.GridBuilderParameters;
-import repast.simphony.space.grid.RandomGridAdder;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.MultiLineString;
+import com.vividsolutions.jts.geom.Point;
+
 
 
 
 
 public class RiverContext extends DefaultContext<RiverSection>
 {
-	private TreeMap<String,RiverSection>	map;
-
 	private TreeSet<RiverSection> setBesos;
 	private LinkedHashMap<RiverSection, RiverSection> flow;
 	private HashSet<WaterPlant> waterPlants;
+	private HashSet<Industry> industry;
 	private Geography<RiverSection> riverGeography;
 	
 	public HashSet<WaterPlant> getWaterPlants() {
 		return waterPlants;
 	}
 
-	public void setWaterPlants(HashSet<WaterPlant> waterPlants) {
-		this.waterPlants = waterPlants;
+	public void setIndustry(HashSet<Industry> industry) {
+		this.industry = industry;
 	}
 
+	public HashSet<Industry> getIndustry() {
+		return industry;
+	}
+
+	public void setWaterPlants(HashSet<Industry> industry) {
+		this.industry = industry;
+	}
+	
 	public LinkedHashMap<RiverSection, RiverSection> getFlow() {
 		return flow;
 	}
@@ -62,6 +69,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 		this.flow = flow;
 	}
 
+	@SuppressWarnings("deprecation")
 	public RiverContext()	{
 		super("RiverContext");
 
@@ -83,7 +91,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 						this, geoParams);
 		System.out.println("Created RiverGeography");
 		
-		map = new TreeMap<String,RiverSection>();
+		new TreeMap<String,RiverSection>();
 
 		File selectedFile = new File("./contrib/x_besos/x_besos.dbf");
 		FileChannel in = null;
@@ -104,7 +112,7 @@ public class RiverContext extends DefaultContext<RiverSection>
 			try {
 				r.readEntry(fields);
 				Row row = r.readRow();
-				System.out.println(row);
+				//System.out.println(row);
 			} catch (IOException ex1) {
 				Logger.getLogger(getClass().getName()).log(Level.DEBUG, null,
 						ex1);
@@ -134,18 +142,17 @@ public class RiverContext extends DefaultContext<RiverSection>
 		for (RiverSection p : riverGeography.getAllObjects()) {
 			Geometry geom = riverGeography.getGeometry(p);
 			Coordinate coord = geom.getCoordinate();
-			MultiLineString line = (MultiLineString)geom;
 			if(p.getNom().startsWith("el Besòs")) {
 				setBesos.add(p);
-				System.out.println(p.agentID + " is at: (" + coord.x + ","+ coord.y + ") [size of set: " + setBesos.size() + "]");
+				//System.out.println(p.agentID + " is at: (" + coord.x + ","+ coord.y + ") [size of set: " + setBesos.size() + "]");
 			} else {
 				this.remove(p);
 			}
 		}
 		
 		flow = new LinkedHashMap<RiverSection,RiverSection>();
-		TreeSet<RiverSection> tempBesos = new TreeSet<RiverSection>(new RiverSectionCmp());
-		tempBesos.addAll(setBesos);
+		//TreeSet<RiverSection> tempBesos = new TreeSet<RiverSection>(new RiverSectionCmp());
+		//tempBesos.addAll(setBesos);
 		Iterator<RiverSection> it1;
 		it1 = setBesos.iterator();
 	
@@ -153,10 +160,11 @@ public class RiverContext extends DefaultContext<RiverSection>
 		
 		
 		waterPlants = new HashSet<WaterPlant>();
+		industry  = new HashSet<Industry>();
 		if (it1.hasNext()) {
 			p1 = it1.next();
 		}
-		
+		GeometryFactory fac = new GeometryFactory();
 		while (it1.hasNext()){
 			p2 = it1.next();
 			if (new Random().nextDouble() < 0.1) {
@@ -164,9 +172,23 @@ public class RiverContext extends DefaultContext<RiverSection>
 				WaterPlant wp = new WaterPlant();
 				wp.setRiverSectionLocation(p1);
 				waterPlants.add(wp);
-				ContextCreator.getWaterPlantGeography().move(wp,riverGeography.getGeometry(p2));
+				Geometry geoP2 = riverGeography.getGeometry(p2);
+				
+				ContextCreator.getWaterPlantGeography().move(wp, geoP2);
 				// Here we should add industries
-				// industries.addIndustries(p2);
+				for (int i=0; i<10; i++){
+					Industry ind = new Industry();
+					ind.setAssignedWWTP(wp);
+					
+					Coordinate coord = new Coordinate(); 
+					coord.setCoordinate(geoP2.getCentroid().getCoordinate());
+					coord.x +=0.003*i;
+					coord.y +=0.003*i;
+					Point geom = fac.createPoint(coord);
+					ind.setLocation(geom);
+					industry.add(ind);
+				}
+
 				this.remove(p2);
 			}
 			else{

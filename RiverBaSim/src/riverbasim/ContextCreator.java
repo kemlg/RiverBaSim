@@ -95,6 +95,17 @@ public class ContextCreator implements ContextBuilder<Object>
 				"WaterPlantGeography");
 	}
 	
+	public static IndustryContext getIndustryContext()
+	{
+		return (IndustryContext) mainContext.findContext("IndustryContext");
+	}
+
+	@SuppressWarnings("unchecked")
+	public static Geography<Industry> getIndustryGeography()
+	{
+		return (Geography<Industry>) ContextCreator.getIndustryContext().getProjection(
+				"IndustryGeography");
+	}
 
 	
 	public static void main(String args[])

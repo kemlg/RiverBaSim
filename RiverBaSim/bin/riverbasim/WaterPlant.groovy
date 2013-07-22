@@ -244,7 +244,7 @@ public class WaterPlant extends riverbasim.WaterHolder  {
 
             // Dump surplus water to river
             Double amountToSend = new Double(amountWater-capacity)
-            riverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(ntConcentration), new Double(ptConcentration))
+            riverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(codConcentration), new Double(ntConcentration), new Double(ptConcentration))
             setAmountWater(capacity)
 
         } else  {
@@ -262,6 +262,11 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @method wastewaterTreatement
      *
      */
+    @ScheduledMethod(
+        start = 1d,
+        interval = 2d,
+        shuffle = true
+    )
     public def wastewaterTreatement() {
 
         // Define the return value variable.
@@ -271,27 +276,27 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         def time = GetTickCountInTimeUnits()
 
         // Cleans N units of wastewater
-        double waterToRiver = amountWater;
+        Double waterToRiver = new Double(amountWater);
         if (capacity< waterToRiver) {
-         waterToRiver = capacity;
+         waterToRiver = new Double(capacity);
         }
-        double solidToRiver = solidConcentration*0.01;
-        double bodToRiver = bodConcentration*0.01;
-        double codToRiver =codConcentration*0.1;
-        double ntToRiver = ntConcentration*0.02;
-        double ptToRiver = ptConcentration*0.3;
-        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);
+        Double solidToRiver = new Double(solidConcentration*0.01)
+        Double bodToRiver = new Double(bodConcentration*0.01)
+        Double codToRiver = new Double(codConcentration*0.1)
+        Double ntToRiver = new Double(ntConcentration*0.02)
+        Double ptToRiver = new Double(ptConcentration*0.3)
+        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, codToRiver, ntToRiver, ptToRiver)
         amountWater -=waterToRiver;
 
         // This is an agent decision.
         if (amountWater==0) {
 
             // Remove pollutants if there's no remaining water
-            setSolidConcentration(0;)
-            setBodConcentration(0;)
-            setCodConcentration(0;)
-            setNtConcentration(0;)
-            setPtConcentration(0;)
+            setSolidConcentration(0)
+            setBodConcentration(0)
+            setCodConcentration(0)
+            setNtConcentration(0)
+            setPtConcentration(0)
 
         } else  {
 
@@ -308,7 +313,7 @@ public class WaterPlant extends riverbasim.WaterHolder  {
      * @method mixIncomingWater
      *
      */
-    public def mixIncomingWater(amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived) {
+    public def mixIncomingWater(Double amountWaterReceived, Double solidConcentrationReceived, Double bodConcentrationReceived, Double codConcentrationReceived, Double ntConcentrationReceived, Double ptConcentrationReceived) {
 
         // Define the return value variable.
         def returnValue
@@ -317,12 +322,13 @@ public class WaterPlant extends riverbasim.WaterHolder  {
         def time = GetTickCountInTimeUnits()
 
         // Mix water
-        setSolidConcentration((solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
-        bodConcentration= (bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
-        codConcentration= (codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
-        ntConcentration= (ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
-        ptConcentration= (ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);
-        amountWater+= amountWaterReceived;)
+        setSolidConcentration((solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))
+        setBodConcentration((bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))
+        setCodConcentration((codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))
+        setNtConcentration((ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))
+        setPtConcentration((ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))
+        // This is a task.
+        amountWater+= amountWaterReceived
         // Return the results.
         return returnValue
 

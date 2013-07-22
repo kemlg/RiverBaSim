@@ -325,18 +325,18 @@ public class RiverSection extends riverbasim.WaterHolder  {
      * @method mixIncomingWater
      *
      */
-    public void mixIncomingWater(amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived) {
+    public void mixIncomingWater(Double amountWaterReceived, Double solidConcentrationReceived, Double bodConcentrationReceived, Double codConcentrationReceived, Double ntConcentrationReceived, Double ptConcentrationReceived) {
 
         // Note the simulation time.
         def time = GetTickCountInTimeUnits()
 
         // Mix water
-        solid = solidConcentration.get(GetTickCount());
-         bod=bodConcentration.get(GetTickCount());
-        cod=codConcentration.get(GetTickCount());
-         nt = ntConcentration.get(GetTickCount());
-         pt = ptConcentration.get(GetTickCount());
-         water = amountWater.get(GetTickCount());
+        def solid = solidConcentration.get(GetTickCount()-1);
+        def bod=bodConcentration.get(GetTickCount()-1);
+        def cod=codConcentration.get(GetTickCount()-1);
+        def nt = ntConcentration.get(GetTickCount()-1);
+        def pt = ptConcentration.get(GetTickCount()-1);
+        def water = amountWater.get(GetTickCount()-1);
         solidConcentration.put(GetTickCount(), (solid*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         bodConcentration.put(GetTickCount(), (bod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));
         codConcentration.put(GetTickCount(), (cod*water+solidConcentrationReceived*amountWaterReceived)/(water+amountWaterReceived));

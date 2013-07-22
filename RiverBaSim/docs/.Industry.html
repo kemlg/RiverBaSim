@@ -39,7 +39,7 @@ The following external code is referenced:<BLOCKQUOTE></p>
 <li>Components from static java.lang.Math.*</li></p>
 <li>Components from static repast.simphony.essentials.RepastEssentials.*</li></p>
 </BLOCKQUOTE><P></p>
-The class "Industry" is defined with visibility "public" . Agent representing a Industry.</p>
+The class "Industry" is defined with visibility "public" which extends parent class "riverbasim.WaterHolder" . Agent representing a Industry.</p>
  <BLOCKQUOTE></p>
 </p>
     <li>There is a field named "bodConcentration" with visibility "public" of type "double" and default value 350. Concentration of BOD The block is tagged with the name "BOD concentration (gr./m3)".</li></p>
@@ -55,6 +55,8 @@ The class "Industry" is defined with visibility "public" . Agent representing a 
     <li>There is a field named "codConcentration" with visibility "public" of type "double" and default value 540. Concentration of COD The block is tagged with the name "COD concentration (gr./m3)".</li></p>
 </p>
     <li>There is a field named "assignedWWTP" with visibility "public" of type "riverbasim.WaterPlant" and default value null. Assigned WWTP The block is tagged with the name "Assigned WWTP where this Industry will send the wastewater".</li></p>
+</p>
+    <li>There is a field named "location" with visibility "public" of type "com.vividsolutions.jts.geom.Geometry" and default value null. Location of the industry The block is tagged with the name "Location".</li></p>
 </p>
     </p>
     </p>
@@ -76,7 +78,7 @@ The class "Industry" is defined with visibility "public" . Agent representing a 
         def time = GetTickCountInTimeUnits()</p>
 </p>
          Dump wastewater to WWTP</p>
-        assignedWWTP.mixIncomingWater(amountWater, solidConcentration, bodConcentration, codConcentration, ntConcentration, ptConcentration)</p>
+        assignedWWTP.mixIncomingWater(new Double(amountWater), new Double(solidConcentration), new Double(bodConcentration), new Double(codConcentration), new Double(ntConcentration), new Double(ptConcentration))</p>
          Return the results.</p>
         return returnValue</p>
 </p>

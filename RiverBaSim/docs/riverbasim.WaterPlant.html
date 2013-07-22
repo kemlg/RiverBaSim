@@ -82,7 +82,7 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
 </p>
              Dump surplus water to river</p>
             Double amountToSend = new Double(amountWater-capacity)</p>
-            riverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(ntConcentration), new Double(ptConcentration))</p>
+            riverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(codConcentration), new Double(ntConcentration), new Double(ptConcentration))</p>
             setAmountWater(capacity)</p>
 </p>
         </BLOCKQUOTE> else  <BLOCKQUOTE></p>
@@ -100,6 +100,11 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
         <li>There is a method named "wastewaterTreatement" method has visibility     "public" has return type "def". Treating wastewater The block is tagged with the name "Wastewater treatement".</li></p>
     </p>
     </p>
+    <BLOCKQUOTE>The wastewaterTreatement method is statically scheduled as follows:<BLOCKQUOTE></p>
+        <li>start = 1d</li></p>
+        <li>interval = 2d</li></p>
+        <li>shuffle = true</li></p>
+    </BLOCKQUOTE></BLOCKQUOTE></p>
  <BLOCKQUOTE>The code for the "wastewaterTreatement" method is as follows:<BLOCKQUOTE><CODE></p>
 </p>
 </p>
@@ -110,27 +115,27 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
         def time = GetTickCountInTimeUnits()</p>
 </p>
          Cleans N units of wastewater</p>
-        double waterToRiver = amountWater;</p>
+        Double waterToRiver = new Double(amountWater);</p>
         if (capacity< waterToRiver) <BLOCKQUOTE></p>
-         waterToRiver = capacity;</p>
+         waterToRiver = new Double(capacity);</p>
         </BLOCKQUOTE></p>
-        double solidToRiver = solidConcentration*0.01;</p>
-        double bodToRiver = bodConcentration*0.01;</p>
-        double codToRiver =codConcentration*0.1;</p>
-        double ntToRiver = ntConcentration*0.02;</p>
-        double ptToRiver = ptConcentration*0.3;</p>
-        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);</p>
+        Double solidToRiver = new Double(solidConcentration*0.01)</p>
+        Double bodToRiver = new Double(bodConcentration*0.01)</p>
+        Double codToRiver = new Double(codConcentration*0.1)</p>
+        Double ntToRiver = new Double(ntConcentration*0.02)</p>
+        Double ptToRiver = new Double(ptConcentration*0.3)</p>
+        riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, codToRiver, ntToRiver, ptToRiver)</p>
         amountWater -=waterToRiver;</p>
 </p>
          This is an agent decision.</p>
         if (amountWater==0) <BLOCKQUOTE></p>
 </p>
              Remove pollutants if there's no remaining water</p>
-            setSolidConcentration(0;)</p>
-            setBodConcentration(0;)</p>
-            setCodConcentration(0;)</p>
-            setNtConcentration(0;)</p>
-            setPtConcentration(0;)</p>
+            setSolidConcentration(0)</p>
+            setBodConcentration(0)</p>
+            setCodConcentration(0)</p>
+            setNtConcentration(0)</p>
+            setPtConcentration(0)</p>
 </p>
         </BLOCKQUOTE> else  <BLOCKQUOTE></p>
 </p>
@@ -144,7 +149,7 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
 </p>
     </p>
     </p>
-        <li>There is a method named "mixIncomingWater" method has visibility     "public" has return type "def" and parameters [amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived]. Mixing water The block is tagged with the name "Receives a mass of water to be mixed with the current water in the Water holder".</li></p>
+        <li>There is a method named "mixIncomingWater" method has visibility     "public" has return type "def" and parameters [Double amountWaterReceived, Double solidConcentrationReceived, Double bodConcentrationReceived, Double codConcentrationReceived, Double ntConcentrationReceived, Double ptConcentrationReceived]. Mixing water The block is tagged with the name "Receives a mass of water to be mixed with the current water in the Water holder".</li></p>
     </p>
     </p>
  <BLOCKQUOTE>The code for the "mixIncomingWater" method is as follows:<BLOCKQUOTE><CODE></p>
@@ -157,12 +162,13 @@ The class "WaterPlant" is defined with visibility "public" which extends parent 
         def time = GetTickCountInTimeUnits()</p>
 </p>
          Mix water</p>
-        setSolidConcentration((solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);</p>
-        bodConcentration= (bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);</p>
-        codConcentration= (codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);</p>
-        ntConcentration= (ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);</p>
-        ptConcentration= (ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);</p>
-        amountWater+= amountWaterReceived;)</p>
+        setSolidConcentration((solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))</p>
+        setBodConcentration((bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))</p>
+        setCodConcentration((codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))</p>
+        setNtConcentration((ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))</p>
+        setPtConcentration((ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived))</p>
+         This is a task.</p>
+        amountWater+= amountWaterReceived</p>
          Return the results.</p>
         return returnValue</p>
 </p>

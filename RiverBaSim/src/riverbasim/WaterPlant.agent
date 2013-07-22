@@ -4,31 +4,34 @@
     <behaviorstep x="106" y="65" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Dumping water beyond capacity" visibility="0" returntype="" compiledname="overloadDump" parameters="" exceptions="">
       <label x="106" y="50" text="Dumping water beyond capacity"/>
     </behaviorstep>
-    <behaviorstep x="593" y="54" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Treating wastewater" visibility="0" returntype="def" compiledname="wastewaterTreatement" parameters="" exceptions="">
+    <behaviorstep x="593" y="54" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="2" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Treating wastewater" visibility="0" returntype="def" compiledname="wastewaterTreatement" parameters="" exceptions="">
       <label x="570" y="40" text="Wastewater treatement"/>
     </behaviorstep>
-    <behaviorstep x="322" y="144" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="amountWaterReceived, solidConcentrationReceived, bodConcentrationReceived, codConcentrationReceived, ntConcentrationReceived, ptConcentrationReceived" exceptions="">
-      <label x="160" y="123" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
+    <behaviorstep x="338" y="149" scheduleannotationstart="" scheduleannotationpick="" scheduleannotationinterval="" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Mixing water" visibility="0" returntype="def" compiledname="mixIncomingWater" parameters="Double amountWaterReceived, Double solidConcentrationReceived, Double bodConcentrationReceived, Double codConcentrationReceived, Double ntConcentrationReceived, Double ptConcentrationReceived" exceptions="">
+      <label x="176" y="128" text="Receives a mass of water to be mixed with the current water in the Water holder"/>
     </behaviorstep>
     <behaviorstep x="422" y="410" scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="" scheduleannotationduration="" scheduleannotationshuffle="1" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="" watchannotationpick="" comment="Update alert level" visibility="0" returntype="def" compiledname="alertLevel" parameters="" exceptions="">
       <label x="422" y="395" text="Measure alert level"/>
     </behaviorstep>
   </behaviorsteps>
   <tasksteps>
-    <taskstep x="41" y="313" comment="Dump surplus water to river" command1="Double amountToSend = new Double(amountWater-capacity)\friverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(ntConcentration), new Double(ptConcentration))" command2="amountWater=capacity" command3="" command4="" command5="">
+    <taskstep x="41" y="313" comment="Dump surplus water to river" command1="Double amountToSend = new Double(amountWater-capacity)" command2="riverSectionLocation.mixIncomingWater(amountToSend, new Double(solidConcentration), new Double(bodConcentration), new Double(codConcentration), new Double(ntConcentration), new Double(ptConcentration))" command3="amountWater=capacity" command4="" command5="">
       <label x="4" y="366" text="Dump surplus water to river"/>
     </taskstep>
-    <taskstep x="546" y="380" comment="Remove pollutants if there&apos;s no remaining water" command1="solidConcentration=0;" command2="bodConcentration= 0;" command3="codConcentration = 0;" command4="ntConcentration=0;" command5="ptConcentration= 0;">
+    <taskstep x="546" y="380" comment="Remove pollutants if there&apos;s no remaining water" command1="solidConcentration=0" command2="bodConcentration= 0" command3="codConcentration = 0" command4="ntConcentration=0" command5="ptConcentration= 0">
       <label x="403" y="358" text="Set pollutants to zero if there is no more water in the WWTP"/>
     </taskstep>
-    <taskstep x="593" y="164" comment="Cleans N units of wastewater" command1="double waterToRiver = amountWater;\fif (capacity&lt; waterToRiver) {\f waterToRiver = capacity;\f}\fdouble solidToRiver = solidConcentration*0.01;\fdouble bodToRiver = bodConcentration*0.01;\fdouble codToRiver =codConcentration*0.1;\fdouble ntToRiver = ntConcentration*0.02;\fdouble ptToRiver = ptConcentration*0.3;\friverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, ntToRiver, ptToRiver);\famountWater -=waterToRiver;" command2="" command3="" command4="" command5="">
+    <taskstep x="593" y="164" comment="Cleans N units of wastewater" command1="Double waterToRiver = new Double(amountWater);\fif (capacity&lt; waterToRiver) {\f waterToRiver = new Double(capacity);\f}\fDouble solidToRiver = new Double(solidConcentration*0.01)\fDouble bodToRiver = new Double(bodConcentration*0.01)\fDouble codToRiver = new Double(codConcentration*0.1)\fDouble ntToRiver = new Double(ntConcentration*0.02)\fDouble ptToRiver = new Double(ptConcentration*0.3)" command2="" command3="" command4="riverSectionLocation.mixIncomingWater(waterToRiver, solidToRiver, bodToRiver, codToRiver, ntToRiver, ptToRiver)" command5="amountWater -=waterToRiver;">
       <label x="497" y="180" text="CleanWasteWater"/>
     </taskstep>
-    <taskstep x="315" y="240" comment="Mix water" command1="solidConcentration=(solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);\fbodConcentration= (bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);\fcodConcentration= (codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);\fntConcentration= (ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);\fptConcentration= (ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived);\famountWater+= amountWaterReceived;" command2="" command3="" command4="" command5="">
-      <label x="220" y="291" text="Mixing a mass of water received with the one being held."/>
+    <taskstep x="324" y="239" comment="Mix water" command1="solidConcentration= (solidConcentration*amountWater+solidConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived)" command2="bodConcentration= (bodConcentration*amountWater+bodConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived)" command3="codConcentration= (codConcentration*amountWater+codConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived)" command4="ntConcentration= (ntConcentration*amountWater+ntConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived)" command5="ptConcentration= (ptConcentration*amountWater+ptConcentrationReceived*amountWaterReceived)/(amountWater+amountWaterReceived)">
+      <label x="229" y="290" text="Mixing a mass of water received with the one being held."/>
     </taskstep>
     <taskstep x="432" y="507" comment="Measure alert level" command1="alertLevel=min(2, amountWater/capacity)" command2="" command3="" command4="" command5="">
       <label x="432" y="492" text="Measure alert level"/>
+    </taskstep>
+    <taskstep x="315" y="359" comment="This is a task." command1="amountWater+= amountWaterReceived" command2="" command3="" command4="" command5="">
+      <label x="315" y="344" text="Do Task"/>
     </taskstep>
   </tasksteps>
   <decisionsteps>
@@ -40,8 +43,8 @@
     </decisionstep>
   </decisionsteps>
   <joinsteps>
-    <joinstep x="175" y="347"/>
-    <joinstep x="716" y="444"/>
+    <joinstep x="185" y="357"/>
+    <joinstep x="726" y="454"/>
   </joinsteps>
   <agentproperties>
     <agentproperty x="810" y="505" comment="River section where the WWTP dumps treated water." visibility="0" compiledname="riverSectionLocation" type="RiverSection" defaultvalue="null">
@@ -73,10 +76,10 @@
     </agentproperty>
   </agentproperties>
   <endsteps>
-    <endstep x="177" y="544"/>
-    <endstep x="722" y="516"/>
-    <endstep x="328" y="435"/>
-    <endstep x="448" y="599"/>
+    <endstep x="187" y="554"/>
+    <endstep x="732" y="526"/>
+    <endstep x="338" y="445"/>
+    <endstep x="458" y="609"/>
   </endsteps>
   <connections>
     <transitions>
@@ -119,12 +122,17 @@
       </transition>
       <transition>
         <transitionsource type="task" index="3" anchor="2"/>
-        <transitiontarget type="end" index="2" anchor="0"/>
+        <transitiontarget type="task" index="5" anchor="0"/>
         <bendpoints/>
       </transition>
       <transition>
         <transitionsource type="task" index="4" anchor="2"/>
         <transitiontarget type="end" index="3" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="5" anchor="2"/>
+        <transitiontarget type="end" index="2" anchor="0"/>
         <bendpoints/>
       </transition>
       <transition>

@@ -26,14 +26,15 @@
         </agents>
         <projections xsi:type="score:SGeography" label="WaterPlantGeography" ID="waterPlantGeography" pluralLabel="WaterPlantGeographies"/>
       </agents>
+      <agents xsi:type="score:SContext" label="IndustryContext" ID="industryContext" pluralLabel="IndustryContexts">
+        <implementation className="IndustryContext"/>
+        <agents label="Industry" ID="industry" pluralLabel="Industries">
+          <implementation className="Industry"/>
+        </agents>
+        <projections xsi:type="score:SGeography" label="IndustryGeography" ID="industryGeography" pluralLabel="IndustryGeographies"/>
+      </agents>
       <projections xsi:type="score:SNetwork" label="FlowNetwork" ID="flowNetwork" pluralLabel="FlowNetworks" directed="true"/>
       <projections xsi:type="score:SGeography" label="WaterHolderGeography" ID="waterHolderGeography" pluralLabel="WaterHolderGeographies"/>
-    </agents>
-    <agents label="RiverSection" ID="riverSection" pluralLabel="RiverSections">
-      <implementation className="RiverSection"/>
-    </agents>
-    <agents label="WaterPlant" ID="waterPlant" pluralLabel="WaterPlants">
-      <implementation className="WaterPlant"/>
     </agents>
   </agents>
 </score:SContext>

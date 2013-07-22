@@ -57,10 +57,7 @@ public class WaterPlantContext extends DefaultContext<WaterPlant>
 		Iterator<WaterPlant> it = wps.iterator();
 		while(it.hasNext()) {
 			WaterPlant wp = it.next();
-			
 			System.out.println("Adding " + wp + " attached to "+wp.getRiverSectionLocation().toString());
-			System.out.println(wp);
-			
 			this.add(wp);
 		}
 

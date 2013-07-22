@@ -1,0 +1,49 @@
+<repast.simphony.data.engine.DefaultDataGathererDescriptor>
+  <name>Pollution level</name>
+  <dataSetId class="string">Data Set 1</dataSetId>
+  <scheduleParameters>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+  </scheduleParameters>
+  <dataMappingContainer class="repast.simphony.data.logging.gather.DefaultDataMappingContainer">
+    <nameMappingTable/>
+    <mappingNameTable/>
+  </dataMappingContainer>
+  <aggregateContainer class="repast.simphony.data.logging.gather.DefaultAggregateDataMappingContainer">
+    <nameMappingTable>
+      <entry>
+        <string>Tick</string>
+        <repast.simphony.data.logging.gather.DefaultTimeDataMapping/>
+      </entry>
+      <entry>
+        <string>Mean pollution level</string>
+        <repast.simphony.data.logging.gather.aggregate.MeanMapping>
+          <type>Mean</type>
+          <decorated class="repast.simphony.data.logging.gather.MethodMapping">
+            <method>
+              <class>riverbasim.RiverSection</class>
+              <name>getPollutionLevel</name>
+              <parameter-types/>
+            </method>
+          </decorated>
+        </repast.simphony.data.logging.gather.aggregate.MeanMapping>
+      </entry>
+    </nameMappingTable>
+    <mappingNameTable>
+      <entry>
+        <repast.simphony.data.logging.gather.aggregate.MeanMapping reference="../../../nameMappingTable/entry[2]/repast.simphony.data.logging.gather.aggregate.MeanMapping"/>
+        <string>Mean pollution level</string>
+      </entry>
+      <entry>
+        <repast.simphony.data.logging.gather.DefaultTimeDataMapping reference="../../../nameMappingTable/entry/repast.simphony.data.logging.gather.DefaultTimeDataMapping"/>
+        <string>Tick</string>
+      </entry>
+    </mappingNameTable>
+    <alternatedNameTable/>
+    <nameAlternatedTable/>
+  </aggregateContainer>
+  <agentClass>riverbasim.RiverSection</agentClass>
+</repast.simphony.data.engine.DefaultDataGathererDescriptor>
